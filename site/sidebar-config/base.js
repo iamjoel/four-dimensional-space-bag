@@ -6,6 +6,17 @@ const config = [
     label: '基础组件',
     id: `${PREFIX}/nav`,
   },
+  {
+    type: 'category',
+    label: '内容',
+    items: [
+      {
+        type: 'doc',
+        label: '按钮',
+        id: `${PREFIX}/content/button`
+      }
+    ]
+  }
 ]
 
 module.exports = config
