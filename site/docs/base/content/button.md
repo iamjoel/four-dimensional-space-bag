@@ -14,5 +14,21 @@ import Code from '@site/src/components/code'
   content={
 `<Button>Primary</Button>
 <Button type="outline">OutLine</Button>
+<Button type="text">text</Button>
+`}
+/>
+
+## 尺寸
+<Demo>
+  <Button size="sm">Small</Button>
+  <Button size="md">Middle</Button>
+  <Button size="lg">Large</Button>
+</Demo>
+
+<Code
+  content={
+`<Button size="sm">Small</Button>
+<Button size="md">Middle</Button>
+<Button size="lg">Large</Button>
 `}
 />
