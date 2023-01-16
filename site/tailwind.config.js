@@ -4,5 +4,8 @@ module.exports = {
   theme: {
     extend: {},
   },
+  safelist: [ // 一定会加载的类名。无视 css Purge
+
+  ],
   plugins: [],
 }

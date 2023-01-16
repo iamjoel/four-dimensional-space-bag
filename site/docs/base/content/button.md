@@ -7,6 +7,7 @@ import Code from '@site/src/components/code'
 <Demo>
   <Button>Primary</Button>
   <Button type="outline">OutLine</Button>
+  <Button type="text">text</Button>
 </Demo>
 
 <Code
@@ -15,10 +16,3 @@ import Code from '@site/src/components/code'
 <Button type="outline">OutLine</Button>
 `}
 />
-
-<!-- <details>
-<summary>代码</summary>
-```jsx
-&gt;Button>Primary&gt;/Button>
-```
-</details> -->
