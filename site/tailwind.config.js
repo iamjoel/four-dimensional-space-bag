@@ -5,7 +5,8 @@ module.exports = {
     extend: {},
   },
   safelist: [ // 一定会加载的类名。无视 css Purge
-
+    'w-6',
+    'h-6'
   ],
   plugins: [],
 }

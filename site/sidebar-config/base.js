@@ -14,7 +14,12 @@ const config = [
         type: 'doc',
         label: '按钮',
         id: `${PREFIX}/content/button`
-      }
+      },
+      {
+        type: 'doc',
+        label: '卡片',
+        id: `${PREFIX}/content/card`
+      },
     ]
   }
 ]
