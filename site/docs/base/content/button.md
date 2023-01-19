@@ -1,8 +1,8 @@
-# 按钮
 import Demo from '@site/src/components/demo'
 import Button from '@site/src/components/base/button'
 import Code from '@site/src/components/code'
 
+# 按钮
 ## 基本用法
 <Demo className="space-x-3">
   <Button>Primary</Button>

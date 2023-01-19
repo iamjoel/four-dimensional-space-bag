@@ -63,9 +63,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'combine/nav',
+            docId: 'logic/nav',
             position: 'left',
-            label: '复合组件',
+            label: '逻辑组件',
           },
           {
             type: 'doc',

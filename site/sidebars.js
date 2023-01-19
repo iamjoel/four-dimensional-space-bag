@@ -10,7 +10,7 @@
  */
 
 const baseConfig = require('./sidebar-config/base')
-const combineConfig = require('./sidebar-config/combine')
+const logicConfig = require('./sidebar-config/logic')
 const pageConfig = require('./sidebar-config/page')
 
 
@@ -19,7 +19,7 @@ const pageConfig = require('./sidebar-config/page')
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   base: baseConfig,
-  combine: combineConfig,
+  logic: logicConfig,
   page: pageConfig,
 };
 

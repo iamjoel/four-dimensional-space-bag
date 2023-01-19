@@ -3,7 +3,7 @@ const PREFIX = 'page'
 const config = [
   {
     type: 'doc',
-    label: '页面d',
+    label: '页面',
     id: `${PREFIX}/nav`,
   },
 ]
