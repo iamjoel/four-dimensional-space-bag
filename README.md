@@ -1,2 +1,4 @@
-# Peacock
-用 React 和 Tailwind 做的 UI 组件，页面库。
+# 四次元袋
+前端的各种内容：API 文档，工具。
+
+主要内容都在：`/site` 下。
