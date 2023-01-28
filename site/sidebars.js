@@ -9,18 +9,16 @@
  Create as many sidebars as you want.
  */
 
-const baseConfig = require('./sidebar-config/base')
-const logicConfig = require('./sidebar-config/logic')
-const pageConfig = require('./sidebar-config/page')
+const knowledgeConfig = require('./sidebar-config/knowledge')
+const libsConfig = require('./sidebar-config/libs')
 
 
 // @ts-check
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  base: baseConfig,
-  logic: logicConfig,
-  page: pageConfig,
+  knowledge: knowledgeConfig,
+  libs: libsConfig,
 };
 
 module.exports = sidebars;

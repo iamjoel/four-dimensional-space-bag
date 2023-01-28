@@ -75,21 +75,15 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'base/nav',
+            docId: 'knowledge/overview',
             position: 'left',
-            label: '基础组件',
+            label: '前端知识', // 
           },
           {
             type: 'doc',
-            docId: 'logic/nav',
+            docId: 'libs/overview',
             position: 'left',
-            label: '逻辑组件',
-          },
-          {
-            type: 'doc',
-            docId: 'page/nav',
-            position: 'left',
-            label: '页面',
+            label: '库',
           },
           // right
           {
