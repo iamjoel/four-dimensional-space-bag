@@ -4,20 +4,23 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const projectPath = 'four-dimensional-space-bag'
+const projectName = '四次元口袋'
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Peacock',
+  title: projectName,
   tagline: 'UI library powered by react and tailwind.',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://github.com',
+  baseUrl: `/${projectPath}/site/build`,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // organizationName: 'facebook', // Usually your GitHub org/user name.
+  // projectName: 'docusaurus', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -45,13 +48,28 @@ const config = {
     ],
   ],
 
+  themes: [
+    // local search: https://github.com/easyops-cn/docusaurus-search-local
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"), 
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        language: 'zh',
+        indexBlog: false,
+        indexPages: true,
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+      })
+    ]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Peacock',
+        title: projectName,
         logo: {
-          alt: 'Peacock Logo',
+          alt: 'Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -75,7 +93,7 @@ const config = {
           },
           // right
           {
-            href: 'https://github.com/iamjoel/peacock',
+            href: `https://github.com/iamjoel/${projectPath}`,
             label: 'GitHub',
             position: 'right',
           },
@@ -84,7 +102,7 @@ const config = {
       footer: {
         style: 'dark',
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} Peacock, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ${projectName}, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
