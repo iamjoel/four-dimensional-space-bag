@@ -15,6 +15,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@arco-design/web-react": "^2.44.0",
     "@docusaurus/core": "2.2.0",
     "@docusaurus/preset-classic": "2.2.0",
     "@docusaurus/theme-common": "^2.3.0",

@@ -7,6 +7,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-stripes-indigo {
+  background-color: #818cf81a;
+  background-image: linear-gradient(135deg,#6366f180 10%,transparent 0,transparent 50%,#6366f180 0,#6366f180 60%,transparent 0,transparent);
+  background-size: 7.07px 7.07px;
+}
+
+.bg-stripes-purple {
+  background-color: #c084fc1a;
+  background-image: linear-gradient(135deg,#a855f780 10%,transparent 0,transparent 50%,#a855f780 0,#a855f780 60%,transparent 0,transparent);
+  background-size: 7.07px 7.07px;
+}
+
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;

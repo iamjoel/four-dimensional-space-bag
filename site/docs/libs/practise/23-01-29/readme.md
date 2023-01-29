@@ -1,6 +1,19 @@
 import TestCase from '@site/src/components/awesome/test-case'
+import Demo from '@site/src/components/awesome/demo'
+import AlignVer from '@site/src/components/temp/align-ver'
 
 # 2023/01/29
+## 1 垂直方向的对齐
+<Demo>
+  <AlignVer />
+</Demo>
+
+## 2 实现 _.chunk
+
+
+## 3 实现 _.concat
+
+
 <TestCase
   title="全部正确"
   items={
