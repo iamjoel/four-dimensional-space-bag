@@ -1,6 +1,6 @@
-import Demo from '@site/src/components/demo'
+import Demo from '@site/src/components/awesome/demo'
 import Button from '@site/src/components/base/button'
-import Code from '@site/src/components/code'
+import Code from '@site/src/components/awesome/code'
 
 # 按钮
 ## 基本用法

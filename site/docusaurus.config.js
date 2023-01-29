@@ -10,7 +10,7 @@ const projectName = '四次元口袋'
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: projectName,
-  tagline: 'UI library powered by react and tailwind.',
+  tagline: '前端的各种内容。如同哆啦A梦的四次元口袋。',
   url: 'https://github.com',
   baseUrl: `/${projectPath}/site/build`,
   onBrokenLinks: 'throw',

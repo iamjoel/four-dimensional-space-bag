@@ -1,5 +1,5 @@
-import Demo from '@site/src/components/demo'
-import Code from '@site/src/components/code'
+import Demo from '@site/src/components/awesome/demo'
+import Code from '@site/src/components/awesome/code'
 import Card from '@site/src/components/base/card'
 
 
