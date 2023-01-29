@@ -1,12 +1,11 @@
 
 import React, { FC, useState } from 'react'
+import { Button } from "@arco-design/web-react"
+const ButtonGroup = Button.Group
 
 const AlignVer: FC = ({
 }) => {
   const [align, setAlign] = useState('top');
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement> ) => {
-    setAlign(e.target.value)
-  }
 
   const alignClassName = (() => {
     return {
@@ -19,15 +18,20 @@ const AlignVer: FC = ({
     <div>
       <label className='block mb-2'>
         对齐方式：
-        <select
-          className='ml-1'
-          value={align}
-          onChange={handleChange}
-        >
-          <option>top</option>
-          <option>middle</option>
-          <option>bottom</option>
-        </select>
+        <ButtonGroup>
+          <Button 
+            type={align === 'top' ? 'primary' : 'outline'} shape='round'
+            onClick={() => setAlign('top')}
+          >top</Button>
+          <Button 
+            type={align === 'middle' ? 'primary' : 'outline'} shape='round'
+            onClick={() => setAlign('middle')}
+          >middle</Button>
+          <Button 
+            type={align === 'bottom' ? 'primary' : 'outline'} shape='round'
+            onClick={() => setAlign('bottom')}
+          >bottom</Button>
+        </ButtonGroup>
       </label>
       
       <div className={`flex ${alignClassName} gap-4 h-40 rounded bg-stripes-indigo`}>
@@ -38,4 +42,5 @@ const AlignVer: FC = ({
     </div>
   )
 }
+
 export default React.memo(AlignVer)

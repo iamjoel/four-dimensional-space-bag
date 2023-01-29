@@ -42,7 +42,10 @@ const config = {
           showReadingTime: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            require.resolve('@arco-design/web-react/dist/css/arco.css')
+          ]
         },
       }),
     ],
