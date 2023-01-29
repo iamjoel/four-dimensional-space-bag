@@ -3,6 +3,9 @@ import React, { FC, useState } from 'react'
 import { Button } from "@arco-design/web-react"
 const ButtonGroup = Button.Group
 
+/*
+1.
+*/
 const AlignVer: FC = ({
 }) => {
   const [align, setAlign] = useState('top');
@@ -34,7 +37,7 @@ const AlignVer: FC = ({
         </ButtonGroup>
       </label>
       
-      <div className={`flex ${alignClassName} gap-4 h-40 rounded bg-stripes-indigo`}>
+      <div className={`flex ${alignClassName} h-40 rounded bg-stripes-indigo gap-4`}>
         <div className='grow h-16 rounded bg-indigo-500'></div>
         <div className='grow h-8 rounded bg-indigo-500'></div>
         <div className='grow h-32 rounded bg-indigo-500'></div>
