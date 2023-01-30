@@ -19,7 +19,7 @@ import { chunk, concat } from '@site/src/utils/array'
       actuallyValue: chunk(['a', 'b', 'c', 'd'], 2)
     },
     {
-      title: `chunk(['a', 'b', 'c', 'd'], 3);`,
+      title: `chunk(['a', 'b', 'c', 'd'], 3)`,
       expectValue: [['a', 'b', 'c'], ['d']],
       actuallyValue: chunk(['a', 'b', 'c', 'd'], 3)
     },
