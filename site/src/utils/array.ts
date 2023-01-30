@@ -3,13 +3,24 @@ export const chunk = (arr: any[], size: number = 1) => {
 }
 
 export const concat = (arr: any[], ...rest: any[]) => {
-  let res = [...arr]
-  rest.forEach((item: any) => {
-    if(Array.isArray(item)) {
-      res = [...res, ...item]
-      return
-    }
-    res = [...res, item]
+  // 声明式
+  const toConcat = rest.flatMap((item: any) => {
+      if(Array.isArray(item)) {
+        return item
+      }
+      return item
   })
-  return res
+
+  return [...arr, ...toConcat]
+
+  // 命令式
+  // let res = [...arr]
+  // rest.forEach((item: any) => {
+  //   if(Array.isArray(item)) {
+  //     res = [...res, ...item]
+  //     return
+  //   }
+  //   res = [...res, item]
+  // })
+  // return res
 }
