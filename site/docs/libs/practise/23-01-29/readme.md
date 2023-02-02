@@ -3,14 +3,9 @@ import Demo from '@site/src/components/awesome/demo'
 import AlignVer from '@site/src/components/temp/align-ver'
 import { chunk, concat } from '@site/src/utils/array'
 
-import { CountDemo } from '@site/docs/libs/components/demo/count'
-import {SimpleSelectDemo} from '@site/docs/libs/components/demo/simple-select'
+
 
 # 2023/01/29
-## 简单下拉框
-<SimpleSelectDemo />
-
-
 ## 1 垂直方向的对齐
 <Demo>
   <AlignVer />
@@ -51,6 +46,5 @@ import {SimpleSelectDemo} from '@site/docs/libs/components/demo/simple-select'
   ]}
 />
 
-## 计数器
-<CountDemo />
+
 

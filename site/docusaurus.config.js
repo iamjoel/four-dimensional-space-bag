@@ -78,9 +78,9 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'knowledge/overview',
+            docId: 'frontend/overview',
             position: 'left',
-            label: '前端知识', // 
+            label: '前端',
           },
           {
             type: 'doc',

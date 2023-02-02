@@ -9,7 +9,7 @@
  Create as many sidebars as you want.
  */
 
-const knowledgeConfig = require('./sidebar-config/knowledge')
+const frontendConfig = require('./sidebar-config/frontend')
 const libsConfig = require('./sidebar-config/libs')
 
 
@@ -17,7 +17,7 @@ const libsConfig = require('./sidebar-config/libs')
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  knowledge: knowledgeConfig,
+  frontend: frontendConfig,
   libs: libsConfig,
 };
 
