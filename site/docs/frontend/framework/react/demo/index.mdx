@@ -1,5 +1,6 @@
 import { CountDemo } from './code/count'
 import { SimpleSelectDemo } from './code/simple-select'
+import BallGame from './code/ball-game'
 
 # Demo
 ## 计数器
@@ -10,3 +11,19 @@ import { SimpleSelectDemo } from './code/simple-select'
 ## 简单下拉框
 主要知识点： **useEffect**。
 <SimpleSelectDemo />
+
+## 游戏：运动的球
+<BallGame />
+
+
+<details>
+  <summary>需要实现的功能</summary>
+  <ol>
+    <li>能控制球的运动和暂停。</li>
+    <li>暂停时，可以修改球的位置，运动方向和速度。</li>
+    <li>球碰到边界后，会弹回来。速度不变，方向变反。</li>
+    <li>一共有三条命。碰到四面的边界，命减1。命的值为0时，游戏结束。</li>
+    <li>游戏结束后，可以重新开始游戏。</li>
+    <li>不同的命的球的颜色不同。三条命时，为绿色，两条命时，为黄色，一条命时，为红色。</li>
+  </ol>
+</details>
