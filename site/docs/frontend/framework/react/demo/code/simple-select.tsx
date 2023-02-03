@@ -68,7 +68,7 @@ const SimpleSelect: FC<ISimpleSelectProps> = ({
       e.stopPropagation()
       e.nativeEvent.stopImmediatePropagation()
     }}>
-      <div style={{color: 'green'}}>count: {count}</div>
+      {/* <div style={{color: 'green'}}>count: {count}</div> */}
       <div className='px-2 h-8 leading-8 border bg-green-500' onClick={() => {setIsShow(true)}}>请选择</div>
       <div className='absolute top-8 w-full'
         style={{
@@ -91,11 +91,12 @@ const SimpleSelect: FC<ISimpleSelectProps> = ({
 }
 
 export const SimpleSelectDemo = () => {
-  const [selected, setSelected] = useState()
+  const [selected, setSelected] = useState('')
   const [controlShow, setControlShow] = useState(0)
   return (
     <div>
-      选中值: {selected}。 <button onClick={() => setControlShow(Date.now())}>点我弹出选项</button>
+      选中值: {selected === '' ? '未选择' : selected}。 
+      <button onClick={() => setControlShow(Date.now())}>点我弹出选项</button>
       <SimpleSelect
         onChange={setSelected}
         controlShow={controlShow}

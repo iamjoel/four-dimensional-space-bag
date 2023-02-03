@@ -17,7 +17,7 @@ const config = [
           {
             type: 'doc',
             label: 'Demo',
-            id: `${PREFIX}/framework/react/demo`
+            id: `${PREFIX}/framework/react/demo/index`
           },
         ]
       },
