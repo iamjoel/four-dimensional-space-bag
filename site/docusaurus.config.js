@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const VeauryVuePlugin = require('./plugins/vueuary-vue')
 
 const projectPath = 'four-dimensional-space-bag'
 const projectName = '四次元口袋'
@@ -117,6 +118,33 @@ const config = {
             return postcssOptions; 
           }, 
         }; 
+      },
+      async function useVue(context, options) {
+        // ...
+        return {
+          name: 'use-vue',
+          configureWebpack(config, isServer, utils) {
+            // config.plugins.push(new VeauryVuePlugin())
+            return {
+              plugins: [new VeauryVuePlugin()]
+            }
+            // const {getCacheLoader} = utils;
+            // config.modules.rules.push({
+            //   test: /\.(vue|vue\.js)$/i,
+            //   use: [getCacheLoader(isServer), ],
+            // });
+            
+            return {
+              ...config,
+              plugins: [
+                ...config.plugins,
+                new VeauryVuePlugin(),
+                // ...
+              ]
+            };
+          },
+          /* other lifecycle API */
+        };
       },
     ],
 };

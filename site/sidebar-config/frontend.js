@@ -21,7 +21,17 @@ const config = [
           },
         ]
       },
-      
+      {
+        type: 'category',
+        label: 'Vue3',
+        items: [
+          {
+            type: 'doc',
+            label: 'Demo',
+            id: `${PREFIX}/framework/vue/demo/index`
+          },
+        ]
+      },
     ]
   }
 ]

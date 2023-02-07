@@ -1,5 +1,4 @@
 import React, { FC, useCallback, useState } from 'react'
-// import s from './style.module.css'
 export interface ICountProps {
   value: number
   onChange: (value: number) => void
