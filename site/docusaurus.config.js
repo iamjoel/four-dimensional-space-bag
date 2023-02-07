@@ -120,7 +120,6 @@ const config = {
         }; 
       },
       async function useVue(context, options) {
-        // ...
         return {
           name: 'use-vue',
           configureWebpack(config, isServer, utils) {
@@ -128,22 +127,7 @@ const config = {
             return {
               plugins: [new VeauryVuePlugin()]
             }
-            // const {getCacheLoader} = utils;
-            // config.modules.rules.push({
-            //   test: /\.(vue|vue\.js)$/i,
-            //   use: [getCacheLoader(isServer), ],
-            // });
-            
-            return {
-              ...config,
-              plugins: [
-                ...config.plugins,
-                new VeauryVuePlugin(),
-                // ...
-              ]
-            };
           },
-          /* other lifecycle API */
         };
       },
     ],
