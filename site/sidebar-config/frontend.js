@@ -30,6 +30,11 @@ const config = [
         items: [
           {
             type: 'doc',
+            label: 'Hooks',
+            id: `${PREFIX}/framework/react/api/hooks`
+          },
+          {
+            type: 'doc',
             label: 'Demo',
             id: `${PREFIX}/framework/react/demo/index`
           },

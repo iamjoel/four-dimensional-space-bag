@@ -1,0 +1,72 @@
+# 函数组件(Hooks)
+## 简介
+React 16.8 之后，支持使用函数组件。
+
+函数组件是纯函数，没有 `this`。 用 Hooks 来管理组件的状态，生命周期等。React 内置了 Hooks 包括： useState, useEffect, useContext 等。同时，还可以通过编写自定义 Hooks 来把可复用的状态逻辑从应用中抽离出来，并且不必担心组件的层级结构。
+
+函数组件比 class 组件**更简单，更容易维护，而且性能更高**。
+
+## [Hooks API](https://reactjs.org/docs/hooks-reference.html)
+Hooks API 包括：
+* 基础 Hooks: useState, useEffect, useContext
+* 额外 Hooks: useCallback, useMemo, useLayoutEffect,
+
+### useState
+useState 用来存数据。
+
+### useEffect
+
+### useContext
+
+### useCallback
+useCallback 用来缓存。
+
+### useMemo
+
+### 自定义 Hooks
+
+
+## 组件间通信
+通信的形式包括：数据 和 触发事件。
+
+### 父 => 子
+传递数据：通过属性。触发事件：通过子组件监听属性的变化。
+
+父组件设置子组件的状态。
+父组件让子组件获得焦点。
+
+### 子 => 父
+传递数据：函数属性的参数。 事件：调用函数属性。
+
+
+### 祖先 => 祖先
+
+
+### 子孙 => 祖先
+
+### 兄弟间
+
+
+## 代码复用
+工具函数，自定义 hooks， 组件。
+
+组件：高阶组件，renderProps。
+
+## 性能优化
+这边的性能优化指运行时性能优化。
+
+### 何时会触发组件被重新渲染
+1. Props 变化。
+2. State 变化。
+2. 父组件重新渲染。
+
+### 避免不必要重新渲染的方式
+React.memo， useCallback， useMemo。
+
+### 找到触发重新渲染的原因
+
+## 常用第三方 Hooks
+[ahooks](https://ahooks.js.org/zh-CN) 是 Hooks 库。常用的有：useBoolean, useGetState, useClickAway, useDebounce, useTimeout。
+
+其他： usePortal。
+
