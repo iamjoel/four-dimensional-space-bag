@@ -1,0 +1,30 @@
+import Demo from '@site/src/components/awesome/demo'
+import Code from '@site/src/components/awesome/code'
+import UsePortalDemo from './code/use-portal'
+
+# 工具 hooks
+
+## usePortal
+将某个元素移动到层级更浅的子元素上。  
+**使用场景：** 子元素的部分内容想超出 overflow: hidden 或 带滚动条的父元素时，仍然显示全。
+
+<Demo className="space-x-3">
+  <UsePortalDemo />
+</Demo>
+
+<Code
+  content={
+`const Portal = usePortal(portal到的元素，默认是 document.body)\n
+return (
+  <Portal>
+    <div
+      className='...'
+      style={{
+        display: isShow ? 'block' : 'none'
+      }}
+    >
+      Portal 内容
+    </div>
+  </Portal>
+)`}
+/>
