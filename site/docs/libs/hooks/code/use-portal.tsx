@@ -1,7 +1,6 @@
 import React, { useEffect, ReactNode, useRef, useState, useCallback } from 'react'
-import { useBoolean, useClickAway } from 'ahooks'
-
 import ReactDOM from 'react-dom';
+import { useBoolean, useClickAway } from 'ahooks'
 
 interface IPortalAPI {
   render: ({children}: {children: JSX.Element}) => ReactNode

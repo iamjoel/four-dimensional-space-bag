@@ -8,11 +8,25 @@ const config = [
   },
   {
     type: 'category',
+    label: 'JavaScript',
+    collapsed: false,
+    items: [
+      {
+        type: 'doc',
+        label: 'DOM',
+        id: `${PREFIX}/base/js/dom/overview`
+      },
+    ]
+  },
+  {
+    type: 'category',
     label: '框架',
+    collapsed: false,
     items: [
       {
         type: 'category',
         label: 'React',
+        collapsed: false,
         items: [
           {
             type: 'doc',
