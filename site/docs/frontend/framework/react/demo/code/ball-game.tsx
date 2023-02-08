@@ -5,11 +5,12 @@ import { useBoolean, useGetState } from 'ahooks'
 const CONTAINER_WIDTH = 200
 const CONTAINER_HEIGHT = 200
 const BALL_R = 10 // 圆的半径
+const REFRESH_DURATION = 25 // 毫秒
 
 enum Speed {
-  slow = 5,
-  middle = 10,
-  fast = 20
+  slow = 10,
+  middle = 20,
+  fast = 40
 }
 
 enum Dir {
@@ -23,36 +24,48 @@ const BallGame: FC = ({
 }) => {
   const [isRun, {toggle: toggleRun}] = useBoolean(false)
   const [x, setX, getX] = useGetState(CONTAINER_WIDTH / 2) // 中心点的X坐标
-  const [y, setY, getY] = useGetState(CONTAINER_HEIGHT / 2 - BALL_R)
+  const [y, setY, getY] = useGetState(CONTAINER_HEIGHT / 2) //  中心点的Y坐标
   const [speed, setSpeed, getSpeed] = useGetState<Speed>(Speed.fast)
-  const [dir, setDir, getDir] = useGetState<Dir>(Dir.top)
+  const [dir, setDir, getDir] = useGetState<Dir>(Dir.right)
+
   let runId
   const move = useCallback(() => {
     let newX = getX()
     let newY = getY()
-    const distance = getSpeed()
+    const distance = getSpeed() * REFRESH_DURATION / 1000
+    let overflowDistance // 溢出部分
     switch(getDir()) {
       case Dir.top:
         newY -= distance
-        if(newY < 0) {
-          newY = -newY
+        overflowDistance = -newY + BALL_R
+        if(overflowDistance > 0) {
+          newY = overflowDistance + 2 * BALL_R
           setDir(Dir.bottom)
         }
         break
       case Dir.bottom:
         newY += distance
-        if(newY > CONTAINER_HEIGHT) {
-          newY = CONTAINER_HEIGHT - (newY - CONTAINER_HEIGHT)
+        overflowDistance = newY - CONTAINER_HEIGHT + BALL_R
+        if(overflowDistance > 0) {
+          newY = CONTAINER_HEIGHT - overflowDistance - BALL_R
           setDir(Dir.top)
         }
         break
       case Dir.left:
         newX -= distance
-        // TODO:
+        overflowDistance = -newX + BALL_R
+        if(overflowDistance > 0) {
+          newX = overflowDistance + 2 * BALL_R
+          setDir(Dir.right)
+        }
         break
       case Dir.right:
-        // TODO:
         newX += distance
+        overflowDistance = newX - CONTAINER_WIDTH + BALL_R
+        if(overflowDistance > 0) {
+          newX = CONTAINER_WIDTH - overflowDistance - BALL_R
+          setDir(Dir.left)
+        }
         break
     }
     setX(newX)
@@ -62,7 +75,7 @@ const BallGame: FC = ({
   useEffect(() => {
     if(isRun) {
       move()
-      runId = setInterval(move, 1000)
+      runId = setInterval(move, REFRESH_DURATION)
     } else {
       clearInterval(runId)
     }

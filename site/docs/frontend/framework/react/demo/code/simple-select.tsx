@@ -47,7 +47,7 @@ const SimpleSelect: FC<ISimpleSelectProps> = ({
 
   useEffect(() => {
     const runId = setInterval(() => {
-      console.log(countRef.current)
+      // console.log(countRef.current)
     }, 3000)
     return () => {
       clearInterval(runId)
