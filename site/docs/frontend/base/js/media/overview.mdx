@@ -1,0 +1,28 @@
+# 操作媒体
+媒体主要包括视频和音频。[MDN 文档](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement)。
+
+## 常用属性
+* 总时长： duration。
+* 是否支持跨域。用属性 `crossOrigin` 控制：
+  * 支持跨域： `anonymous`
+  * 不支持跨域： `use-credentials`
+* 是否有控制条：controls。音频没有控制条会自动隐藏。
+* 自动播放：autoplay。
+
+## 播放位置
+获取：
+```js
+const video = document.createElement('video');
+console.log(video.currentTime)
+```
+
+currentTime 的代码是秒。
+
+设置：
+```js
+video.currentTime = 值
+```
+
+## 视频播放器 Demo
+TODO
+

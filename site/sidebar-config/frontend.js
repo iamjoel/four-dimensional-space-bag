@@ -13,8 +13,13 @@ const config = [
     items: [
       {
         type: 'doc',
-        label: 'DOM',
-        id: `${PREFIX}/base/js/dom/overview`
+        label: 'DOM & BOM',
+        id: `${PREFIX}/base/js/dom-bom/overview`
+      },
+      {
+        type: 'doc',
+        label: '操作媒体',
+        id: `${PREFIX}/base/js/media/overview`
       },
     ]
   },
