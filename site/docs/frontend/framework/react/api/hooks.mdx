@@ -1,3 +1,7 @@
+import Demo from '@site/src/components/awesome/demo'
+import Code from '@site/src/components/awesome/code'
+import UseContextDemo from './code/use-context'
+
 # 函数组件(Hooks)
 ## 简介
 React 16.8 之后，支持使用函数组件。
@@ -17,6 +21,31 @@ useState 用来存数据。
 ### useEffect
 
 ### useContext
+用于共享状态。在组件中，用 context 设置了值。无论多深的子组件，无需一层层的传递，都能获得context 的值。
+
+<Demo>
+  <UseContextDemo />
+</Demo>
+
+<Code 
+  content={`//1. 创建context
+const NameContext = React.createContext<INameContext>({
+  name: '',
+  setName: () => null
+}) \n
+// 2. 在父组件上设置要共享的值
+import NameContext from './name-context'
+<NameContext.Provider value={{
+  name,
+  setName
+}}>...</NameContext.Provider>\n
+// 3. 子组件消费
+const {name, setName} = React.useContext(NameContext)
+`}/>
+
+:::tip
+调用了 useContext 的组件总会在 context 值变化时重新渲染。如果重渲染组件的开销较大，你可以 通过使用 [memoization 来优化](https://github.com/facebook/react/issues/15156#issuecomment-474590693)。
+:::
 
 ### useCallback
 useCallback 用来缓存。

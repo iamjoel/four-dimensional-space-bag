@@ -36,9 +36,8 @@ const Code: FC<ICodeProps> = ({
             language={language}
             title={title}
             showLineNumbers
-          >
-            {content}
-          </CodeBlock>
+            children={content}
+          />
         )
       }
     </div>
