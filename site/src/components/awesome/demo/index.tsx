@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import BrowserOnly from '@docusaurus/BrowserOnly'
+
 import cn from 'clsx'
 
 interface IDemo {
@@ -6,13 +8,15 @@ interface IDemo {
   contentSize?: 'sm' | 'md' | 'lg' | 'full'
   padding?: string
   className?: string
+  browserOnly?: boolean
 }
 
 const Demo: FC<IDemo> = ({
   children,
   contentSize = 'full',
   padding = 'p-12',
-  className
+  className,
+  browserOnly
 }) => {
   const maxWidthStyle = (() => {
     if(contentSize === 'full') {
@@ -26,7 +30,8 @@ const Demo: FC<IDemo> = ({
       }[contentSize]
     )
   })()
-  return (
+
+  const main = (
     <div className={`
       mb-2
       rounded-sm
@@ -38,6 +43,14 @@ const Demo: FC<IDemo> = ({
         {children}
       </div>
     </div>
+  )
+  return (
+    <>
+      {browserOnly ? 
+        <BrowserOnly>{() => <>{main}</>}</BrowserOnly> :
+        main
+      }
+    </>
   )
 }
 

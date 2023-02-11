@@ -26,7 +26,7 @@ const config = [
           },
           {
             type: 'doc',
-            label: '滑动条',
+            label: '滑动输入条',
             id: `${PREFIX}/components/base/slider/readme`
           },
           {

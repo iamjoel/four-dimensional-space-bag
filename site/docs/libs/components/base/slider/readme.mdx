@@ -1,0 +1,30 @@
+import Demo from '@site/src/components/awesome/demo'
+import Code from '@site/src/components/awesome/code'
+import SliderDemo from './code/demo'
+
+# 滚动输入条
+## 基础用法
+<Demo browserOnly>
+  <SliderDemo />
+</Demo>
+
+<Code content={`<Slider
+  current={current}
+  onChange={setCurrent}
+  total={100}
+/>
+`}
+/>
+
+## 禁用
+<Demo browserOnly>
+  <SliderDemo initValue={30} disabled />
+</Demo>
+
+<Code content={`<Slider
+  current={current}
+  total={100}
+  disabled
+/>
+`}
+/>
