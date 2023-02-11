@@ -8,6 +8,40 @@ const config = [
   },
   {
     type: 'category',
+    label: 'CSS',
+    collapsed: false,
+    items: [
+      {
+        type: 'doc',
+        label: '选择器',
+        id: `${PREFIX}/base/css/selector/overview`
+      },
+      {
+        type: 'doc',
+        label: '布局',
+        id: `${PREFIX}/base/css/layout/overview`
+      },
+      {
+        type: 'category',
+        label: '规则',
+        items: [
+          {
+            type: 'doc',
+            label: '背景',
+            id: `${PREFIX}/base/css/rules/background/overview`
+          },
+          {
+            type: 'doc',
+            label: '图片',
+            id: `${PREFIX}/base/css/rules/image/overview`
+          },
+        ]
+      }
+      
+    ],
+  },
+  {
+    type: 'category',
     label: 'JavaScript',
     collapsed: false,
     items: [
