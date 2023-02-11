@@ -1,0 +1,28 @@
+.wrap {
+  display: inline-block;
+}
+
+.menuWrap {
+  position: fixed;
+  user-select: none;
+  z-index: 2000;
+  padding: 6px;
+  margin: 0;
+  background-color: #1F1F26;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 1px solid #3F3F4D;
+  cursor: pointer;
+  color: #fff;
+}
+
+.menuItem {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 6px;
+}
+
+.menuItem:hover {
+  background-color: #3F3F4D;
+}

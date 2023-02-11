@@ -1,0 +1,37 @@
+import Demo from '@site/src/components/awesome/demo'
+import Code from '@site/src/components/awesome/code'
+import ContextMenuDemo from './code/demo'
+
+# 上下文菜单
+<Demo>
+  <ContextMenuDemo />
+</Demo>
+
+<Code  content={
+`<ContextMenu
+  menus={[
+    {
+      key: 'create',
+      node: '创建'
+    },
+    {
+      key: 'copy',
+      node: (
+        <div className="flex justify-between">
+            <span>复制</span>
+            <span style={{color: '#77778C'}}>⌘C</span>
+          </div>
+      )
+    }
+  ]}
+  onAction={菜单选项点击回调} // (action: string) => void
+>
+  <Button type="primary">
+    触发元素
+  </Button>
+</ContextMenu>`}
+/>
+
+支持：
+1. 点菜单外的其他地方消失。
+2. 自定义菜单选项。
