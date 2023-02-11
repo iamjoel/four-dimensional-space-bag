@@ -1,0 +1,46 @@
+.select {
+  position: relative;
+  width: 80px;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.input {
+  position: relative;
+  height: 28px;
+  line-height: 28px;
+  padding-left: 8px;
+  border-radius: 4px;
+  background: #2A2A33 url(./icons/arrow.svg) right 8px center no-repeat;
+}
+
+.options {
+  position: absolute;
+  left: 0;
+  padding: 4px;
+  background: #1F1F26;
+  border: 1px solid #3F3F4D;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.option {
+  margin-bottom: 4px;
+  padding-left: 8px;
+  width: 72px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 4px;
+}
+
+.optionSelected {
+  color: #4D88FF;
+}
+
+.option:hover {
+  background: #3F3F4D;
+}
+
+

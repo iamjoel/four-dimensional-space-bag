@@ -1,0 +1,35 @@
+import Demo from '@site/src/components/awesome/demo'
+import Code from '@site/src/components/awesome/code'
+import SelectDemo from './code/demo.tsx'
+
+# 选择器
+## 基本用法
+<Demo className="space-x-3">
+  <SelectDemo />
+</Demo>
+
+<Code
+  content={
+`<Select
+  value={fruit}
+  onChange={setFruit}
+  options={fruitList} // 结构形如 [...{value: 1, label: '荔枝'}]
+/>
+`}
+/>
+
+## 选项往上展示
+<Demo className="space-x-3">
+  <SelectDemo showInTop />
+</Demo>
+
+<Code
+  content={
+`<Select
+  value={fruit}
+  onChange={setFruit}
+  options={fruitList} // 结构形如 [...{value: 1, label: '荔枝'}]
+  showInTop
+/>
+`}
+/>

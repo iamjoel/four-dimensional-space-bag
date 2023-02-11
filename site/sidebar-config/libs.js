@@ -17,12 +17,27 @@ const config = [
           {
             type: 'doc',
             label: '按钮',
-            id: `${PREFIX}/components/base/button`
+            id: `${PREFIX}/components/base/button/readme`
+          },
+          {
+            type: 'doc',
+            label: '选择器',
+            id: `${PREFIX}/components/base/select/readme`
+          },
+          {
+            type: 'doc',
+            label: '滑动条',
+            id: `${PREFIX}/components/base/slider/readme`
+          },
+          {
+            type: 'doc',
+            label: '上下文菜单',
+            id: `${PREFIX}/components/base/context-menu/readme`
           },
           {
             type: 'doc',
             label: '卡片',
-            id: `${PREFIX}/components/base/card`
+            id: `${PREFIX}/components/base/card/readme`
           },
         ]
       },
