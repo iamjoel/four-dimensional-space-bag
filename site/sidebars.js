@@ -9,8 +9,8 @@
  Create as many sidebars as you want.
  */
 
-const frontendConfig = require('./sidebar-config/frontend')
-const libsConfig = require('./sidebar-config/libs')
+const frontendConfig = require('./docs/frontend/sidebar')
+const libsConfig = require('./docs/libs/sidebar')
 
 
 // @ts-check

@@ -91,6 +91,17 @@ const config = [
         ]
       },
     ]
+  },
+  {
+    type: 'category',
+    label: '场景',
+    items: [
+      {
+        type: 'doc',
+        label: '代码调试',
+        id: `${PREFIX}/scenario/debugger/overview`
+      },
+    ]
   }
 ]
 

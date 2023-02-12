@@ -78,7 +78,7 @@ const config = [
   },
   {
     type: 'category',
-    label: '日常练习',
+    label: '日常练习4',
     items: [
       {
         type: 'doc',
