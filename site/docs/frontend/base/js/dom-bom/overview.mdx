@@ -1,5 +1,6 @@
 import Demo from '@site/src/components/awesome/demo'
 import Code from '@site/src/components/awesome/code'
+import ScrollToElem from './code/scroll-to-element'
 
 # DOM & BOM
 ## 代码参考
@@ -39,7 +40,27 @@ elem.getElementsByTagName('hello')
 
 ## 元素的样式信息
 
-## 判断是否有滚动条
+## 滚动
+### 滚动到指定元素
+<Demo>
+  <ScrollToElem />
+</Demo>
+
+<Code content={`const scrollToElem = ...
+if(scrollToElem.current && wrapElemRef.current) {
+  // top: 距浏览器视口位置
+  const { top: wrapTop } = wrapElemRef.current.getBoundingClientRect()
+  const {top} = scrollToElem.current.getBoundingClientRect()
+  const scrollY = top - wrapTop + wrapElemRef.current.scrollTop // 浏览器网上滚动了，子元素的top就小了滚动值
+  wrapElemRef.current.scrollTo({
+    top: scrollY,
+    behavior: 'smooth',
+  })
+}
+}`}>
+</Code>
+
+### 判断是否有滚动条
 
 ## URL 
 ### URL 信息

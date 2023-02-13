@@ -1,0 +1,65 @@
+import CallTrace from './code/call-trace'
+
+# 代码调试
+代码调试用于检查程序中的错误。所谓错误，就是实际值和预期值不一样。
+
+如何高效的的调试代码呢，主要有三个技巧： 断点，断言/测试用例，日志。
+
+## 1 断点
+断点主要看：数据，调用堆栈。
+
+<CallTrace />
+
+### 普通断点
+
+### 条件断点
+```js
+function doSth(a, b) {
+  // 比如 a > 0 的时候会出错，所以只想看 a > 0 的情况...
+  if(a > 0) {
+    debugger
+  }
+}
+```
+
+#### 外部控制的条件断点
+```js
+if(window.isDebugger) {
+  debugger
+}
+```
+
+在控制台通过改 window.isDebugger 的值来控制中断。
+
+## 2 断言/测试用例
+console.assert(boolean, '错误信息')
+
+```js
+import compareArrEqual from '...'
+// [1, 2, 3] => 2 * [] => sum
+function doubleArr(arr) {
+  return arr.map(item => item * 2)
+}
+
+function sumArr(arr) {
+  return arr.reduce((prevSum, current) => prevSum + current, 0)
+}
+
+const arr = [1, 2, 3]
+let doubledArr = doubleArr(arr)
+console.arrset(compareArrEqual(doubledArr, [2, 4, 6]), 'doubleArr 出错')
+
+const sum = sumArr(doubledArr)
+console.arrset(sum === (2 + 4 + 6), 'sum 出错')
+```
+
+## 3 日志
+log, info, warn, error
+
+```js
+console.log('xxx')
+```
+
+
+
+
