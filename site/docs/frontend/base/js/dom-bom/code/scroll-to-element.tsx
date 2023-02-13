@@ -23,16 +23,7 @@ const ScrollToElem: FC = ({
 
   useEffect(() => {
     const scrollToElem = colorRefMap[current]
-    if(scrollToElem.current && wrapElemRef.current) {
-      // top: 距浏览器视口位置
-      const { top: wrapTop } = wrapElemRef.current.getBoundingClientRect()
-      const {top} = scrollToElem.current.getBoundingClientRect()
-      const scrollY = top - wrapTop + wrapElemRef.current.scrollTop // 浏览器网上滚动了，子元素的top就小了滚动值
-      wrapElemRef.current.scrollTo({
-        top: scrollY,
-        behavior: 'smooth',
-      })
-    }
+    scrollTo(wrapElemRef.current, scrollToElem.current)
   }, [current])
 
   return (
@@ -63,4 +54,19 @@ const ScrollToElem: FC = ({
     
   )
 }
+
 export default React.memo(ScrollToElem)
+
+const scrollTo = (wrapElem, targetElem) => {
+  if(wrapElem && targetElem) {
+    // top: 距浏览器视口位置
+    const { top: wrapTop } = wrapElem.getBoundingClientRect()
+    const wrapScrollTop = wrapElem.scrollTop
+    const { top: childTop} = targetElem.getBoundingClientRect()
+    const scrollY = childTop - wrapTop + wrapScrollTop// 浏览器网上滚动了，子元素的top就小了滚动值
+    wrapElem.scrollTo({
+      top: scrollY,
+      behavior: 'smooth',
+    })
+  }
+}
