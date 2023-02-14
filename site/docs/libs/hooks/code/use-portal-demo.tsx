@@ -1,35 +1,6 @@
-import React, { useEffect, ReactNode, useRef, useState, useCallback } from 'react'
-import ReactDOM from 'react-dom';
+import React, { useRef, useState, useCallback } from 'react'
 import { useBoolean, useClickAway } from 'ahooks'
-
-interface IPortalAPI {
-  render: ({children}: {children: JSX.Element}) => ReactNode
-  remove: () => void
-}
-
-export const usePortal = (el: HTMLElement = document.body) => {
-  const [portal, setPortal] = React.useState<IPortalAPI>({
-    render: () => null,
-    remove: () => null,
-  });
-
-  const createPortal = React.useCallback(el => {
-    const Portal = ({ children }: {children: JSX.Element}) => ReactDOM.createPortal(children, el);
-    const remove = () => ReactDOM.unmountComponentAtNode(el);
-    return { render: Portal, remove };
-  }, []);
-
-  useEffect(() => {
-    if (el) portal.remove();
-    const newPortal = createPortal(el);
-    setPortal(newPortal);
-    return () => {
-      newPortal.remove();
-    }
-  }, [el]);
-
-  return portal.render;
-};
+import usePortal from '@site/src/hooks/use-portal'
 
 const Demo: React.FC = () => {
   const Portal = usePortal()

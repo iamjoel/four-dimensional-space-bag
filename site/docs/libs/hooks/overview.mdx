@@ -1,8 +1,14 @@
 import Demo from '@site/src/components/awesome/demo'
 import Code from '@site/src/components/awesome/code'
-import UsePortalDemo from './code/use-portal'
+import UsePortalDemo from './code/use-portal-demo'
+import UseGetStateDemo from './code/use-get-state-demo'
 
 # 工具 hooks
+## UseGetStateDemo
+总是返回最新的 state 值。解决在 useEffect 的异步函数 和 useCallback 中出现拿旧的 state 的情况。
+<Demo browserOnly className="space-x-3">
+  <UseGetStateDemo />
+</Demo>
 
 ## usePortal
 将某个元素移动到层级更浅的子元素上。  
