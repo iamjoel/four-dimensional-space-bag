@@ -1,6 +1,7 @@
 import Demo from '@site/src/components/awesome/demo'
 import Code from '@site/src/components/awesome/code'
 import UseContextDemo from './code/use-context'
+import  { ChangeVarNotReRender } from './code/use-state/demo.tsx'
 
 # 函数组件(Hooks)
 ## 简介
@@ -17,6 +18,12 @@ Hooks API 包括：
 
 ### useState
 useState 用来存数据。
+
+变量变化，并不会导致组件重新渲染。打开控制台查看效果。
+<Demo>
+  <ChangeVarNotReRender />
+</Demo>
+
 
 ### useEffect
 
