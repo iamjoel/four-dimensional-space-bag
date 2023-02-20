@@ -21,8 +21,13 @@ const config = [
           },
           {
             type: 'doc',
-            label: '选择器',
+            label: '下拉选择器',
             id: `${PREFIX}/components/base/select/readme`
+          },
+          {
+            type: 'doc',
+            label: '列表无限加载',
+            id: `${PREFIX}/components/base/infinite-list/readme`
           },
           {
             type: 'doc',
