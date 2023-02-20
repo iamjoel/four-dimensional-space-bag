@@ -21,6 +21,7 @@
     "@docusaurus/theme-common": "^2.3.0",
     "@easyops-cn/docusaurus-search-local": "^0.33.6",
     "@mdx-js/react": "^1.6.22",
+    "@splidejs/react-splide": "^0.7.12",
     "@vue/babel-plugin-jsx": "^1.1.1",
     "ahooks": "^3.7.4",
     "autoprefixer": "^10.4.13",
