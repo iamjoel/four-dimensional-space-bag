@@ -2,6 +2,7 @@ import Demo from '@site/src/components/awesome/demo'
 import TestCase from '@site/src/components/awesome/test-case'
 
 import AlignVer from '@site/src/components/temp/align-ver'
+import { PlusBtn, CloseBtn } from '@site/docs/frontend/base/css/demo/plus-and-close-btn'
 
 import { chunk, concat } from '@site/src/utils/array'
 
@@ -19,7 +20,17 @@ import BallGame from '@site/docs/frontend/framework/react/demo/code/ball-game'
 
 <Demo>
   <AlignVer />
-</Demo> 
+</Demo>
+
+### + 号和 x 号按钮
+要实现的样式如下：
+<Demo>
+  <div className="flex  justify-center space-x-3">
+    <PlusBtn />
+    <CloseBtn />
+  </div>
+</Demo>
+
 
 ## JavaScript
 ### 实现 loadash 的 [`_.chunk`](https://lodash.com/docs/4.17.15#chunk) 方法 #_.chunk
@@ -75,6 +86,11 @@ import BallGame from '@site/docs/frontend/framework/react/demo/code/ball-game'
 <Demo>
   <InfiniteListDemo  dir="hor" />
 </Demo>
+
+## BOM
+### 解析搜索字符串的内 #parse-search
+
+### 实现 useLocalStroge
 
 ## 框架
 React，Vue 等。
