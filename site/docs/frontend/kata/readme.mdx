@@ -1,0 +1,163 @@
+import Demo from '@site/src/components/awesome/demo'
+import TestCase from '@site/src/components/awesome/test-case'
+
+import AlignVer from '@site/src/components/temp/align-ver'
+
+import { chunk, concat } from '@site/src/utils/array'
+
+import { CountDemo } from '@site/docs/frontend/framework/react/demo/code/count'
+import UseContextDemo from '@site/docs/frontend/framework/react/api/code/use-context/'
+import InfiniteListDemo from '@site/docs/libs/components/base/infinite-list/code/demo'
+import { SimpleSelectDemo } from '@site/docs/frontend/framework/react/demo/code/simple-select'
+import BallGame from '@site/docs/frontend/framework/react/demo/code/ball-game'
+
+
+# 编程练习题
+## CSS
+### 垂直方向对齐 #flex-ver
+> 用 Flex 布局，实现多个子项在垂直方向的居顶，居中，居底的对齐。
+
+<Demo>
+  <AlignVer />
+</Demo> 
+
+## JavaScript
+### 实现 loadash 的 [`_.chunk`](https://lodash.com/docs/4.17.15#chunk) 方法 #_.chunk
+> 数组的切分。
+
+<TestCase
+  title="_.chunk 需求："
+  items={[
+    {
+      title: `_.chunk(['a', 'b', 'c', 'd'], 2)`,
+      expectValue: [['a', 'b'], ['c', 'd']],
+      actuallyValue: chunk(['a', 'b', 'c', 'd'], 2)
+    },
+    {
+      title: `_.chunk(['a', 'b', 'c', 'd'], 3)`,
+      expectValue: [['a', 'b', 'c'], ['d']],
+      actuallyValue: chunk(['a', 'b', 'c', 'd'], 3)
+    },
+  ]}
+/>
+
+### 实现 loadash 的 [`_.concat`](https://lodash.com/docs/4.17.15#concat) 方法 #_.concat
+> 数组的拼接。
+
+<TestCase
+  title="_.concat 需求："
+  items={[
+    {
+      title: `_.concat([1], 2, [3], [[4]])`,
+      expectValue: [1, 2, 3, [4]],
+      actuallyValue: concat([1], 2, [3], [[4]])
+    },
+    {
+      title: `_.concat([1], 2, [3, 4, 5], [[4]])`,
+      expectValue: [1, 2, 3,  4, 5, [4]],
+      actuallyValue: concat([1], 2, [3, 4, 5], [[4]])
+    },
+  ]}
+/>
+
+### 实现  loadash 的 [`_.curry`](https://lodash.com/docs/4.17.15#curry) 方法 #_.curry **\[未完成\]**
+
+## DOM
+### 列表无限加载 #infinite-list
+> 列表滚动到底部，加载更多内容。
+
+支持垂直和水平方向的列表。示例：
+
+<Demo>
+  <InfiniteListDemo />
+</Demo>
+
+<Demo>
+  <InfiniteListDemo  dir="hor" />
+</Demo>
+
+## 框架
+React，Vue 等。
+
+### 计数器 #count
+> 实现计数器功能。计数器是用以来计数的。
+
+<details>
+  <summary>需求</summary>
+  <ol>
+    <li>展示数值。用输入框来展示当前数值。</li>
+    <li>修改数值。支持通过输入框，+ 和 - 按钮来改数值。点击+，数值增加1。点击-，数值减少1。</li>
+    <li>数值必须是整数。</li>
+    <li>数值的范围是: 5 到 15。
+      <ol>
+        <li>当数值达到最大或最小值时，隐藏对应的按钮。</li>
+        <li>当输入的数值大于最大值时，显示最大值。</li>
+        <li>当输入的数值小于最大值时，显示最小值。</li>
+      </ol>
+    </li>
+    <li>优化项: 用 自定义 hooks 来抽离逻辑。</li>
+  </ol>
+</details>
+
+示例：
+<Demo contentSize="md">
+  <CountDemo />
+</Demo>
+
+### 简单的下拉选择器 #select
+> 下拉选择器
+
+<details>
+  <summary>需求</summary>
+  <ol>
+    <li>展示下拉选项。点击下拉框 或 "点我弹出选项" 按钮，展示下拉选项。</li>
+    <li>可以通过</li>
+    <li>选择选项。点击选项，则选择选项，并隐藏下拉内容。</li>
+    <li>点击下拉选择器外侧，隐藏下拉内容。</li>
+  </ol>
+</details>
+
+示例：
+<Demo contentSize="md">
+  <SimpleSelectDemo />
+</Demo>
+
+### 给很深的子组件传值 #passToDeepChildren
+> 父组件直接传值给很深的子组件传值。
+
+<details>
+  <summary>需求</summary>
+  <ol>
+    <li>父组件直接传值给很深的子组件传值，但不通过中间组件传递。父组件和子组件均能获取和修改值。</li>
+    <li>React 用 Context API 实现。Vue 用 Project/Inject 实现。</li>
+  </ol>
+</details>
+示例：
+<Demo>
+  <UseContextDemo />
+</Demo>
+
+### 运动的球 #ball
+> 控制球的运动。
+
+<details>
+  <summary>需求</summary>
+  <ol>
+    <li>能控制球的运动和暂停。</li>
+    <li>暂停时，可以修改球的位置，运动方向和速度。</li>
+    <li>球碰到边界后，会弹回来。速度不变，方向变反。</li>
+    <li>一共有三条命。碰到四面的边界，命减1。命的值为0时，游戏结束。</li>
+    <li>游戏结束后，可以重新开始游戏。</li>
+    <li>不同的命的球的颜色不同。三条命时，为绿色，两条命时，为黄色，一条命时，为红色。</li>
+  </ol>
+</details>
+
+示例：
+<Demo contentSize="md">
+  <BallGame />
+</Demo>
+
+### 待办事宜 **\[未完成\]**
+
+
+

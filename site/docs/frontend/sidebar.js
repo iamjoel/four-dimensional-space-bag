@@ -102,7 +102,23 @@ const config = [
         id: `${PREFIX}/scenario/debugger/overview`
       },
     ]
-  }
+  },
+  {
+    type: 'category',
+    label: '工具',
+    items: [
+      {
+        type: 'doc',
+        label: '自定义代码片段',
+        id: `${PREFIX}/tools/vscode/snippet`
+      },
+    ]
+  },
+  {
+    type: 'doc',
+    label: '编程练习题',
+    id: `${PREFIX}/kata/readme`
+  },
 ]
 
 module.exports = config

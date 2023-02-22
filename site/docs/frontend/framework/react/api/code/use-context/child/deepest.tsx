@@ -5,7 +5,7 @@ const Deepest: FC = () => {
   const {name, setName} = useContext(NameContext)
   return (
     <div>
-      姓名：<input value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}></input>
+      值：<input value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}></input>
     </div>
   )
 }

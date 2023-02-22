@@ -5,14 +5,14 @@ import Deepest from './child/deepest'
 import ChildComp from './child'
 
 const UseContextDemo: FC = () => {
-  const [name, setName] = useState('')
+  const [name, setName] = useState('改我试试')
 
   return (
     <NameContext.Provider value={{
       name,
       setName
     }}>
-      姓名: <input value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}></input>
+      值: <input value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}></input>
       <ChildComp name="第一级子元素">
         <ChildComp name="第二级子元素">
           <ChildComp name="第三级子元素">

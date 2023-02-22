@@ -81,17 +81,6 @@ const config = [
       },
     ]
   },
-  {
-    type: 'category',
-    label: '日常练习4',
-    items: [
-      {
-        type: 'doc',
-        label: '2023/01/29',
-        id: `${PREFIX}/practise/23-01-29/readme`
-      },
-    ]
-  },
 ]
 
 module.exports = config

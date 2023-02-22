@@ -1,0 +1,36 @@
+# 自定义代码片段(VSCode Snippets)
+> 快速生成代码。
+
+[官方文档](https://code.visualstudio.com/docs/editor/userdefinedsnippets)。
+
+## 基础写法
+```js
+"flex row center": {
+  "prefix": "ly-c",
+  "body": [
+    "justify-content: center;",
+  ],
+  "description": "flex row center",
+  "scope": "css"
+},
+```
+
+其中：
+* prefix: 触发代码片段的字符串。
+* body: 生成内容。
+* description: 代码片段描述。
+* scope: 生效的文件类型。不指定的话，都生效。
+
+
+## 站位符
+用 `$1`, `$2`... 来指定站位符。按 tab 会按 `$` 后数字，从小到大依次跳到都用位置。
+
+占位符支持多光标。即如果指定 `$1`，当改 `$1` 值时，所有 `$1` 的内容会同时改。
+
+### 默认值
+默认值是文本： `${1:默认值}`
+
+默认值是选项: `${1|选项1,选项2,选项3|}`
+
+## 推荐阅读
+* [一个案例学会 VSCode Snippets，极大提高开发效率](https://zhuanlan.zhihu.com/p/457062272)

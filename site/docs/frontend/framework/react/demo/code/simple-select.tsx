@@ -1,26 +1,12 @@
 import React, { FC, useState, useEffect, useRef } from 'react'
 export interface ISimpleSelectProps {
+  list: {id: number, title: string}[]
   controlShow: number
   onChange: (value: number) => void
-  // onGetCount: (value: number) => void
 }
 
-const list = [
-  {
-    id: 1,
-    title: '选项1'
-  },
-  {
-    id: 2,
-    title: '选项2'
-  },
-  {
-    id: 3,
-    title: '选项3'
-  },
-]
-
 const SimpleSelect: FC<ISimpleSelectProps> = ({
+  list,
   controlShow,
   onChange
 }) => {
@@ -57,16 +43,13 @@ const SimpleSelect: FC<ISimpleSelectProps> = ({
   useEffect(() => {
     if(controlShow) {
       setIsShow(true)
-      // 。。。。。.then(onGetCount())
     }
   }, [controlShow])
 
-
-
   return (
-    <div className='relative w-24 text-white cursor-pointer' onClick={e => {
-      e.stopPropagation()
-      e.nativeEvent.stopImmediatePropagation()
+    <div className='relative w-24 text-white cursor-pointer' onClick={(e: MouseEvent) => {
+      e.stopPropagation();
+      (e as any).nativeEvent.stopImmediatePropagation()
     }}>
       {/* <div style={{color: 'green'}}>count: {count}</div> */}
       <div className='px-2 h-8 leading-8 border bg-green-500' onClick={() => {setIsShow(true)}}>请选择</div>
@@ -98,12 +81,25 @@ export const SimpleSelectDemo = () => {
       选中值: {selected === '' ? '未选择' : selected}。 
       <button onClick={() => setControlShow(Date.now())}>点我弹出选项</button>
       <SimpleSelect
+        list={[
+          {
+            id: 1,
+            title: '选项1'
+          },
+          {
+            id: 2,
+            title: '选项2'
+          },
+          {
+            id: 3,
+            title: '选项3'
+          },
+        ]}
         onChange={setSelected}
         controlShow={controlShow}
       />
     </div>
   )
-
 }
 
 export default React.memo(SimpleSelect)

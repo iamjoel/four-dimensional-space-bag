@@ -30,10 +30,10 @@ const TestCase: FC<ITestCaseProps> = ({
       <div key={title} className={cn('mb-1 text-sm', isRight ? 'text-green-500': 'text-red-500')}>
         <div className='flex items-center'>
           <span className='mr-1 h-6'>{isRight ? rightIcon : wrongIcon}</span>
-          {title}{!title.endsWith('。') && '。'}
+          {title} 的结果应该是: {renderValue(expectValue)}。
         </div>
         {!isRight && (<div className='ml-3 pl-4 text-xs'>
-          期望值: {renderValue(expectValue)}。实际值: {renderValue(actuallyValue)}。
+          实际值: {renderValue(actuallyValue)}。
         </div>)}
       </div>
     )
