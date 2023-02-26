@@ -3,6 +3,7 @@ import TestCase from '@site/src/components/awesome/test-case'
 
 import AlignVer from '@site/src/components/temp/align-ver'
 import { PlusBtn, CloseBtn } from '@site/docs/frontend/base/css/demo/plus-and-close-btn'
+import Cup from '@site/docs/frontend/base/css/layout/demo/cup'
 import Dice from '@site/docs/frontend/base/css/layout/demo/dice'
 
 import { chunk, concat } from '@site/src/utils/array'
@@ -23,10 +24,24 @@ import BallGame from '@site/docs/frontend/framework/react/demo/code/ball-game'
   <AlignVer />
 </Demo>
 
+### 圣杯布局
+<details>
+  <summary>需求</summary>
+  <ol>
+    <li>垂直方向: header, footer 固定高度。中间部分撑满容器剩余部分。</li>
+    <li>水平方向: left, right 固定宽度。中间部分撑满容器剩余部分。</li>
+  </ol>
+</details>
+
+要实现的样式如下：
+<Demo>
+  <Cup />
+</Demo>
+
 ### + 号和 x 号按钮 #plus-close-btn
 要实现的样式如下：
 <Demo>
-  <div className="flex  justify-center space-x-3">
+  <div className="flex justify-center space-x-3">
     <PlusBtn />
     <CloseBtn />
   </div>
