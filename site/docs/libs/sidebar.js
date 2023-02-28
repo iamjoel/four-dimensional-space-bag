@@ -31,6 +31,11 @@ const config = [
           },
           {
             type: 'doc',
+            label: 'Toast',
+            id: `${PREFIX}/components/base/toast/readme`
+          },
+          {
+            type: 'doc',
             label: '滑动输入条',
             id: `${PREFIX}/components/base/slider/readme`
           },
