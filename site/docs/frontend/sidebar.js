@@ -109,6 +109,11 @@ const config = [
     items: [
       {
         type: 'doc',
+        label: 'Notion AI',
+        id: `${PREFIX}/tools/notion-ai/readme`
+      },
+      {
+        type: 'doc',
         label: '自定义代码片段',
         id: `${PREFIX}/tools/vscode/snippet`
       },

@@ -1,0 +1,62 @@
+import Demo from '@site/src/components/awesome/demo'
+import TodoList, { TodoList2 }  from '@site/docs/frontend/framework/react/demo/code/todolist'
+
+# Notion AI
+> Notion AI 是一种基于自然语言处理的智能写作工具, 它能够帮助用户快速生成文章、简历、邮件等文本内容。
+
+## 功能
+### 生成代码
+#### js
+Promot: `用 js 代码实现如下功能：传入开始值和结果值，对值之间的数求和`。输出：
+```js
+function sum(start, end) {
+  let sum = 0;
+  for (let i = start; i <= end; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+console.log(sum(1, 10)); // 输出 55
+```
+
+以上是 JavaScript 代码，实现了一个函数 `sum`，它接受两个参数 `start` 和 `end`，分别表示求和的开始值和结束值。函数通过 for 循环对从 `start` 到 `end` 之间的数进行累加，并将累加结果返回。
+
+例如，调用 `sum(1, 10)` 将返回 55，因为 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 的结果为 55。
+
+#### react
+Promot: `用 react 实现 todo list。其中，样式 用 tailwindcss 来实现`。生成代码如下： 
+
+<Demo>
+  <TodoList />
+</Demo>
+
+Promot: `写 react 实现 todo list 的代码。其中，样式 用 tailwindcss 来实现。todo list 要支持 todo 的增删改查，以及完成操作`。生成代码如下：
+
+<Demo>
+  <TodoList2 />
+</Demo>
+
+### 解释代码
+选中如下代码：
+```js
+let sum = 0
+for(let i = 0; i < 10; i++) {
+  sum += i
+}
+```
+
+Prompt: `解释这段代码`。输出:
+> 这是一段 JavaScript 代码。它定义了一个名为 "sum" 的变量，并将其初始化为 0。然后使用 for 循环从 0 到 9 对变量 "i" 的值进行累加，并将总和存储在 "sum" 中。最终 "sum" 的值将为 45。
+
+
+## 生成格式
+以列表输出。
+
+以表格输出。
+
+
+
+## 写技术文章
+技术文章大体的结构是：是什么，为什么，怎么用。
+
