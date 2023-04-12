@@ -30,3 +30,6 @@ GPT：GPT：**Thought：**现在我想可以回答用户的问题了。
 **Final Answer**：我帮你从携程查了一下，3月26日上海到北京的机票价格是 ¥1000 元。
 
 工具的返回：我帮你从携程查了一下，3月26日上海到北京的机票价格是 ¥1000 元。
+
+## 一些产品
+* [YC爆发AIGC潮，100+项目完整盘点](https://mp.weixin.qq.com/s/8VU_ekaHAO93YhmkYgQJCw)
