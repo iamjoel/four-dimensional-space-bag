@@ -45,4 +45,5 @@ A:我被设定为只能回答与项目管理和 PMP 考试有关的问题。
 * [ChatGPT 中文调教指南](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)
 
 ## 工具
+* [flowgpt](https://flowgpt.com/)
 * [Open GPT](https://open-gpt.app/) 预制了 Prompt 模版进行聊天的 Hub。
