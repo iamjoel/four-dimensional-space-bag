@@ -9,11 +9,14 @@ Notion, Quora 用的是这个模型。
 ## [Vicuna](https://vicuna.lmsys.org/)
 聊天类模型。
 
+> a chat assistant fine-tuned from LLaMA on user-shared conversations. This one is expected to perform best according to our evaluation.
 > Vicuna-13B achieves more than 90%* quality of OpenAI ChatGPT and Google Bard while outperforming other models like LLaMA and Stanford Alpaca in more than 90%* of cases. 
+
+[Demo](https://chat.lmsys.org/)
 
 The cost of training Vicuna-13B is around $300.
 
-Vicuna 官方出的 Chat App：[FastChat](https://github.com/lm-sys/FastChat)
+Vicuna 官方出的 Chat App [FastChat](https://github.com/lm-sys/FastChat):An open platform for training, serving, and evaluating large language model based chatbots.
 
 ## [WebLLM](https://mlc.ai/web-llm/)
 > This project brings large-language model and LLM-based chatbot to web browsers. Everything runs inside the browser with no server support and accelerated with WebGPU. 
