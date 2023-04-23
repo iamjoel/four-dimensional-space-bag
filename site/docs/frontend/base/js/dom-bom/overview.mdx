@@ -109,3 +109,21 @@ const searchParams = new URLSearchParams(search)
 searchParams.set('name', 'jack')
 searchParams.toString() // name=jack&age=18
 ```
+
+## 复杂的生成或解析 URL 参数
+使用库：[qs](https://www.npmjs.com/package/qs)。
+
+比如：`ids = [1, 2, 3]` 要生成的参数是 `ids=1&ids=2&ids=3`。实现：
+```js
+qs.stringify(ids, { indices: false })
+```
+
+在 axios 的写法：
+```js
+{
+  params: ids,
+  paramsSerializer: params => {
+    return qs.stringify(params, { indices: false })
+  }
+}
+```

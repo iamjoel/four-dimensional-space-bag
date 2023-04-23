@@ -9,6 +9,7 @@ import Dice from '@site/docs/frontend/base/css/layout/demo/dice'
 import { chunk, concat } from '@site/src/utils/array'
 
 import { CountDemo } from '@site/docs/frontend/framework/react/demo/code/count'
+import GuessNum from '@site/docs/frontend/framework/react/demo/code/guess-num'
 import UseContextDemo from '@site/docs/frontend/framework/react/api/code/use-context/'
 import InfiniteListDemo from '@site/docs/libs/components/base/infinite-list/code/demo'
 import { SimpleSelectDemo } from '@site/docs/frontend/framework/react/demo/code/simple-select'
@@ -141,6 +142,29 @@ React，Vue 等。
 示例：
 <Demo contentSize="md">
   <CountDemo />
+</Demo>
+
+### 猜数字
+> 轻松的聚会游戏。
+
+<details>
+  <summary>需求</summary>
+  <ol>
+    <li>
+      主持人写下 1 到 100 之间的一个数字。 
+    </li>
+    <li>
+      其他人轮流猜，猜到主持人写的数字，则游戏结束。
+    </li>
+    <li>
+      其他人猜的答案比写下数字大，主持人会说大了。猜的比写下数字小，主持人会说小了。
+    </li>
+  </ol>
+</details>
+
+示例：
+<Demo contentSize="md">
+  <GuessNum />
 </Demo>
 
 ### 简单的下拉选择器 #select

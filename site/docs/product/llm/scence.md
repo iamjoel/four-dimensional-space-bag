@@ -55,6 +55,7 @@
 
 角色扮演： 心理医生，律师，面试官，美食评论家，健身教练，英语老师。
 
+* [character.ai](https://beta.character.ai/) 各种人物角色扮演聊天机器人。
 * [mendable](https://www.mendable.ai/) 搜索文档。
 
 

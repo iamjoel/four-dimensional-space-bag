@@ -11,7 +11,7 @@ const projectName = '四次元口袋'
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: projectName,
-  tagline: '前端的各种内容。如同哆啦A梦的四次元口袋。',
+  tagline: '互联网开发，运营的各种内容。如同哆啦A梦的四次元口袋。',
   url: 'https://github.com',
   baseUrl: `/${projectPath}/site/build`,
   onBrokenLinks: 'throw',
@@ -55,7 +55,7 @@ const config = {
   themes: [
     // local search: https://github.com/easyops-cn/docusaurus-search-local
     [
-      require.resolve("@easyops-cn/docusaurus-search-local"), 
+      require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       ({
         language: 'zh',
@@ -107,30 +107,30 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-    plugins: [ 
-      async function tailwind(context, options) { 
-        return { 
-          name: "docusaurus-tailwindcss",
-          configurePostCss(postcssOptions) {
-            // Appends TailwindCSS and AutoPrefixer. 
-            postcssOptions.plugins.push(require("tailwindcss"));
-            postcssOptions.plugins.push(require("autoprefixer"));
-            return postcssOptions; 
-          }, 
-        }; 
-      },
-      async function useVue(context, options) {
-        return {
-          name: 'use-vue',
-          configureWebpack(config, isServer, utils) {
-            // config.plugins.push(new VeauryVuePlugin())
-            return {
-              plugins: [new VeauryVuePlugin()]
-            }
-          },
-        };
-      },
-    ],
+  plugins: [
+    async function tailwind(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer. 
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+    async function useVue(context, options) {
+      return {
+        name: 'use-vue',
+        configureWebpack(config, isServer, utils) {
+          // config.plugins.push(new VeauryVuePlugin())
+          return {
+            plugins: [new VeauryVuePlugin()]
+          }
+        },
+      };
+    },
+  ],
 };
 
 module.exports = config;
