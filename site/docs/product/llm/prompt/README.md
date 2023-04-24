@@ -40,6 +40,8 @@ A:我被设定为只能回答与项目管理和 PMP 考试有关的问题。
 
 
 ## 资源
+* [Prompt 学习指南](https://prompt-guide.xiniushu.com/)
+* 琐碎的： https://tagly.notion.site/060248bc8a4e4a1a835363dced11e569?v=8a803cfe65194e00ab4843c30c37195b
 * [The Art of ChatGPT Prompting: A Guide to Crafting Clear and Effective Prompts](https://fka.gumroad.com/l/art-of-chatgpt-prompting)
 * [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)
 * [ChatGPT 中文调教指南](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)

@@ -11,7 +11,7 @@
 
 const frontendConfig = require('./docs/frontend/sidebar')
 const libsConfig = require('./docs/libs/sidebar')
-
+const backendConfig = require('./docs/backend/sidebar')
 
 // @ts-check
 
@@ -19,6 +19,7 @@ const libsConfig = require('./docs/libs/sidebar')
 const sidebars = {
   frontend: frontendConfig,
   libs: libsConfig,
+  backend: backendConfig,
 };
 
 module.exports = sidebars;

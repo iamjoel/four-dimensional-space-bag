@@ -1,0 +1,59 @@
+# 环境变量
+环境变量是操作系统中的一组动态的值，用于定义操作系统或应用程序的行为。
+
+## 访问环境变量
+```
+process.env.环境变量名
+```
+
+一般的前端框架中，一般都设置的几个环境变量：
+* `process.env.NODE_ENV` 来区分开发环境和生产环境。开发环境和生产环境的值分别是 `development` 或 `production`。
+* `process.env.PORT` 启动应用的端口号。
+
+## 设置环境变量
+不同的系统，设置环境变量的方式不同。
+
+Linux 或 macOS 系统中，可以通过以下命令设置环境变量：
+```bash
+PORT=5001 MYNAME=Joel node src/index.js
+```
+
+要将环境变量导出到全局的环境变量，加 `export` 前缀：
+```bash
+export PORT=5001 MYNAME=Joel node src/index.js
+# echo $PORT => 5001
+# unset PORT # 删除环境变量
+```
+
+Windows 的 Powershell 中，可以通过以下命令设置环境变量：
+```bash
+$env:PORT="5001"
+$env:MYNAME="Joel"
+node src\index.js
+```
+
+设置环境变量要跨系统，可以使用 [cross-env](https://www.npmjs.com/package/cross-env) 这个包。写法
+```bash
+cross-env PORT=5001 MYNAME=Joel node src/index.js
+```
+
+## 需要设置很多环境变量
+环境变量很多时，用 [dotenv](https://www.npmjs.com/package/dotenv) 可以帮助我们方便地管理环境变量。
+
+使用 dotenv，我们可以在一个 `.env` 文件中定义环境变量，然后在程序中使用 process.env 对象来访问这些环境变量。
+
+.env 中的内容例如：
+```
+PORT=5001
+MYNAME=Joel
+```
+
+使用
+```js
+require('dotenv').config()
+// ES6 的写法
+// import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+// dotenv.config()
+process.env.PORT
+```
+

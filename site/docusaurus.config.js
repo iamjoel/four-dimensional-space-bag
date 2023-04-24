@@ -89,6 +89,12 @@ const config = {
             position: 'left',
             label: '库',
           },
+          {
+            type: 'doc',
+            docId: 'backend/overview',
+            position: 'left',
+            label: '后端',
+          },
           // right
           {
             href: `https://github.com/iamjoel/${projectPath}`,
