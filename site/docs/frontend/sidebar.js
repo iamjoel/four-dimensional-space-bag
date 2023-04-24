@@ -37,7 +37,7 @@ const config = [
           },
         ]
       }
-      
+
     ],
   },
   {
@@ -101,6 +101,17 @@ const config = [
         label: '代码调试',
         id: `${PREFIX}/scenario/debugger/overview`
       },
+    ]
+  },
+  {
+    type: 'category',
+    label: '代码质量',
+    items: [
+      {
+        type: 'doc',
+        label: '高质量组件设计的思考',
+        id: `${PREFIX}/code-quality/component-design/readme`
+      }
     ]
   },
   {
