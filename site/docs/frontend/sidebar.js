@@ -55,6 +55,11 @@ const config = [
         label: '操作媒体',
         id: `${PREFIX}/base/js/media/overview`
       },
+      {
+        type: 'doc',
+        label: '正则',
+        id: `${PREFIX}/base/js/regex`
+      },
     ]
   },
   {

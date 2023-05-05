@@ -1,0 +1,20 @@
+# 正则
+## 密码校验
+
+```js
+/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/
+```
+
+## 正则设置了全局标志，用 test/exec 方法，一会返回 true，一会返回 false
+正则表达式设置了全局标志，`test/exec` 的执行会改变正则表达式 lastIndex 属性。连续的执行 `test/exec`，后续的执行将会从 lastIndex 处开始匹配字符串。
+```js
+var regex = /foo/g;
+
+regex.test('foo'); // true
+regex.test('foo'); // false
+regex.test('foo'); // true
+
+regex.lastIndex = 0 // 解决方案
+regex.test('foo'); // true
+
+```

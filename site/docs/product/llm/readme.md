@@ -33,3 +33,4 @@ GPT：GPT：**Thought：**现在我想可以回答用户的问题了。
 
 ## 一些产品
 * [YC爆发AIGC潮，100+项目完整盘点](https://mp.weixin.qq.com/s/8VU_ekaHAO93YhmkYgQJCw)
+* [AIGC 导航](http://www.aigc.cn/)

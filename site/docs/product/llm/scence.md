@@ -1,7 +1,27 @@
 # 场景
 输入要求(自然语言) -> 处理 -> 输出(自然语言)。
 
-很多时候是先有软件 + 
+很多时候是先有软件。
+
+大分类
+1. 转化。
+  1. 翻译。不同语言的转化。不同编程语言的转化。
+  2. 文字和代码的转化。
+  3. 文字和符号，图片，音频，视频的转化。
+  4. 文字和的转化。
+2. 变长
+  1. 续写。
+  2. 脑爆。
+3. 变短
+  1. 总结。
+  2. 分类。
+
+常见场景
+1. 内容生成
+2. 总结
+3. 分类、归类和情感分析
+4. 数据提取
+5. 翻译
 
 ## 内容生成（AIGC）
 ### 生成图片
@@ -21,6 +41,10 @@
 ### 生成代码
 * [GitHub Copilot](https://github.com/features/copilot)
 * [Cursor](https://www.cursor.so/)  反应好慢。可以生成代码+聊天。 [GitHub](https://github.com/getcursor/cursor)
+* [FigPilot](https://figma.chakra-ui.com/) 根据 Figma 生成代码。 Figma 出品。
+
+### 代码查找 & 分析
+* [bloop](https://bloop.ai/)
 
 ### 其他
 * [Xmind Copilot](https://xmind.ai/) 思维导图 AI 助手。
@@ -43,6 +67,9 @@
 
 
 ## 翻译
+
+## 分析
+* [FinChat.io](https://finchat.io/) 财报分析聊天机器人。
 
 ## 解释
 解释代码的意思。
