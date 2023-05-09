@@ -36,6 +36,11 @@ const config = [
           },
           {
             type: 'doc',
+            label: 'Loading',
+            id: `${PREFIX}/components/base/loading/readme`
+          },
+          {
+            type: 'doc',
             label: '滑动输入条',
             id: `${PREFIX}/components/base/slider/readme`
           },
