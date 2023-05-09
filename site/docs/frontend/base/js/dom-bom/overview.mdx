@@ -75,6 +75,21 @@ elem.getElementsByTagName('hello')
 
 ### 判断是否有滚动条
 
+## 事件
+### [KeyboardEvent.isComposing](https://developer.mozilla.org/zh-CN/docs/Web/API/KeyboardEvent/isComposing)
+KeyboardEvent.isComposing 只读属性，返回一个 Boolean 值，表示该事件是否在 compositionstart 之后和 compositionend 之前被触发。
+
+场景：当避免在输入法回车时触发回车的处理事件。实现：
+```js
+const handleKeyDown = (e) => {
+  if(e.key === 'Enter' && !e.isComposing) {
+    // do something
+  }
+}
+```
+
+在 React 中，isComposing 在 e.nativeEvent 上。
+
 ## URL 
 ### URL 信息
 * locaion.href
