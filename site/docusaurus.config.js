@@ -95,6 +95,12 @@ const config = {
             position: 'left',
             label: '后端',
           },
+          {
+            type: 'doc',
+            docId: 'ai/prompt/overview',
+            position: 'left',
+            label: 'AI',
+          },
           // right
           {
             href: `https://github.com/iamjoel/${projectPath}`,

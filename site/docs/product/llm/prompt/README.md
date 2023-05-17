@@ -45,6 +45,7 @@ A:我被设定为只能回答与项目管理和 PMP 考试有关的问题。
 * [The Art of ChatGPT Prompting: A Guide to Crafting Clear and Effective Prompts](https://fka.gumroad.com/l/art-of-chatgpt-prompting)
 * [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)
 * [ChatGPT 中文调教指南](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)
+* [betterprompt](https://github.com/stjordanis/betterprompt) 评估 Prompt 的工具。基于 [Demystifying Prompts in Language Models via Perplexity Estimation](https://arxiv.org/pdf/2212.04037.pdf)
 
 ## APP
 * [flowgpt](https://flowgpt.com/)

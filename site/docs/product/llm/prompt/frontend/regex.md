@@ -1,4 +1,5 @@
 # JavaScript 正则生成器
+介绍文章：[一分钟做个写正则的 AI 应用？有点厉害哦](https://mp.weixin.qq.com/s/-I95ZVjCOhK2ZwXpx5wD-A)
 
 ## V1 能满足要求
 问题：

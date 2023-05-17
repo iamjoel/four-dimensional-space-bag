@@ -12,6 +12,7 @@
 const frontendConfig = require('./docs/frontend/sidebar')
 const libsConfig = require('./docs/libs/sidebar')
 const backendConfig = require('./docs/backend/sidebar')
+const aiConifg = require('./docs/ai/sidebar')
 
 // @ts-check
 
@@ -20,6 +21,7 @@ const sidebars = {
   frontend: frontendConfig,
   libs: libsConfig,
   backend: backendConfig,
+  ai: aiConifg,
 };
 
 module.exports = sidebars;
