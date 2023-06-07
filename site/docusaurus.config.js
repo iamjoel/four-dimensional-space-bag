@@ -91,6 +91,12 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'tools/docker/overview',
+            position: 'left',
+            label: '工具',
+          },
+          {
+            type: 'doc',
             docId: 'backend/overview',
             position: 'left',
             label: '后端',
