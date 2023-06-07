@@ -40,6 +40,11 @@ const config = [
             label: '边框',
             id: `${PREFIX}/base/css/rules/border/overview`
           },
+          {
+            type: 'doc',
+            label: '文字',
+            id: `${PREFIX}/base/css/rules/text/overview`
+          },
         ]
       }
 
