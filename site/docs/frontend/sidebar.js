@@ -35,6 +35,11 @@ const config = [
             label: '图片',
             id: `${PREFIX}/base/css/rules/image/overview`
           },
+          {
+            type: 'doc',
+            label: '边框',
+            id: `${PREFIX}/base/css/rules/border/overview`
+          },
         ]
       }
 
