@@ -1,0 +1,37 @@
+import Demo from '@site/src/components/awesome/demo'
+import Cup from '@site/docs/frontend/base/css/layout/demo/cup'
+import Dice from '@site/docs/frontend/base/css/layout/demo/dice'
+import GrowTooLargeBreakUI from '@site/docs/frontend/base/css/layout/demo/grow-too-large'
+
+
+# 布局
+## 概览
+布局：位置 + 大小。
+
+### 布局基础
+* 盒模型。margin，content，padding。
+* 渲染模式。标准模式，怪癖模式。
+
+### 布局技术
+* Flex
+* Grid
+* 定位布局。绝对定位。固定定位。sticky定位。
+* 响应式布局。
+* 列布局
+
+## 例子
+### 圣杯布局
+<Demo>
+  <Cup />
+</Demo>
+
+### 骰子
+<Demo>
+  <Dice />
+</Demo>
+
+### 子元素宽度超出父元素问题
+通过在 grow 的父元素上设置：`width: 0` 或 `overflow-auto`来实现。 具体说明：[flex布局子元素宽度超出父元素问题](https://juejin.cn/post/6974356682574921765)
+<Demo>
+  <GrowTooLargeBreakUI />
+</Demo>
