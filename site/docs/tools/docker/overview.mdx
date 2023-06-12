@@ -95,6 +95,20 @@ docker build . -t 构建出的镜像名称
 
 docker 还支持对 GitHub 的 repo 或者压缩包来构建。
 
+传构时传参，用 `--build-arg key=value`。如 `docker build --build-arg SENTRY_DSN=abc --build-arg SENTRY_ORG=abc . -t xxx `
+```
+ARG SENTRY_DSN # 获取到的参数
+ENV NEXT_PUBLIC_SENTRY_DSN $SENTRY_DSN
+RUN echo "NEXT_PUBLIC_SENTRY_DSN is: $NEXT_PUBLIC_SENTRY_DSN"
+
+# ...
+RUN NEXT_PUBLIC_SENTRY_DSN=$SENTRY_DSN \
+    NEXT_PUBLIC_SENTRY_ORG=$SENTRY_ORG \
+    NEXT_PUBLIC_SENTRY_PROJECT=$SENTRY_PROJECT \
+    npm run build
+```
+
+[更多信息](https://docs.docker.com/engine/reference/commandline/build/)。
 
 :::info
 不推荐用 `docker commit` 来定制镜像。`docker commit` 意味着所有对镜像的操作都是黑箱操作，生成的镜像也被称为 黑箱镜像，换句话说，就是除了制作镜像的人知道执行过什么命令、怎么生成的镜像，别人根本无从得知。而且，即使是这个制作镜像的人，过一段时间后也无法记清具体的操作。这种黑箱镜像的维护工作是非常痛苦的。
