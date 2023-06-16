@@ -116,6 +116,11 @@ const config = [
         label: '代码调试',
         id: `${PREFIX}/scenario/debugger/overview`
       },
+      {
+        type: 'doc',
+        label: '拖动排序',
+        id: `${PREFIX}/scenario/sortable/index`
+      },
     ]
   },
   {
