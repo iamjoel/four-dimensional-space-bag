@@ -91,7 +91,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'tools/docker/overview',
+            docId: 'tools/overview',
             position: 'left',
             label: '工具',
           },
@@ -103,7 +103,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'ai/prompt/overview',
+            docId: 'ai/overview',
             position: 'left',
             label: 'AI',
           },
