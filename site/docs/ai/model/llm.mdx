@@ -1,0 +1,39 @@
+# LLM 模型概览
+## 闭源
+* OpenAI。 GTP-3.5，GTP-4等。
+* Band。Google。
+* 国内
+  * 文心一言。百度
+  * 通义千问。阿里。
+  * 微语亿达。腾讯。
+  * 鸿蒙万向。华为。
+  * [星火](https://xinghuo.xfyun.cn/)。科大讯飞。
+
+## 开源
+* [LLaMA](https://github.com/facebookresearch/llama)
+* 基于 LLaMA 微调的
+    * Alpaca（斯坦福）。
+    * Vicuna，gpt4all 等。
+* [Falcon 猎鹰]
+
+* 国内
+    * [百川7B](https://github.com/baichuan-inc/baichuan-7B) 百川智能（搜狗王小川）开发的一个开源可商用的大规模预训练语言模型。整体模型基于标准的 Transformer 结构，我们采用了和 LLaMA 一样的模型设计。
+    * [ChatGLM](https://chatglm.cn/) 目前是 ChatGLM 6B。是一个具有问答、多轮对话和代码生成功能的中英双语模型，基于千亿基座 GLM-130B 开发。 旨在推动大模型的科学研究，面向高校学术交流与行业合作。ChatGLM 在ChatGPT之前就发布了，所以架构不是最先进的。
+    *  智源[Aquila](https://github.com/FlagAI-Open/FlagAI/tree/master/examples/Aquila)。相关的 [FlagAI 飞智](https://github.com/FlagAI-Open/FlagAI/blob/master/README_zh.md) 支持在多模态的各种下游任务上训练、微调和部署大规模模型。
+    * [中文 LLaMA * Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
+
+
+很多模型都是基于 LLaMA 
+
+## 测评(Benchmark)
+* [Hugging face Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)。用的测试集：AI2 Reasoning Challenge，HellaSwag，MMLU，TruthfulQA。
+* [SuperGLUE](https://super.gluebenchmark.com/)
+* [C-Eval](https://cevalbenchmark.com/index.html) 中文基础模型评测。[排行](https://cevalbenchmark.com/static/leaderboard.html)
+
+测评的点：
+* 知识：学科，编程，翻译。 
+* 能力：
+  * 推理
+  * 数值计算
+  * 伦理
+  * 多轮交互
