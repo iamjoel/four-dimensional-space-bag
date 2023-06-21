@@ -48,6 +48,10 @@ const config = {
             require.resolve('@arco-design/web-react/dist/css/arco.css')
           ]
         },
+        gtag: {
+          trackingID: 'G-37H5PXD0DP',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
