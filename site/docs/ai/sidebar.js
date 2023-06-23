@@ -7,9 +7,21 @@ const config = [
     id: `${PREFIX}/overview`,
   },
   {
+    type: 'category',
+    label: 'AI 模型',
+    collapsed: false,
+    items: [
+      {
+        type: 'doc',
+        label: 'LLM',
+        id: `${PREFIX}/model/llm`,
+      },
+    ]
+  },
+  {
     type: 'doc',
-    label: 'LLM 模型概览',
-    id: `${PREFIX}/model/llm`,
+    label: '应用场景',
+    id: `${PREFIX}/app/index`,
   },
   {
     type: 'category',
@@ -32,11 +44,6 @@ const config = [
         id: `${PREFIX}/build-app/flow/overview`,
       },
     ]
-  },
-  {
-    type: 'doc',
-    label: '应用',
-    id: `${PREFIX}/app/index`,
   },
 ]
 

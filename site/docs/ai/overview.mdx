@@ -1,57 +1,26 @@
 # AI 概览
 > 成为出题家。而不是做题家。我们来出题，AI 来做题。
 
-* 模型
-* Prompt
-    * Prompt 库
-        * [SnackPrompt](https://snackprompt.com) Prompt界的Github，可以创建分享自己的Prompt，可以按周、月纬度看热门Prompt。 
-        * [FlowGPT](https://flowgpt.com/)
-        * [OpenPrompt](https://openprompt.co/)
-* Flow: 多步骤，多模型配合。
-    * AI Agents。
-        * [Hugging GPT](https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652312923&idx=1&sn=bc29fe3ffc35b42b6e2b6ffa8af940bd&scene=21#wechat_redirect)
-        * [AutoGPT](https://zhuanlan.zhihu.com/p/622947810)
-        * BabyAGI, visual-chatgpt 等
-    * workflow
-        * langchain flow
-        * [Click Prompt](https://www.clickprompt.org/zh-CN/click-flow/) [prompt engineering](https://github.com/prompt-engineering)
-* 嵌入 Embedding
-    * 向量数据库
-* 微调 Fine-tuning
-* Chain of thought
-    * [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/abs/2201.11903)
-* 编程工具
-    * langChain
-    * [Reflexion](https://github.com/noahshinn024/reflexion)
-    * [Semantic Kernel](https://github.com/microsoft/semantic-kernel) is a lightweight SDK enabling integration of AI Large Language Models (LLMs) with conventional programming languages.
-* 综合
-    * Embedding 和 Fine-tuning 各自适合的场景
-* 开发 App 工具
-    * Dify
-    * [AirOps](https://www.airops.com/) Create LLM-powered Workflows, Tools and Chat Agents that delight your users and team.
-    * 基于文档对话。 核心是要显示来源。
-        * [ChatPDF](https://www.chatpdf.com/)
-        * [PandaGPT](https://www.pandagpt.io/)
-        * [Markprompt](https://github.com/motifland/markprompt) 数据源支持 md，Github Repo，[motif](https://motif.land/)。开源，可以self host。云端版：有些免费的额度。可以定制prompt，分享给别人。
-    * 国内
-        * [Chato](https://chato.cn/) [体验](./build-app/chato)
-        * [FastGPT](https://github.com/c121914yu/FastGPT) build an AI knowledge based app.
-    
-* 文本生产类
-    * [Copy.ai](https://app.copy.ai/) 运营内容的生成。
+## 内容
+* AI 模型
+  * LLM(语言大模型)
+  * 图像模型
+  * 语言，视频等多模态模型
+  * 具体场景的模型：推理等
+* 应用场景
+* 开发应用
 
-## 开发
-    * [DocsGPT](https://github.com/arc53/DocsGPT) 了解通过文档回答问题的实现。基于 LLM 的。云端版免费用7天，收费 10$/月。收费版可以用 GPT 4。相似度比较用了：
-        * [Faiss](https://github.com/facebookresearch/faiss)
-    * [LangChain Visualizer](https://github.com/amosjyng/langchain-visualizer) 推理过程的
-    * 皮肤
-        * [Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-        * [Chatbot UI](https://github.com/mckaywrigley/chatbot-ui)
-        * [LoLLMS Web UI](https://github.com/ParisNeo/lollms-webui) gpt4all chatbot ui
+## 整体的生态
+* 底层： AI 模型
+* 中间层：
+    * 编排：LangChain， LamaIndex，
+    * 嵌入：向量数据库
+    * 缓存：GTP chache，Redis
+    * LLMOps: Weights & Biases, MLflow
+    * Validation
+    * 应用部署： Vercel，Steamship
+* 应用层。不同类型的应用
 
-## 总结类的
-* [Wiseone - ChatGPT for Reading & Browsing](https://chrome.google.com/webstore/detail/wiseone-chatgpt-for-readi/paodpkkacimmkacaecjmhdncjgjepcai/related)
-* 总结 Youtube，bilibili 等。
 
 ## 资源
 * [AIGC 工具群](https://bytedance.feishu.cn/base/AIMAbnJxQaNgSGsBAtwcdAkLnvf?table=tblmZTd8VuUOOONh&view=vew0Eo17BB)

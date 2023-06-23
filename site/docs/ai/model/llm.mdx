@@ -1,4 +1,40 @@
 # LLM 模型概览
+大语言模型（Large Language Model，简称LLM）是一种计算机语言模型，它由具有许多参数（从数千万到数十亿）的人工神经网络组成，这些参数是通过自监督学习或半监督学习在大量未标记文本上进行训练的。LLM在2018年左右出现，并且在各种任务中表现良好，这改变了自然语言处理研究的焦点，使其从训练专门的有监督模型以完成特定任务的旧模式转向新的焦点。
+
+尽管大语言模型没有正式的定义，但它通常指的是在大型语料库上进行预训练的深度学习模型，这些模型具有数百万甚至数十亿的参数。LLM是通用模型，擅长于各种任务，而不是被训练为完成一项特定任务（如情感分析、命名实体识别或数学推理）。尽管这些模型在训练过程中只执行一些简单的任务，比如预测句子中的下一个单词，但是足够训练并具有足够参数的神经语言模型已经被发现能够捕捉到人类语言的大部分语法和语义。此外，大型语言模型表现出了对世界的广泛知识，并且能够在训练过程中"记住"大量的事实。LLM通常在大型文本数据集上进行预训练。一些常用的文本数据集包括Common Crawl、The Pile、MassiveText、Wikipedia和GitHub。这些数据集的规模可以达到10万亿个单词。
+
+一般来说，LLM可以由四个参数来描述：**模型的大小，训练数据集的大小，训练的成本，以及训练后的性能**。这四个变量都可以被精确地定义成一个实数，而且它们被发现在实际中是由一些简单的统计规律，被称为"规模定律"。
+
+在一些涉及问题回答等任务的自然语言基准测试中，模型在达到一定规模（在这种情况下，是通过训练计算来衡量）之前，其性能通常不会比随机抽样好。但是，一旦达到这个规模，它们的性能会急剧提高。这些都是能力的涌现。虽然大模型在各种任务上的表现通常可以基于类似较小模型的性能来推断，但有时会发生“断裂”现象，在这种情况下，更大的模型会突然以不同于较小模型的速率获得显著的能力。
+
+总的来说，大语言模型是一种强大的工具，具有广泛的应用，包括但不限于情感分析、命名实体识别、数学推理等。它们通过在大量文本数据上进行预训练，能够在各种任务上表现出色，并且可以根据特定的需求进行微调。
+
+## 擅长做的事
+1. 文本生成：LLM可以生成连贯的、符合上下文的文本，这使其能用于自动撰写文章、故事或诗歌等。
+2. 问题回答：你可以向LLM提问，它会根据其训练数据生成可能的答案。
+3. 对话：LLM可以参与对话，生成符合上下文的响应，这使其适合作为聊天机器人或虚拟助手。
+4. 翻译：如果给出一段非英语文本，LLM可以尝试将其翻译为英语。
+5. 简单编程帮助：对于基础的编程问题，LLM可能能提供一些帮助。
+
+## 不擅长的事
+1. 处理未知或新的信息：LLM的训练数据截止到某个时间点（例如OpenAI的GPT-3和GPT-4的截止时间分别是2020年和2021年），因此它无法处理这之后发生的事件或出版的信息。
+2. 保密性和隐私：因为LLM的训练数据是公开的，所以它无法访问或了解具体的个人信息或保密信息。如果你告诉它一些私人信息，它也没有办法记住或存储这些信息。
+3. 偏见和歧视：LLM基于公开可用的文本进行训练，这些文本可能包含某些偏见或歧视。虽然训练过程中会尽力减少这些问题，但LLM可能仍然在某些情况下无意识地展示出这些偏见。
+4. 感知环境：LLM无法感知或理解其所处的环境，也无法获取除了文本输入以外的信息。
+5. 实时交互：LLM并不能进行实时交互或对实时事件做出反应。其对话并不是实时的，每一次输入都是独立的，它不会记住之前的输入。
+
+这些不擅长的都可以通过引入外部的工具（插件）或数据来解决。
+
+## 衡量一个语言模型
+困惑度 (Perplexity)：困惑度是语言模型最常用的评价指标。它衡量了模型在预测下一个词的能力。困惑度越低，表示模型的预测能力越好。这个指标在处理如机器翻译、语音识别等问题时特别重要。
+精度 (Accuracy)：在一些任务中，如文本分类或命名实体识别，我们可以使用精度来评估模型的性能。精度是正确预测的数量与总预测数量的比例。
+F1 分数：F1 分数是精确率和召回率的调和平均数，通常用于评估模型在处理不平衡数据集时的性能。
+BLEU 分数：BLEU 分数是一种广泛用于机器翻译的评价指标。它比较机器翻译输出和人工翻译之间的n-gram重合度。
+ROUGE 分数：ROUGE 分数主要用于评估自动文摘和机器翻译的性能。它包括多个指标，如ROUGE-N（比较n-gram的重合度）、ROUGE-L（比较最长公共子序列）等。
+人类评估 (Human Evaluation)：在许多情况下，我们需要人类评估者来评估模型的性能。例如，在生成对话、文章或故事时，我们可能会让人类评估者对模型生成的文本在一致性、逻辑性、创新性等方面进行评分。
+其他任务特定的指标：根据不同的任务，可能会有一些特定的评估指标。例如，在问答任务中，我们可能会使用MRR（Mean Reciprocal Rank，平均倒数排名）或者MAP（Mean Average Precision，平均精确率）等指标。
+请注意，任何单一的指标都无法完全反映一个语言模型的全部能力。对于不同的任务和用例，我们可能需要结合使用多种指标来评估模型的性能。
+
 ## 闭源
 * OpenAI。 GTP-3.5，GTP-4等。
 * Band。Google。
@@ -37,3 +73,59 @@
   * 数值计算
   * 伦理
   * 多轮交互
+
+
+
+## 其他
+
+* 模型
+* Prompt
+    * Prompt 库
+        * [SnackPrompt](https://snackprompt.com) Prompt界的Github，可以创建分享自己的Prompt，可以按周、月纬度看热门Prompt。 
+        * [FlowGPT](https://flowgpt.com/)
+        * [OpenPrompt](https://openprompt.co/)
+* Flow: 多步骤，多模型配合。
+    * AI Agents。
+        * [Hugging GPT](https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652312923&idx=1&sn=bc29fe3ffc35b42b6e2b6ffa8af940bd&scene=21#wechat_redirect)
+        * [AutoGPT](https://zhuanlan.zhihu.com/p/622947810)
+        * BabyAGI, visual-chatgpt 等
+    * workflow
+        * langchain flow
+        * [Click Prompt](https://www.clickprompt.org/zh-CN/click-flow/) [prompt engineering](https://github.com/prompt-engineering)
+* 嵌入 Embedding
+    * 向量数据库
+* 微调 Fine-tuning
+* Chain of thought
+    * [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/abs/2201.11903)
+* 编程工具
+    * langChain
+    * [Reflexion](https://github.com/noahshinn024/reflexion)
+    * [Semantic Kernel](https://github.com/microsoft/semantic-kernel) is a lightweight SDK enabling integration of AI Large Language Models (LLMs) with conventional programming languages.
+* 综合
+    * Embedding 和 Fine-tuning 各自适合的场景
+* 开发 App 工具
+    * Dify
+    * [AirOps](https://www.airops.com/) Create LLM-powered Workflows, Tools and Chat Agents that delight your users and team.
+    * 基于文档对话。 核心是要显示来源。
+        * [ChatPDF](https://www.chatpdf.com/)
+        * [PandaGPT](https://www.pandagpt.io/)
+        * [Markprompt](https://github.com/motifland/markprompt) 数据源支持 md，Github Repo，[motif](https://motif.land/)。开源，可以self host。云端版：有些免费的额度。可以定制prompt，分享给别人。
+    * 国内
+        * [Chato](https://chato.cn/) [体验](../build-app/chato)
+        * [FastGPT](https://github.com/c121914yu/FastGPT) build an AI knowledge based app.
+    
+* 文本生产类
+    * [Copy.ai](https://app.copy.ai/) 运营内容的生成。
+
+## 开发
+* [DocsGPT](https://github.com/arc53/DocsGPT) 了解通过文档回答问题的实现。基于 LLM 的。云端版免费用7天，收费 10$/月。收费版可以用 GPT 4。相似度比较用了：
+    * [Faiss](https://github.com/facebookresearch/faiss)
+* [LangChain Visualizer](https://github.com/amosjyng/langchain-visualizer) 推理过程的
+* 皮肤
+    * [Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+    * [Chatbot UI](https://github.com/mckaywrigley/chatbot-ui)
+    * [LoLLMS Web UI](https://github.com/ParisNeo/lollms-webui) gpt4all chatbot ui
+
+## 总结类的
+* [Wiseone - ChatGPT for Reading & Browsing](https://chrome.google.com/webstore/detail/wiseone-chatgpt-for-readi/paodpkkacimmkacaecjmhdncjgjepcai/related)
+* 总结 Youtube，bilibili 等。
