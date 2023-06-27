@@ -111,6 +111,12 @@ const config = {
             position: 'left',
             label: 'AI',
           },
+          {
+            type: 'doc',
+            docId: 'basic/overview',
+            position: 'left',
+            label: '基础',
+          },
           // right
           {
             href: `https://github.com/iamjoel/${projectPath}`,
