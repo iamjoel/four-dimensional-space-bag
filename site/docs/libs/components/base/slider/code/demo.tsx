@@ -1,12 +1,13 @@
-import React, { FC, useState } from 'react'
+import type { FC } from 'react'
+import React, { useState } from 'react'
 import Slider from './index'
 
 const SliderDemo: FC = ({
   initValue = 0,
-  disabled
+  disabled,
 }) => {
   const [current, setCurrent] = useState(initValue)
-  
+
   return (
     <div>
       <Slider
@@ -15,7 +16,7 @@ const SliderDemo: FC = ({
         total={100}
         disabled={disabled}
       />
-      <div className="mt-4">当前值: {parseInt(current)}</div>
+      <div className="mt-4">当前值: {Number.parseInt(current)}</div>
     </div>
   )
 }

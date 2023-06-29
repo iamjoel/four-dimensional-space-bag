@@ -14,10 +14,10 @@ const config = [
       {
         type: 'doc',
         label: '环境变量',
-        id: `${PREFIX}/nodejs/env/index`
+        id: `${PREFIX}/nodejs/env/index`,
       },
-    ]
-  }
+    ],
+  },
 ]
 
 module.exports = config

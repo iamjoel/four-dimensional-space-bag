@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useBoolean } from 'ahooks'
 import cn from 'clsx'
 
@@ -8,12 +8,12 @@ const ITEM_HEIGHT = 28
 const ITEM_WIDTH = 80
 const ITEM_COUNT = 6.5
 
-const InfiniteListDemo = ({dir = Direction.ver}: {dir: Direction}) => {
+function InfiniteListDemo({ dir = Direction.ver }: { dir: Direction }) {
   const isVer = dir === Direction.ver
   const [list, setList] = useState([])
   const [page, setPage] = useState(1)
-  const [isLoadAll, {setTrue: setLoadAll}] = useBoolean(false)
-  const [isLoading, {setTrue: setIsLoading, setFalse: stopLoading}] = useBoolean(false)
+  const [isLoadAll, { setTrue: setLoadAll }] = useBoolean(false)
+  const [isLoading, { setTrue: setIsLoading, setFalse: stopLoading }] = useBoolean(false)
 
   const fetchNextPage = async () => {
     setIsLoading()
@@ -21,9 +21,8 @@ const InfiniteListDemo = ({dir = Direction.ver}: {dir: Direction}) => {
     stopLoading()
     setList([...list, ...res.list])
     setPage(page + 1)
-    if(res.isLoadedAll) {
+    if (res.isLoadedAll)
       setLoadAll()
-    }
   }
 
   useEffect(() => {
@@ -50,40 +49,41 @@ const InfiniteListDemo = ({dir = Direction.ver}: {dir: Direction}) => {
         }
       </InfiniteList>
     </div>
-    
+
   )
 }
 
-interface IListResult {
+type IListResult = {
   isLoadedAll: boolean
-  list: {id: number, name: string}[]
+  list: { id: number; name: string }[]
 }
 
-const fetchList = (page = 1): Promise<IListResult> => {
-  if(page > 5) {
+function fetchList(page = 1): Promise<IListResult> {
+  if (page > 5) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
           isLoadedAll: true,
-          list: []
+          list: [],
         })
       }, 1000)
     })
-  } else {
+  }
+  else {
     const list = []
     const start = (page - 1) * 10
-    for(let i = 1; i < 11; i++) {
-      let id = start + i
+    for (let i = 1; i < 11; i++) {
+      const id = start + i
       list.push({
         id,
-        name: `Holly ${id}`
+        name: `Holly ${id}`,
       })
     }
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
           isLoadedAll: false,
-          list
+          list,
         })
       }, 1000)
     })

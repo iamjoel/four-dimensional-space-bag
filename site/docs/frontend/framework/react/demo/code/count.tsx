@@ -1,12 +1,14 @@
-import React, { FC, useCallback, useState } from 'react'
-export interface ICountProps {
+import type { FC } from 'react'
+import React, { useCallback, useState } from 'react'
+
+export type ICountProps = {
   value: number
   onChange: (value: number) => void
 }
 
 const Count: FC<ICountProps> = ({
   value,
-  onChange
+  onChange,
 }) => {
   const handleMinus = useCallback(() => {
     onChange(value - 1)
@@ -18,15 +20,15 @@ const Count: FC<ICountProps> = ({
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    if(!/^[0-9]+$/.test(value)) {
+    if (!/^[0-9]+$/.test(value))
       return
-    }
-    onChange(parseInt(value))
+
+    onChange(Number.parseInt(value))
   }, [])
 
   return (
     <div className='flex space-x-1'>
-      <div 
+      <div
         className='
           w-6 h-6 leading-6
           rounded-full
@@ -44,7 +46,7 @@ const Count: FC<ICountProps> = ({
         onChange={handleChange}
       />
 
-      <div 
+      <div
         className='
           w-6 h-6 leading-6
           rounded-full
@@ -59,7 +61,7 @@ const Count: FC<ICountProps> = ({
   )
 }
 
-export const CountDemo = () => {
+export function CountDemo() {
   const [value, setValue] = useState(10)
 
   return (

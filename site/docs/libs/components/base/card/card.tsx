@@ -1,6 +1,8 @@
-import React, { FC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 import cn from 'clsx'
-export interface ICardProps {
+
+export type ICardProps = {
   className?: string
   title?: string
   children?: JSX.Element
@@ -10,7 +12,7 @@ const Card: FC<ICardProps> = ({
   className,
   title,
   children,
-  extra
+  extra,
 }) => {
   return (
     <div className={
@@ -23,7 +25,7 @@ const Card: FC<ICardProps> = ({
       `, className)
     }>
       <div>
-        {children ? children : (
+        {children || (
           <div>{title}</div>
         ) }
       </div>

@@ -1,11 +1,12 @@
-import React, { FC, useState, useEffect } from 'react'
+import type { FC } from 'react'
+import React, { useEffect, useState } from 'react'
 import s from './style.module.css'
 
-export interface ISlider {
-  current: number,
-  total: number,
-  totalWidth?: number,
-  disabled?: boolean,
+export type ISlider = {
+  current: number
+  total: number
+  totalWidth?: number
+  disabled?: boolean
   onChange?: (current: number) => void
 }
 
@@ -20,12 +21,12 @@ const Slider: FC<ISlider> = ({
   onChange,
 }) => {
   const current = (() => {
-    if(_current < 0) {
+    if (_current < 0)
       return 0
-    }
-    if(_current > total) {
+
+    if (_current > total)
       return total
-    }
+
     return _current
   })()
   const percent = current / total
@@ -36,9 +37,9 @@ const Slider: FC<ISlider> = ({
   const [isMoving, setIsMoving] = useState(false)
 
   const handleStartMove = (e: React.MouseEvent<HTMLElement>) => {
-    if(disabled) {
+    if (disabled)
       return
-    }
+
     setClientX(e.clientX)
     setIsMoving(true)
     setPrevUserSelectStyle(getComputedStyle(document.body).userSelect)
@@ -51,23 +52,23 @@ const Slider: FC<ISlider> = ({
   }
 
   const handleMove = (e: any) => {
-    if(disabled || !isMoving) {
+    if (disabled || !isMoving)
       return
-    }
+
     const offset = e.clientX - clientX
     // debugger
     const resLeft = left + offset
-    if(resLeft < 0 || resLeft > totalWidth) {
+    if (resLeft < 0 || resLeft > totalWidth)
       return
-    }
+
     setClientX(e.clientX)
     let nextCurrent = resLeft * total / totalWidth
-    if(nextCurrent < 0.1) { // 不容易碰到0的情况
+    if (nextCurrent < 0.1) { // 不容易碰到0的情况
       nextCurrent = 0
     }
-    if(total - nextCurrent < 0.1) {
+    if (total - nextCurrent < 0.1)
       nextCurrent = total
-    }
+
     onChange(nextCurrent) // 新的current
   }
 
@@ -83,18 +84,18 @@ const Slider: FC<ISlider> = ({
   return (
     <div className={s.timeLine} style={{
       width: totalWidth,
-      opacity: disabled ? 0.6 : 1
+      opacity: disabled ? 0.6 : 1,
     }}>
       <div className={s.progress} style={{
-        width: left
+        width: left,
       }}></div>
-      <div 
+      <div
         className={s.handler}
         onMouseDown={handleStartMove}
         style={
           {
             left: left - HANDLE_OFFSET,
-            cursor: disabled ? 'not-allowed' : 'pointer'
+            cursor: disabled ? 'not-allowed' : 'pointer',
           }
         }
       ></div>

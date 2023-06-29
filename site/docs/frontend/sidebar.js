@@ -14,12 +14,12 @@ const config = [
       {
         type: 'doc',
         label: '选择器',
-        id: `${PREFIX}/base/css/selector/overview`
+        id: `${PREFIX}/base/css/selector/overview`,
       },
       {
         type: 'doc',
         label: '布局',
-        id: `${PREFIX}/base/css/layout/overview`
+        id: `${PREFIX}/base/css/layout/overview`,
       },
       {
         type: 'category',
@@ -28,25 +28,25 @@ const config = [
           {
             type: 'doc',
             label: '背景',
-            id: `${PREFIX}/base/css/rules/background/overview`
+            id: `${PREFIX}/base/css/rules/background/overview`,
           },
           {
             type: 'doc',
             label: '图片',
-            id: `${PREFIX}/base/css/rules/image/overview`
+            id: `${PREFIX}/base/css/rules/image/overview`,
           },
           {
             type: 'doc',
             label: '边框',
-            id: `${PREFIX}/base/css/rules/border/overview`
+            id: `${PREFIX}/base/css/rules/border/overview`,
           },
           {
             type: 'doc',
             label: '文字',
-            id: `${PREFIX}/base/css/rules/text/overview`
+            id: `${PREFIX}/base/css/rules/text/overview`,
           },
-        ]
-      }
+        ],
+      },
 
     ],
   },
@@ -58,19 +58,19 @@ const config = [
       {
         type: 'doc',
         label: 'DOM & BOM',
-        id: `${PREFIX}/base/js/dom-bom/overview`
+        id: `${PREFIX}/base/js/dom-bom/overview`,
       },
       {
         type: 'doc',
         label: '操作媒体',
-        id: `${PREFIX}/base/js/media/overview`
+        id: `${PREFIX}/base/js/media/overview`,
       },
       {
         type: 'doc',
         label: '正则',
-        id: `${PREFIX}/base/js/regex`
+        id: `${PREFIX}/base/js/regex`,
       },
-    ]
+    ],
   },
   {
     type: 'category',
@@ -85,14 +85,14 @@ const config = [
           {
             type: 'doc',
             label: 'Hooks',
-            id: `${PREFIX}/framework/react/api/hooks`
+            id: `${PREFIX}/framework/react/api/hooks`,
           },
           {
             type: 'doc',
             label: 'Demo',
-            id: `${PREFIX}/framework/react/demo/index`
+            id: `${PREFIX}/framework/react/demo/index`,
           },
-        ]
+        ],
       },
       {
         type: 'category',
@@ -101,11 +101,11 @@ const config = [
           {
             type: 'doc',
             label: 'Demo',
-            id: `${PREFIX}/framework/vue/demo/index`
+            id: `${PREFIX}/framework/vue/demo/index`,
           },
-        ]
+        ],
       },
-    ]
+    ],
   },
   {
     type: 'category',
@@ -114,19 +114,19 @@ const config = [
       {
         type: 'doc',
         label: '代码调试',
-        id: `${PREFIX}/scenario/debugger/overview`
+        id: `${PREFIX}/scenario/debugger/overview`,
       },
       {
         type: 'doc',
         label: '拖动排序',
-        id: `${PREFIX}/scenario/sortable/index`
+        id: `${PREFIX}/scenario/sortable/index`,
       },
       {
         type: 'doc',
         label: '解析&生成 CSV',
-        id: `${PREFIX}/scenario/csv/index`
+        id: `${PREFIX}/scenario/csv/index`,
       },
-    ]
+    ],
   },
   {
     type: 'category',
@@ -135,9 +135,9 @@ const config = [
       {
         type: 'doc',
         label: '高质量组件设计的思考',
-        id: `${PREFIX}/code-quality/component-design/readme`
-      }
-    ]
+        id: `${PREFIX}/code-quality/component-design/readme`,
+      },
+    ],
   },
   {
     type: 'category',
@@ -146,19 +146,19 @@ const config = [
       {
         type: 'doc',
         label: 'Notion AI',
-        id: `${PREFIX}/tools/notion-ai/readme`
+        id: `${PREFIX}/tools/notion-ai/readme`,
       },
       {
         type: 'doc',
         label: '自定义代码片段',
-        id: `${PREFIX}/tools/vscode/snippet`
+        id: `${PREFIX}/tools/vscode/snippet`,
       },
-    ]
+    ],
   },
   {
     type: 'doc',
     label: '编程练习题',
-    id: `${PREFIX}/kata/readme`
+    id: `${PREFIX}/kata/readme`,
   },
 ]
 

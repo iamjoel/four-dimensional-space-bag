@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
+import React from 'react'
 
-const GrowTooLargeBreakUI = ({
-}) => {
+function GrowTooLargeBreakUI({
+}) {
   return (
     <div className="flex h-40 text-white ">
       <div className="shrink-0 h-full bg-indigo-500 px-1">Left</div>

@@ -1,5 +1,6 @@
-import React, { FC } from 'react'
-import {applyVueInReact} from 'veaury'
+import type { FC } from 'react'
+import React from 'react'
+import { applyVueInReact } from 'veaury'
 import ComponentVue from './index.vue'
 
 const Component = applyVueInReact(ComponentVue)

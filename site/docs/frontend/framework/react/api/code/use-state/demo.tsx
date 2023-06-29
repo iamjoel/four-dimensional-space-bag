@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 
-export const ChangeVarNotReRender = () => {
-  let value: any = {
-    current: 5
-  };
+export function ChangeVarNotReRender() {
+  const value: any = {
+    current: 5,
+  }
   // (window as any).value = value
   console.log(Math.random())
 
@@ -11,9 +11,8 @@ export const ChangeVarNotReRender = () => {
     const runId = setInterval(() => {
       value.current = value.current + 1
       console.log(value.current)
-      if(value.current > 30) {
+      if (value.current > 30)
         clearInterval(runId)
-      }
     }, 3000)
     return () => {
       clearInterval(runId)

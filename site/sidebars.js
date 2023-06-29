@@ -26,6 +26,6 @@ const sidebars = {
   tools: toolsConfig,
   ai: aiConfig,
   basic: basicConfig,
-};
+}
 
-module.exports = sidebars;
+module.exports = sidebars

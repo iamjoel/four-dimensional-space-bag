@@ -1,6 +1,7 @@
-import React, { FC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 
-//骰子。 Flex
+// 骰子。 Flex
 const Dice: FC = ({
 }) => {
   return (

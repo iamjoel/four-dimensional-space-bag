@@ -1,7 +1,7 @@
-function normalize<T> (value: T | undefined, defaultValue: T) {
-  if(value === undefined) {
+function normalize<T>(value: T | undefined, defaultValue: T) {
+  if (value === undefined)
     return defaultValue
-  }
+
   return value
 }
 

@@ -1,4 +1,5 @@
-import React, { FC, useState, useCallback } from 'react'
+import type { FC } from 'react'
+import React, { useCallback, useState } from 'react'
 
 const GuessNum: FC = () => {
   const [step, setStep] = useState('giveNum') // giveNum => gusessNum => finished
@@ -15,10 +16,12 @@ const GuessNum: FC = () => {
   const confirmGuessNum = useCallback(() => {
     if (guessNum === targetNum) {
       setStep('finished')
-    } else if (guessNum > targetNum) {
+    }
+    else if (guessNum > targetNum) {
       setMax(Math.min(guessNum, max))
-      setRes(`猜大了`)
-    } else {
+      setRes('猜大了')
+    }
+    else {
       setMin(Math.max(guessNum, min))
       setRes('猜小了')
     }
@@ -30,7 +33,7 @@ const GuessNum: FC = () => {
       <span>请给出数字:</span>
       <input
         value={targetNum}
-        onChange={e => setTargetNum(parseInt(e.target.value, 10))}
+        onChange={e => setTargetNum(Number.parseInt(e.target.value, 10))}
         placeholder='1 ~ 100 之间的数字'
       />
       <button onClick={confirmGiveNum}>确定</button>
@@ -43,7 +46,7 @@ const GuessNum: FC = () => {
         <span>请猜数字:</span>
         <input
           value={guessNum}
-          onChange={e => setGuessNum(parseInt(e.target.value, 10))}
+          onChange={e => setGuessNum(Number.parseInt(e.target.value, 10))}
           placeholder='0 ~ 100 之间的数字'
         />
         <button onClick={confirmGuessNum}>确定</button>
@@ -55,7 +58,7 @@ const GuessNum: FC = () => {
     <div>
       {step === 'giveNum' && renderGiveNum()}
       {step === 'guessNum' && renderGuessNum()}
-      {step === 'finished' && "恭喜你，答对了"}
+      {step === 'finished' && '恭喜你，答对了'}
     </div>
   )
 }

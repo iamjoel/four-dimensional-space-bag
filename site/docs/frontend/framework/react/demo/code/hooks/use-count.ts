@@ -1,10 +1,10 @@
 import { useCallback } from 'react'
 
-const useCount = ({
+function useCount({
   value,
   setValue,
   maxValue,
-}) => {
+}) {
   const minus = useCallback(() => {
     setValue(value - 1)
   }, [value])
@@ -14,9 +14,9 @@ const useCount = ({
   }, [value])
 
   const isValid = (value: string) => {
-    if(/^[0-9]+$/.test(value)) {
+    if (/^[0-9]+$/.test(value))
       return true
-    }
+
     return false
   }
 
@@ -26,7 +26,7 @@ const useCount = ({
     minus,
     plus,
     isValid,
-    isMax
+    isMax,
   }
 }
 

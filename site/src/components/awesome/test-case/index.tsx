@@ -1,33 +1,34 @@
-import React, { FC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 import _ from 'lodash'
 import cn from 'clsx'
 import Demo from '../demo'
 
-interface IItem {
+type IItem = {
   title: string
   expectValue: any
   actuallyValue: any
   isThrow?: boolean
 }
 
-export interface ITestCaseProps {
+export type ITestCaseProps = {
   title: string
   items: IItem[]
 }
 
 const TestCase: FC<ITestCaseProps> = ({
   title,
-  items
+  items,
 }) => {
-  const hasWrong = !!items.find(({expectValue, actuallyValue}) => !_.isEqual(expectValue, actuallyValue))
+  const hasWrong = !!items.find(({ expectValue, actuallyValue }) => !_.isEqual(expectValue, actuallyValue))
   const renderItem = ({
     title,
     expectValue,
-    actuallyValue
+    actuallyValue,
   }: IItem) => {
     const isRight = _.isEqual(expectValue, actuallyValue)
     return (
-      <div key={title} className={cn('mb-1 text-sm', isRight ? 'text-green-500': 'text-red-500')}>
+      <div key={title} className={cn('mb-1 text-sm', isRight ? 'text-green-500' : 'text-red-500')}>
         <div className='flex items-center'>
           <span className='mr-1 h-6'>{isRight ? rightIcon : wrongIcon}</span>
           {title} 的结果应该是: {renderValue(expectValue)}。
@@ -40,18 +41,18 @@ const TestCase: FC<ITestCaseProps> = ({
   }
 
   const renderValue = (value: any) => {
-    if(typeof value ==='string') {
+    if (typeof value === 'string')
       return `'${value}'`
-    }
-    if(typeof value === 'object') {
+
+    if (typeof value === 'object')
       return JSON.stringify(value)
-    }
-    return value + ''
+
+    return `${value}`
   }
   return (
     <Demo padding="p-6">
       <div>
-        <div className={cn('mb-2', !hasWrong ? 'text-green-500': 'text-red-500')}>{title}</div>
+        <div className={cn('mb-2', !hasWrong ? 'text-green-500' : 'text-red-500')}>{title}</div>
         <div className='pl-4x'>
           {
             items.map(item => renderItem(item))
@@ -74,7 +75,7 @@ const wrongIcon = (
   <div className="flex justify-center items-center w-6 h-6">
     <div className="flex justify-center items-center w-5 h-5 border-solid rounded-full border border-red-500">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </div>
   </div>

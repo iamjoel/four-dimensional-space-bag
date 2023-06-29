@@ -1,28 +1,28 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
+
 // import * as ReactDOM from 'react-dom/client'
 // ReactDOM.createRoot
 
 import s from './style.module.css'
 
 let root
-const removeContainer = () => {
+function removeContainer() {
   const container = document.getElementById('toast-wrap')
-  if(container) {
+  if (container)
     document.body.removeChild(container)
-  }
-  if(root) {
+
+  if (root)
     root = null
-  }
 }
 
 const Toast = {
   show: ({
     type,
-    content
+    content,
   } = {
     type: 'success',
-    content: '操作成功'
+    content: '操作成功',
   }) => {
     // let container = document.getElementById('toast-wrap')
     // if(!container) {
@@ -41,17 +41,17 @@ const Toast = {
     ReactDOM.createPortal((
       <div id="toast-wrap"><ToastContent type={type} content={content}/></div>
     ),
-      document.body)
+    document.body)
   },
-  hide: ()=> {
+  hide: () => {
     removeContainer()
-  }
+  },
 }
 
-const ToastContent = ({
+function ToastContent({
   type = 'success',
-  content
-}) => {
+  content,
+}) {
   useEffect(() => {
     setTimeout(() => {
       removeContainer()

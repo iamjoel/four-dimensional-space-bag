@@ -1,11 +1,12 @@
-import { useAsyncEffect } from 'ahooks'
-import React, { FC, useEffect } from 'react'
-const foo = () => {
+import type { FC } from 'react'
+import React, { useEffect } from 'react'
+
+function foo() {
 }
-const baz = () => {
+function baz() {
   foo()
 }
-const what = () => {
+function what() {
   baz()
 }
 

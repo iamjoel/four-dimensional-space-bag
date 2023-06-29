@@ -1,9 +1,9 @@
-import React, { FC, useCallback, useState } from 'react'
-import count from './count'
+import type { FC } from 'react'
+import React, { useCallback, useState } from 'react'
 import useCount from './hooks/use-count'
 
 // import s from './style.module.css'
-export interface ICountProps {
+export type ICountProps = {
   value: number
   maxValue: number
   onChange: (value: number) => void
@@ -12,30 +12,30 @@ export interface ICountProps {
 const Count: FC<ICountProps> = ({
   value,
   maxValue,
-  onChange
+  onChange,
 }) => {
   const {
     minus,
     plus,
     isValid,
-    isMax
+    isMax,
   } = useCount({
     value,
     maxValue,
-    setValue: onChange
+    setValue: onChange,
   })
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    if(!isValid(value)) {
+    if (!isValid(value))
       return
-    }
-    onChange(parseInt(value))
+
+    onChange(Number.parseInt(value))
   }, [])
 
   return (
     <div className='flex space-x-1'>
-      <div 
+      <div
         className='
           w-6 h-6 leading-6
           rounded-full
@@ -53,7 +53,7 @@ const Count: FC<ICountProps> = ({
         onChange={handleChange}
       />
       {!isMax && (
-        <div 
+        <div
           className='
             w-6 h-6 leading-6
             rounded-full
@@ -69,7 +69,7 @@ const Count: FC<ICountProps> = ({
   )
 }
 
-export const CountSplitLogicDemo = () => {
+export function CountSplitLogicDemo() {
   const [value, setValue] = useState(10)
   return (
     <div>

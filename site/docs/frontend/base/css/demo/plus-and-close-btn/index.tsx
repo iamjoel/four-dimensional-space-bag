@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const PlusBtn = ({
-  className = ''
-}) => {
+export function PlusBtn({
+  className = '',
+}) {
   return (
     <div className={`
       relative
@@ -20,6 +20,6 @@ export const PlusBtn = ({
   )
 }
 
-export const CloseBtn = () => {
+export function CloseBtn() {
   return <PlusBtn className="rotate-45" />
 }

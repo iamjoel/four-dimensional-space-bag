@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react'
+import type { FC } from 'react'
+import React, { useState } from 'react'
 import NameContext from './name-context'
 import Deepest from './child/deepest'
 
@@ -10,13 +11,13 @@ const UseContextDemo: FC = () => {
   return (
     <NameContext.Provider value={{
       name,
-      setName
+      setName,
     }}>
       值: <input value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}></input>
       <ChildComp name="第一级子元素">
         <ChildComp name="第二级子元素">
           <ChildComp name="第三级子元素">
-              <Deepest />
+            <Deepest />
           </ChildComp>
         </ChildComp>
       </ChildComp>

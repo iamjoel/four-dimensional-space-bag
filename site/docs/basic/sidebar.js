@@ -22,8 +22,8 @@ const config = [
         label: '助动词和动词加s的规则',
         id: `${PREFIX}/english/grammar/auxiliary-verbs-and-verbs-add-s`,
       },
-    ]
-  }
+    ],
+  },
 ]
 
 module.exports = config

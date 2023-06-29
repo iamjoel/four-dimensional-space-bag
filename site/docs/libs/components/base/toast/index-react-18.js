@@ -1,50 +1,49 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from 'react'
 import * as ReactDOM from 'react-dom/client'
 
 import s from './style.module.css'
 
 let root
-const removeContainer = () => {
+function removeContainer() {
   const container = document.getElementById('toast-wrap')
-  if(container) {
+  if (container)
     document.body.removeChild(container)
-  }
-  if(root) {
+
+  if (root)
     root = null
-  }
 }
 
 const Toast = {
   show: ({
     type,
-    content
+    content,
   } = {
     type: 'success',
-    content: '操作成功'
+    content: '操作成功',
   }) => {
     let container = document.getElementById('toast-wrap')
-    if(!container) {
+    if (!container) {
       const div = document.createElement('div')
       div.setAttribute('id', 'toast-wrap')
       container = div
       document.body.append(container)
     }
-    if(!root) {
+    if (!root)
       root = ReactDOM.createRoot(container)
-    }
+
     root.render(
-      <ToastContent type={type} content={content}/>
+      <ToastContent type={type} content={content}/>,
     )
   },
-  hide: ()=> {
+  hide: () => {
     removeContainer()
-  }
+  },
 }
 
-const ToastContent = ({
+function ToastContent({
   type = 'success',
-  content
-}) => {
+  content,
+}) {
   useEffect(() => {
     setTimeout(() => {
       removeContainer()

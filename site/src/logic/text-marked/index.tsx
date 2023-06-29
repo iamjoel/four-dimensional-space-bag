@@ -1,8 +1,9 @@
-import React, { FC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 
-export interface ITextMarkedProps {
-  title: string,
-  children: JSX.Element,
+export type ITextMarkedProps = {
+  title: string
+  children: JSX.Element
   author: string
 }
 
@@ -22,7 +23,7 @@ const TextMarked: FC<ITextMarkedProps> = ({
     ">
       <div className="flex justify-center">
         <div className="
-          flex justify-center items-center 
+          flex justify-center items-center
           rounded-full
           w-10 h-10
           bg-indigo-500

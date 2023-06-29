@@ -1,11 +1,11 @@
-import React, { useRef, useState, useCallback } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import { useBoolean, useClickAway } from 'ahooks'
 import usePortal from '@site/src/hooks/use-portal'
 
 const Demo: React.FC = () => {
   const Portal = usePortal()
-  const [isShow, {setTrue: show, setFalse: hide}] = useBoolean(false)
-  const [pos, setPos] = useState({left: 0, top: 0})
+  const [isShow, { setTrue: show, setFalse: hide }] = useBoolean(false)
+  const [pos, setPos] = useState({ left: 0, top: 0 })
   const wrapRef = useRef<HTMLDivElement>(null)
 
   const handleShow = useCallback((e: MouseEvent) => {
@@ -20,7 +20,7 @@ const Demo: React.FC = () => {
     hide()
   }, wrapRef)
   return (
-    <div 
+    <div
       className='
         flex justify-center items-center
         h-20

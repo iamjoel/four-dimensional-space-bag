@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react'
+import { useRef, useState } from 'react'
 
-const useGetState = <T>(initValue: T) => {
+function useGetState<T>(initValue: T) {
   const [value, doSetValue] = useState<T>(initValue)
   const valueRef = useRef<T>(initValue)
 

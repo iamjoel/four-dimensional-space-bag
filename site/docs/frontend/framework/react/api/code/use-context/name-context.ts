@@ -1,13 +1,13 @@
 import React from 'react'
 
-interface INameContext {
+type INameContext = {
   name: string
   setName: (name: string) => void
 }
 
 const NameContext = React.createContext<INameContext>({
   name: '',
-  setName: () => null
+  setName: () => null,
 })
 
 export default NameContext

@@ -1,20 +1,21 @@
-import React, { FC, useState, useEffect,  useRef } from 'react'
-import { Button } from "@arco-design/web-react"
+import type { FC } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Button } from '@arco-design/web-react'
 import scrollTo from '@site/src/utils/dom/scroll-to-elem'
+
 const ButtonGroup = Button.Group
 
 enum Color {
-  red, green, blue
+  red, green, blue,
 }
 
 enum Dir {
   HOR = 'hor',
-  VER = 'ver'
+  VER = 'ver',
 }
 
 const ScrollToElem: FC = ({
 }) => {
-  
   const [current, setCurrent] = useState<Color>(Color.red)
   const [dir, setDir] = useState<Dir>(Dir.VER)
   const isVer = dir === Dir.VER
@@ -40,11 +41,11 @@ const ScrollToElem: FC = ({
       <div className='flex items-center mb-3'>
         滚动方向:
         <ButtonGroup className='ml-3'>
-          <Button 
+          <Button
             type={dir === Dir.HOR ? 'primary' : 'outline'} shape='round'
             onClick={() => setDir(Dir.HOR)}
           >水平</Button>
-          <Button 
+          <Button
             type={dir === Dir.VER ? 'primary' : 'outline'} shape='round'
             onClick={() => setDir(Dir.VER)}
           >竖直</Button>
@@ -53,15 +54,15 @@ const ScrollToElem: FC = ({
       <div className='flex items-center mb-3'>
         滚动到:
         <ButtonGroup className='ml-3'>
-          <Button 
+          <Button
             type={current === Color.red ? 'primary' : 'outline'} shape='round'
             onClick={() => setCurrent(Color.red)}
           >红</Button>
-          <Button 
+          <Button
             type={current === Color.green ? 'primary' : 'outline'} shape='round'
             onClick={() => setCurrent(Color.green)}
           >绿</Button>
-          <Button 
+          <Button
             type={current === Color.blue ? 'primary' : 'outline'} shape='round'
             onClick={() => setCurrent(Color.blue)}
           >蓝</Button>
@@ -76,7 +77,7 @@ const ScrollToElem: FC = ({
         <div ref={blueElemRef} className={`${isVer ? 'h-52' : 'w-52 shrink-0'} bg-blue-500`}></div>
       </div>
     </div>
-    
+
   )
 }
 

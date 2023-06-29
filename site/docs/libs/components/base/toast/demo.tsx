@@ -1,5 +1,6 @@
-import React, { FC } from 'react'
-import { Button } from "@arco-design/web-react"
+import type { FC } from 'react'
+import React from 'react'
+import { Button } from '@arco-design/web-react'
 import Toast from './'
 
 const Demo: FC = ({

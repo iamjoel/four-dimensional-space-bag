@@ -1,9 +1,10 @@
-import React, { FC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 import BrowserOnly from '@docusaurus/BrowserOnly'
 
 import cn from 'clsx'
 
-interface IDemo {
+type IDemo = {
   children: JSX.Element
   contentSize?: 'sm' | 'md' | 'lg' | 'full'
   padding?: string
@@ -16,17 +17,17 @@ const Demo: FC<IDemo> = ({
   contentSize = 'full',
   padding = 'p-12',
   className,
-  browserOnly
+  browserOnly,
 }) => {
   const maxWidthStyle = (() => {
-    if(contentSize === 'full') {
+    if (contentSize === 'full')
       return ''
-    }
+
     return (
       {
-        'sm': 'max-w-sm',
-        'md': 'max-w-md',
-        'lg': 'max-w-lg',
+        sm: 'max-w-sm',
+        md: 'max-w-md',
+        lg: 'max-w-lg',
       }[contentSize]
     )
   })()
@@ -46,9 +47,9 @@ const Demo: FC<IDemo> = ({
   )
   return (
     <>
-      {browserOnly ? 
-        <BrowserOnly>{() => <>{main}</>}</BrowserOnly> :
-        main
+      {browserOnly
+        ? <BrowserOnly>{() => <>{main}</>}</BrowserOnly>
+        : main
       }
     </>
   )

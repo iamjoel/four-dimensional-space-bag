@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const VeauryVuePlugin = require('./plugins/vueuary-vue')
 
 const projectPath = 'four-dimensional-space-bag'
@@ -45,8 +45,8 @@ const config = {
         theme: {
           customCss: [
             require.resolve('./src/css/custom.css'),
-            require.resolve('@arco-design/web-react/dist/css/arco.css')
-          ]
+            require.resolve('@arco-design/web-react/dist/css/arco.css'),
+          ],
         },
         gtag: {
           trackingID: 'G-37H5PXD0DP',
@@ -59,7 +59,7 @@ const config = {
   themes: [
     // local search: https://github.com/easyops-cn/docusaurus-search-local
     [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
+      require.resolve('@easyops-cn/docusaurus-search-local'),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       ({
         language: 'zh',
@@ -67,8 +67,8 @@ const config = {
         indexPages: true,
         // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-      })
-    ]
+      }),
+    ],
   ],
 
   themeConfig:
@@ -138,14 +138,14 @@ const config = {
   plugins: [
     async function tailwind(context, options) {
       return {
-        name: "docusaurus-tailwindcss",
+        name: 'docusaurus-tailwindcss',
         configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer. 
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'))
+          postcssOptions.plugins.push(require('autoprefixer'))
+          return postcssOptions
         },
-      };
+      }
     },
     async function useVue(context, options) {
       return {
@@ -153,12 +153,12 @@ const config = {
         configureWebpack(config, isServer, utils) {
           // config.plugins.push(new VeauryVuePlugin())
           return {
-            plugins: [new VeauryVuePlugin()]
+            plugins: [new VeauryVuePlugin()],
           }
         },
-      };
+      }
     },
   ],
-};
+}
 
-module.exports = config;
+module.exports = config

@@ -1,38 +1,42 @@
 // 修 vueuary-vue.js 的报错。
 // https://github.com/devilwjp/veaury/blob/master/README_zhcn.md
-const {VueLoaderPlugin} = require('vue-loader')
-let vueJsx = []
+const { VueLoaderPlugin } = require('vue-loader')
+
+const vueJsx = []
 try {
   require.resolve('@vue/babel-plugin-jsx')
   vueJsx.push('@vue/babel-plugin-jsx')
-} catch(e) {}
-
+}
+catch (e) {}
 
 class VeauryVuePlugin {
   constructor(options = {}) {
     this.vueLoaderPluginInstance = new VueLoaderPlugin()
     this.options = { ...options }
   }
+
   apply(compiler) {
     function defaultBabelInclude(filename) {
-      if (filename.match(/[/\\]node_modules[\\/$]+/)) return
+      if (filename.match(/[/\\]node_modules[\\/$]+/))
+        return
       // // default pass vue file
-      if (filename.match(/\.(vue|vue\.js)$/i)){
+      if (filename.match(/\.(vue|vue\.js)$/i))
         return filename
-      }
+
       // default pass vue_app path
-      if (filename.match(/[/\\]vue_app[\\/$]+/)) return filename
+      if (filename.match(/[/\\]vue_app[\\/$]+/))
+        return filename
     }
-    const {babelLoader} = this.options
+    const { babelLoader } = this.options
     const extensions = compiler.options.resolve?.extensions
-    if (extensions && extensions.indexOf('.vue') < 0) {
+    if (extensions && !extensions.includes('.vue'))
       extensions.push('.vue')
-    }
+
     const rules = compiler.options.module.rules
     // find oneOf rule
-    const oneOfRule = rules.find((rule) => rule.oneOf)
+    const oneOfRule = rules.find(rule => rule.oneOf)
     // the last rule is file-loader
-    const fileLoaderRule = oneOfRule && oneOfRule.oneOf[oneOfRule.oneOf.length-1]
+    const fileLoaderRule = oneOfRule && oneOfRule.oneOf[oneOfRule.oneOf.length - 1]
 
     if (fileLoaderRule && fileLoaderRule.exclude) {
       // ignore vue type file
@@ -52,14 +56,14 @@ class VeauryVuePlugin {
           babelrc: false,
           plugins: [
             // Compile with Vue's jsx
-            ...vueJsx
-          ]
-        }
+            ...vueJsx,
+          ],
+        },
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: { hotReload: false }
+        options: { hotReload: false },
       },
     ]
     rules.push(...newRules)
@@ -68,4 +72,4 @@ class VeauryVuePlugin {
   }
 }
 
-module.exports = VeauryVuePlugin;
+module.exports = VeauryVuePlugin

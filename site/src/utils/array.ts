@@ -1,14 +1,14 @@
-export const chunk = (arr: any[], size: number = 1) => {
+export function chunk(arr: any[], size = 1) {
   return [arr.slice(0, size), arr.slice(size)]
 }
 
-export const concat = (arr: any[], ...rest: any[]) => {
+export function concat(arr: any[], ...rest: any[]) {
   // 声明式
   const toConcat = rest.flatMap((item: any) => {
-      if(Array.isArray(item)) {
-        return item
-      }
+    if (Array.isArray(item))
       return item
+
+    return item
   })
 
   return [...arr, ...toConcat]

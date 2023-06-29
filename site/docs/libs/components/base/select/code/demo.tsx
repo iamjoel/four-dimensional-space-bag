@@ -1,23 +1,24 @@
-import React, { FC, useState } from 'react'
+import type { FC } from 'react'
+import React, { useState } from 'react'
 import Select from './index'
 
 const fruitList = [
   {
     value: 1,
-    label: '荔枝'
+    label: '荔枝',
   },
   {
     value: 2,
-    label: '香蕉'
+    label: '香蕉',
   },
   {
     value: 3,
-    label: '菠萝'
+    label: '菠萝',
   },
 ]
 
 export const SelectDemo: FC = ({
-  showInTop
+  showInTop,
 }) => {
   const [fruit, setFruit] = useState('')
   return (

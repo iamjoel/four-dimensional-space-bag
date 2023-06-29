@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { nanoid } from 'nanoid';
+import React, { useState } from 'react'
+import { nanoid } from 'nanoid'
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [todos, setTodos] = useState([])
+  const [inputValue, setInputValue] = useState('')
 
   function handleAddTodo() {
     if (inputValue) {
-      setTodos([...todos, inputValue]);
-      setInputValue('');
+      setTodos([...todos, inputValue])
+      setInputValue('')
     }
   }
 
   function handleDelete(index) {
-    setTodos(todos.filter((_, i) => i !== index));
+    setTodos(todos.filter((_, i) => i !== index))
   }
 
   return (
@@ -27,7 +27,7 @@ function TodoList() {
               <input
                 type="text"
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
                 className="flex-grow border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
               <button
@@ -50,46 +50,45 @@ function TodoList() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default TodoList;
+export default TodoList
 
-
-export const TodoList2 = () => {
+export function TodoList2() {
   const [todos, setTodos] = useState([
     { id: nanoid(), text: 'Todo item 1', completed: false },
     { id: nanoid(), text: 'Todo item 2', completed: true },
     { id: nanoid(), text: 'Todo item 3', completed: false },
-  ]);
-  const [newTodoText, setNewTodoText] = useState('');
+  ])
+  const [newTodoText, setNewTodoText] = useState('')
 
   function handleNewTodoTextChange(event) {
-    setNewTodoText(event.target.value);
+    setNewTodoText(event.target.value)
   }
 
   function handleNewTodoSubmit(event) {
-    event.preventDefault();
-    if (!newTodoText.trim()) {
-      return;
-    }
-    setTodos((prevTodos) => [
+    event.preventDefault()
+    if (!newTodoText.trim())
+      return
+
+    setTodos(prevTodos => [
       ...prevTodos,
       { id: nanoid(), text: newTodoText, completed: false },
-    ]);
-    setNewTodoText('');
+    ])
+    setNewTodoText('')
   }
 
   function handleTodoDelete(todoId) {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
+    setTodos(prevTodos => prevTodos.filter(todo => todo.id !== todoId))
   }
 
   function handleTodoComplete(todoId) {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+    setTodos(prevTodos =>
+      prevTodos.map(todo =>
+        todo.id === todoId ? { ...todo, completed: !todo.completed } : todo,
+      ),
+    )
   }
 
   return (
@@ -106,7 +105,7 @@ export const TodoList2 = () => {
         </button>
       </form>
       <ul className="list-disc list-inside mt-4">
-        {todos.map((todo) => (
+        {todos.map(todo => (
           <li
             key={todo.id}
             className={`${
@@ -129,5 +128,5 @@ export const TodoList2 = () => {
         ))}
       </ul>
     </div>
-  );
+  )
 }

@@ -1,4 +1,5 @@
-import React, { FC, useState, useCallback, useEffect } from 'react'
+import type { FC } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { Button, InputNumber } from '@arco-design/web-react'
 import { useBoolean, useGetState } from 'ahooks'
 
@@ -10,7 +11,7 @@ const REFRESH_DURATION = 25 // 毫秒
 enum Speed {
   slow = 10,
   middle = 20,
-  fast = 40
+  fast = 40,
 }
 
 enum Dir {
@@ -22,7 +23,7 @@ enum Dir {
 
 const BallGame: FC = ({
 }) => {
-  const [isRun, {toggle: toggleRun}] = useBoolean(false)
+  const [isRun, { toggle: toggleRun }] = useBoolean(false)
   const [x, setX, getX] = useGetState(CONTAINER_WIDTH / 2) // 中心点的X坐标
   const [y, setY, getY] = useGetState(CONTAINER_HEIGHT / 2) //  中心点的Y坐标
   const [speed, setSpeed, getSpeed] = useGetState<Speed>(Speed.fast)
@@ -34,11 +35,11 @@ const BallGame: FC = ({
     let newY = getY()
     const distance = getSpeed() * REFRESH_DURATION / 1000
     let overflowDistance // 溢出部分
-    switch(getDir()) {
+    switch (getDir()) {
       case Dir.top:
         newY -= distance
         overflowDistance = -newY + BALL_R
-        if(overflowDistance > 0) {
+        if (overflowDistance > 0) {
           newY = overflowDistance + 2 * BALL_R
           setDir(Dir.bottom)
         }
@@ -46,7 +47,7 @@ const BallGame: FC = ({
       case Dir.bottom:
         newY += distance
         overflowDistance = newY - CONTAINER_HEIGHT + BALL_R
-        if(overflowDistance > 0) {
+        if (overflowDistance > 0) {
           newY = CONTAINER_HEIGHT - overflowDistance - BALL_R
           setDir(Dir.top)
         }
@@ -54,7 +55,7 @@ const BallGame: FC = ({
       case Dir.left:
         newX -= distance
         overflowDistance = -newX + BALL_R
-        if(overflowDistance > 0) {
+        if (overflowDistance > 0) {
           newX = overflowDistance + 2 * BALL_R
           setDir(Dir.right)
         }
@@ -62,7 +63,7 @@ const BallGame: FC = ({
       case Dir.right:
         newX += distance
         overflowDistance = newX - CONTAINER_WIDTH + BALL_R
-        if(overflowDistance > 0) {
+        if (overflowDistance > 0) {
           newX = CONTAINER_WIDTH - overflowDistance - BALL_R
           setDir(Dir.left)
         }
@@ -73,10 +74,11 @@ const BallGame: FC = ({
   }, [])
 
   useEffect(() => {
-    if(isRun) {
+    if (isRun) {
       move()
       runId = setInterval(move, REFRESH_DURATION)
-    } else {
+    }
+    else {
       clearInterval(runId)
     }
     return () => {
@@ -92,10 +94,10 @@ const BallGame: FC = ({
           w-5 h-5
           rounded-full bg-green-500
         `}
-          style={{
-            left: x - BALL_R,
-            top: y - BALL_R
-          }}
+        style={{
+          left: x - BALL_R,
+          top: y - BALL_R,
+        }}
         />
       </div>
       <div className='mt-5'>
@@ -134,23 +136,23 @@ const BallGame: FC = ({
           <div className='flex items-center space-x-2'>
             <div>方向: </div>
             <Button.Group>
-              <Button 
+              <Button
                 type={dir === Dir.top ? 'primary' : 'outline'}
                 onClick={() => !isRun && setDir(Dir.top)}
                 disabled={isRun}
                 shape="round"
               >上</Button>
-              <Button 
+              <Button
                 type={dir === Dir.bottom ? 'primary' : 'outline'}
                 onClick={() => !isRun && setDir(Dir.bottom)}
                 disabled={isRun}
               >下</Button>
-              <Button 
+              <Button
                 type={dir === Dir.left ? 'primary' : 'outline'}
                 onClick={() => !isRun && setDir(Dir.left)}
                 disabled={isRun}
               >左</Button>
-              <Button 
+              <Button
                 type={dir === Dir.right ? 'primary' : 'outline'}
                 onClick={() => !isRun && setDir(Dir.right)}
                 disabled={isRun}
@@ -165,18 +167,18 @@ const BallGame: FC = ({
             <div className='flex items-center space-x-2'>
               <div>速度: </div>
               <Button.Group>
-                <Button 
+                <Button
                   type={speed === Speed.slow ? 'primary' : 'outline'}
                   onClick={() => !isRun && setSpeed(Speed.slow)}
                   disabled={isRun}
                   shape="round"
                 >慢</Button>
-                <Button 
+                <Button
                   type={speed === Speed.middle ? 'primary' : 'outline'}
                   onClick={() => !isRun && setSpeed(Speed.middle)}
                   disabled={isRun}
                 >中</Button>
-                <Button 
+                <Button
                   type={speed === Speed.fast ? 'primary' : 'outline'}
                   onClick={() => !isRun && setSpeed(Speed.fast)}
                   disabled={isRun}

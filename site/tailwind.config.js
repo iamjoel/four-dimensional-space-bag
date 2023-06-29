@@ -17,18 +17,18 @@ module.exports = {
           600: '#1C64F2',
           700: '#1A56DB',
         },
-      }
+      },
     },
   },
   safelist: [ // 一定会加载的类名。无视 css Purge
-    'relative', 'absolute', 
+    'relative', 'absolute',
     'space-x-1',
-    'w-6', 'w-12', 'w-24', 
+    'w-6', 'w-12', 'w-24',
     'h-6', 'h-8',
     'leading-8',
     'px-2',
-    'bg-green-500','bg-green-600',
-    'text-white'
+    'bg-green-500', 'bg-green-600',
+    'text-white',
   ],
   plugins: [],
 }

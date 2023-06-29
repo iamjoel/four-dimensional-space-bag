@@ -1,6 +1,8 @@
-import React, { FC, useState, useEffect, useRef } from 'react'
-export interface ISimpleSelectProps {
-  list: {id: number, title: string}[]
+import type { FC } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+
+export type ISimpleSelectProps = {
+  list: { id: number; title: string }[]
   controlShow: number
   onChange: (value: number) => void
 }
@@ -8,7 +10,7 @@ export interface ISimpleSelectProps {
 const SimpleSelect: FC<ISimpleSelectProps> = ({
   list,
   controlShow,
-  onChange
+  onChange,
 }) => {
   const [isShow, setIsShow] = useState(false)
   const [count, didSetCount] = useState(0)
@@ -18,14 +20,13 @@ const SimpleSelect: FC<ISimpleSelectProps> = ({
     countRef.current = value
   }
 
-
   useEffect(() => {
     const hide = () => {
       setIsShow(false)
       setCount(countRef.current + 1)
     }
     document.addEventListener('click', hide)
-    
+
     return () => {
       document.removeEventListener('click', hide)
     }
@@ -41,9 +42,8 @@ const SimpleSelect: FC<ISimpleSelectProps> = ({
   }, [])
 
   useEffect(() => {
-    if(controlShow) {
+    if (controlShow)
       setIsShow(true)
-    }
   }, [controlShow])
 
   return (
@@ -52,10 +52,10 @@ const SimpleSelect: FC<ISimpleSelectProps> = ({
       (e as any).nativeEvent.stopImmediatePropagation()
     }}>
       {/* <div style={{color: 'green'}}>count: {count}</div> */}
-      <div className='px-2 h-8 leading-8 border bg-green-500' onClick={() => {setIsShow(true)}}>请选择</div>
+      <div className='px-2 h-8 leading-8 border bg-green-500' onClick={() => { setIsShow(true) }}>请选择</div>
       <div className='absolute top-8 w-full'
         style={{
-          display: isShow ? 'block' : 'none'
+          display: isShow ? 'block' : 'none',
         }}
       >
         {list.map(item => (
@@ -73,26 +73,26 @@ const SimpleSelect: FC<ISimpleSelectProps> = ({
   )
 }
 
-export const SimpleSelectDemo = () => {
+export function SimpleSelectDemo() {
   const [selected, setSelected] = useState('')
   const [controlShow, setControlShow] = useState(0)
   return (
     <div>
-      选中值: {selected === '' ? '未选择' : selected}。 
+      选中值: {selected === '' ? '未选择' : selected}。
       <button onClick={() => setControlShow(Date.now())}>点我弹出选项</button>
       <SimpleSelect
         list={[
           {
             id: 1,
-            title: '选项1'
+            title: '选项1',
           },
           {
             id: 2,
-            title: '选项2'
+            title: '选项2',
           },
           {
             id: 3,
-            title: '选项3'
+            title: '选项3',
           },
         ]}
         onChange={setSelected}

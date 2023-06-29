@@ -16,7 +16,7 @@ const config = [
         label: 'LLM',
         id: `${PREFIX}/model/llm`,
       },
-    ]
+    ],
   },
   {
     type: 'doc',
@@ -43,7 +43,7 @@ const config = [
         label: 'Flow',
         id: `${PREFIX}/build-app/flow/overview`,
       },
-    ]
+    ],
   },
 ]
 
