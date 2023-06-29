@@ -121,6 +121,11 @@ const config = [
         label: '拖动排序',
         id: `${PREFIX}/scenario/sortable/index`
       },
+      {
+        type: 'doc',
+        label: '解析&生成 CSV',
+        id: `${PREFIX}/scenario/csv/index`
+      },
     ]
   },
   {

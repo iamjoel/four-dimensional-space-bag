@@ -1,0 +1,20 @@
+import Demo from '@site/src/components/awesome/demo'
+import { CSVReader, CSVDownloader } from './demo'
+
+# 解析&生成 CSV
+用的 [react-papaparse](https://github.com/Bunlong/react-papaparse)。基于 [PapaParse](https://github.com/mholt/PapaParse)
+
+:::tip
+csv 和 excel 的区别：  
+* csv 是纯文本，主要用来存数据。相比 excel，其功能简单很多。不包含格式，公式，宏等。能直接用文本编辑器打开。  
+* excel 是二进制文件。支持包含格式，公式，宏等。所以不能直接用文本编辑器打开，需要用 excel 打开。
+:::
+## 解析
+<Demo>
+  <CSVReader />
+</Demo>
+
+## 下载
+<Demo>
+  <CSVDownloader />
+</Demo>
