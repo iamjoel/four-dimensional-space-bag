@@ -1,0 +1,68 @@
+# 场景 & 哪些可以用 AI
+1. 搜索/语义匹配。做电商也好、做推荐也好，随着数据量的增加，传统的关键词搜索已经不能满足需求，语义匹配的搜索变得越来越受
+2. 扩充。根据目标。
+3. 内容改写。翻译等。
+4. 精简。
+5. 检查，解释。
+
+## 日常
+* 长内容总结。这个受限于 token，还挺难的。
+
+### 总结的原理
+> 递归任务分解总结，或树状总结，从分段后的叶子节点开始总结，持续往根节点迭代总结，直到浓缩为一段关于这本书的总结。
+> 为什么这么做，两方面原因：
+> 1. 由于人类阅读一本书需要很长时间，而让 LLM 进行分解总结可以很方便的直接从总结的文章摘要、章节摘要等阅读到最有价值的信息
+> 2. 另外由于 LLM tokens 限制，每次只能传入规定数量 tokens 文本，而无法把整本书一次性进行总结操作，需要分解总结。
+> 参考：https://openai.com/research/summarizing-books
+
+
+## 职场
+* 求职：写简历/简历优化。
+* 邮件
+
+## 编程
+### 通用
+* 代码生成/API 查找
+* 找 Bug
+* 代码解释
+* Code Review
+
+
+#### [Github copilot](https://github.com/features/copilot)
+根据上下文生成代码。
+
+#### [Replit](https://replit.com)
+提供了 Web IDE。在 Ghostwrite 提问，会回复代码方面的问题：生成代码，找 Bug。
+
+
+### 代码生成细分
+#### 写正则
+> 正则很难写。
+
+[AutoRegex](https://www.autoregex.xyz/) : English 和 Regex 之间转化。
+  
+
+#### 生成某个语言的代码
+[Generate Code for Arduino®](https://www.duinocodegenerator.com/)
+
+#### 代码转化
+[GPT-Migrate](https://github.com/0xpayne/gpt-migrate/): Easily migrate your codebase from one framework or language to another.
+
+### 前端
+* 用指定库写前端代码，比如 React，Tailwind CSS。
+
+## 产品经理
+### [PMAI](https://www.pm-ai.cn/)
+基本上还是 AIGC。
+1. PRD 生成。输入产品名，功能名生成 PRD。
+2. SQL 生成。
+3. PRD 检查。优化。
+4. 周报，解决方案，流程图，测试用户，原型图转功能。
+
+## 语音
+* [MockingBird](https://github.com/babysor/MockingBird)
+
+## 资源
+* [AI Tool Master List](https://doc.clickup.com/25598832/d/h/rd6vg-14247/0b79ca1dc0f7429/rd6vg-12207)
+* [AIGC 交流工具沉淀](https://bytedance.feishu.cn/base/AIMAbnJxQaNgSGsBAtwcdAkLnvf?table=tblmZTd8VuUOOONh&view=vew0Eo17BB)
+* [全球 AIGC 独角兽](https://zaozaoliao.feishu.cn/wiki/KQ5QwI9oHiJwgWksYwLc3vBrned?table=tblUqX1ZcQarIKLG&view=vewSzGYSRv)

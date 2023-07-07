@@ -1,0 +1,65 @@
+# 开发资源
+## 基础套件
+* LangChain
+* [Semantic Kernel](https://github.com/microsoft/semantic-kernel) 从 API 上看和 LangChain 很像。微软出的。 
+* [LlamaIndex](https://gpt-index.readthedocs.io/en/latest/)： a data framework for your LLM application.官方的拿数据源的比较塑料 [llama hub](https://llama-hub-ui.vercel.app/)  
+
+## 非 Openai 的模型的接入
+模型的部署，以及把模型对外提供和 openai 格式一样的API。
+
+* [OpenLLM](https://github.com/bentoml/OpenLLM)  
+
+## Embedding
+* [AI Getting Started](https://github.com/a16z-infra/ai-getting-started)
+* [ChatFiles](https://github.com/guangzhengli/ChatFiles) 
+
+## 代理
+* [Reflexion](https://github.com/noahshinn024/reflexion)
+
+## 通过代理的多轮迭代完成复杂的任务
+### 通用型
+* [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT)
+
+### 写整个项目的代码
+* [SuperAGI](https://github.com/TransformerOptimus/SuperAGI)
+* [gpt-engineer](https://github.com/AntonOsika/gpt-engineer)
+
+## Prompt
+### [Promptify](https://github.com/promptslab/Promptify)
+> Prompt Engineering | Use GPT or other prompt based models to get structured output.  
+
+按不同的任务，从 Prompt 中提取出对应的信息，返回不同类型的 json 类型的输出。 支持：
+* Named Entity Recognition
+* Multi-Label Text Classification
+* Multi-Class Text Classification
+* Binary Text Classification
+* Question-Answering 
+* Question-Answer Generation
+* Relation-Extraction
+* Summarization
+* SQL Writer SQL
+* ...
+
+### [Guidance](https://github.com/microsoft/guidance)
+> Guidance enables you to control modern language models more effectively and efficiently than traditional prompting or chaining. Guidance programs allow you to interleave generation, prompting, and logical control into a single continuous flow matching how the language model actually processes the text. Simple output structures like Chain of Thought and its many variants (e.g., ART, Auto-CoT, etc.) have been shown to improve LLM performance. The advent of more powerful LLMs like GPT-4 allows for even richer structure, and guidance makes that structure easier and cheaper.
+
+Prompt 模板语法。
+
+## 多模态
+### [TaskMatrix](https://github.com/microsoft/TaskMatrix)  在聊天过程中发送和接收图片。[Visual ChatGPT](https://arxiv.org/abs/2303.04671)。
+
+## 皮肤
+* Chat ui
+* [chatgpt-clone](https://github.com/xtekky/chatgpt-clone) ChatGPT interface with better UI。
+
+## 创建应用平台
+> 创建应用；运行应用；自定义应用：提供应用的SDK，API。
+
+* [Dify](https://dify.ai)
+* [BentoML](https://bentoml.com/) 做的一些应用： [Gallary](https://bentoml.com/gallery)。
+
+## 部署
+* [Hugging face spaces](https://huggingface.co/spaces) [文档](https://huggingface.co/docs/hub/spaces)。基于 [streamlit](https://streamlit.io/cloud)。
+
+## 资源
+* [LLM Ranking](https://ossinsight.io/collections/llm-tools/?monthly-rankings=issues) LLM 工具排名。根据最近28天，对 GitHub 上 repo 的三个维度进行分别排名：新增的 Star 数，PR 数和 Issuse 数。 还有一些其他排行。

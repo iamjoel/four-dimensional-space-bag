@@ -1,0 +1,19 @@
+# langchain
+
+## Agent
+### 类型
+### Action agents
+根据之前所有的动作来决定下一个动作。
+
+支持的类型：
+* Zero-shot ReAct： 基于 ReAct 框架来选择工具。
+* Structured input ReAct
+* OpenAI Functions： 检测调用外部函数。
+* Conversational
+* Self ask with search
+* ReAct document store
+
+### Plan-and-execute agents
+规划和执行。预先规划行动的全部顺序，然后在不更新计划的情况下全部执行。
+
+This idea is largely inspired by [BabyAGI](https://github.com/yoheinakajima/babyagi) and then the "Plan-and-Solve" paper.

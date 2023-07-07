@@ -19,6 +19,23 @@ const config = [
     ],
   },
   {
+    type: 'category',
+    label: '技术',
+    collapsed: false,
+    items: [
+      {
+        type: 'doc',
+        label: '嵌入',
+        id: `${PREFIX}/tech/embedding/overview`,
+      },
+      {
+        type: 'doc',
+        label: '代理',
+        id: `${PREFIX}/tech/agent/overview`,
+      },
+    ],
+  },
+  {
     type: 'doc',
     label: '应用场景',
     id: `${PREFIX}/app/index`,

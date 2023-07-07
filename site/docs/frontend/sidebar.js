@@ -7,6 +7,11 @@ const config = [
     id: `${PREFIX}/overview`,
   },
   {
+    type: 'doc',
+    label: 'HTML Demo',
+    id: `${PREFIX}/base/html/demo`,
+  },
+  {
     type: 'category',
     label: 'CSS',
     collapsed: false,

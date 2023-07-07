@@ -6,7 +6,8 @@
   },
   "eslint.format.enable": true,
   "[python]": {
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.autopep8"
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -21,5 +22,6 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "python.formatting.provider": "none"
 }
