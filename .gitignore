@@ -108,3 +108,5 @@ dist
 .pnp.loader.mjs
 .yarn/
 yarn.lock
+
+.DS_Store
