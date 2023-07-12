@@ -1,7 +1,7 @@
 'use client'
 import type { FC } from 'react'
 import React, { useEffect, useState } from 'react'
-import { Button, Progress } from '@arco-design/web-react'
+import { Button, Message, Progress } from '@arco-design/web-react'
 import { useGetState } from 'ahooks'
 
 type RES = {
@@ -73,12 +73,12 @@ function Keyboard({
   }
 
   const Item = ({ text }) => {
-    return <Button className='w-[60px] h-[60px]' size='large' onClick={() => handleClick(text)}>{text}</Button>
+    return <Button className='!w-[60px] !h-[60px]' onClick={() => handleClick(text)}>{text}</Button>
   }
 
   const renderRow = (row, index) => {
     return (
-      <div className='flex space-x-2' key={index}>
+      <div className='flex items-center space-x-3' key={index}>
         {row.map((text) => {
           return (<Item text={text} key={text} />)
         })}
@@ -87,7 +87,7 @@ function Keyboard({
   }
 
   return (
-    <div className='space-y-2'>
+    <div className='space-y-3'>
       {rows.map((row, index) => renderRow(row, index))}
     </div>
   )
@@ -106,6 +106,11 @@ const PlusMinus: FC = () => {
   }
   const [res, setRes] = useState('')
   const handleOnEnter = () => {
+    if (Number.parseInt(res) !== current.res) {
+      Message.error('错了')
+      setRes('')
+      return
+    }
     setRes('')
     genNext()
   }
