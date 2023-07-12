@@ -1,7 +1,8 @@
 'use client'
 import type { FC } from 'react'
 import React, { useEffect, useState } from 'react'
-import { Button } from '@arco-design/web-react'
+import { Button, Progress } from '@arco-design/web-react'
+import { useGetState } from 'ahooks'
 
 type RES = {
   left: number
@@ -48,38 +49,94 @@ function gen() {
 }
 
 function Keyboard({
+  value,
   onChange,
   onEnter,
 }) {
   const rows = [
     [1, 2, 3],
-    [4],
+    [4, 5, 6],
+    [7, 8, 9],
+    ['<-', 0, 'E'],
   ]
-  const Item = (num) => {
-    return <Button>{num}</Button>
+  const handleClick = (text) => {
+    switch (text) {
+      case '<-':
+        onChange(value.slice(0, -1))
+        break
+      case 'E':
+        onEnter()
+        break
+      default:
+        onChange(`${value}${text}`)
+    }
   }
+
+  const Item = ({ text }) => {
+    return <Button className='w-[60px] h-[60px]' size='large' onClick={() => handleClick(text)}>{text}</Button>
+  }
+
+  const renderRow = (row, index) => {
+    return (
+      <div className='flex space-x-2' key={index}>
+        {row.map((text) => {
+          return (<Item text={text} key={text} />)
+        })}
+      </div>
+    )
+  }
+
+  return (
+    <div className='space-y-2'>
+      {rows.map((row, index) => renderRow(row, index))}
+    </div>
+  )
 }
 const PlusMinus: FC = () => {
   const total = 100
   const [completedNum, setCompletedNum] = useState(0)
+  const EACH_TIME = 5
+  const [countDown, setCountDown, getCountDown] = useGetState(EACH_TIME)
   const [current, setCurrent] = useState<RES>({})
+
   const genNext = () => {
     setCompletedNum(completedNum + 1)
     setCurrent(gen())
+    setCountDown(EACH_TIME)
+  }
+  const [res, setRes] = useState('')
+  const handleOnEnter = () => {
+    setRes('')
+    genNext()
   }
 
   useEffect(() => {
     genNext()
+    const runId = setInterval(() => {
+      const nextCountDown = getCountDown() - 1
+      if (nextCountDown >= 0)
+        setCountDown(nextCountDown)
+    }, 1000)
+    return () => {
+      clearInterval(runId)
+    }
   }, [])
 
   return (
     <div className='mx-auto'>
+      <Progress percent={countDown / EACH_TIME * 100} showText={false} />
       <div className='flex text-[80px]'>
-        {current.left} {current.op} {current.right} =
+        {current.left} {current.op} {current.right} = {res}
       </div>
+
+      <Keyboard
+        value={res}
+        onChange={setRes}
+        onEnter={handleOnEnter}
+      />
       <div className='mt-3 pb-10 flex justify-between'>
         <div><span className='text-[#0f0]'>{completedNum}</span> / {total}</div>
-        <Button type='primary' onClick={genNext}>下一题</Button>
+        {/* <Button type='primary' onClick={genNext}>下一题</Button> */}
       </div>
     </div>
   )
