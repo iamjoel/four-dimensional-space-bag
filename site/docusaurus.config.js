@@ -37,6 +37,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // sidebar: {
+          //   hideable: true,
+          // },
           sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: {

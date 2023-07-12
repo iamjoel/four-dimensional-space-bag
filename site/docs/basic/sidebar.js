@@ -8,6 +8,11 @@ const config = [
   },
   {
     type: 'doc',
+    label: '20以内加减法',
+    id: `${PREFIX}/math/plus-minus/index`,
+  },
+  {
+    type: 'doc',
     label: '设计原则',
     id: `${PREFIX}/design/rule/index`,
   },
