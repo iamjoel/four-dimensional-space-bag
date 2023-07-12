@@ -73,7 +73,7 @@ function Keyboard({
   }
 
   const Item = ({ text }) => {
-    return <Button className='!w-[60px] !h-[60px]' onClick={() => handleClick(text)}>{text}</Button>
+    return <Button className='!w-[80px] !h-[80px] !text-[20px]' onClick={() => handleClick(text)}>{text}</Button>
   }
 
   const renderRow = (row, index) => {
@@ -130,6 +130,7 @@ const PlusMinus: FC = () => {
   return (
     <div className='mx-auto'>
       <Progress percent={countDown / EACH_TIME * 100} showText={false} />
+      <div className='text-[#f00] h-[22px]'>{countDown === 0 ? '超时了' : ' '}</div>
       <div className='flex text-[80px]'>
         {current.left} {current.op} {current.right} = {res}
       </div>
