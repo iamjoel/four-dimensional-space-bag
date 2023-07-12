@@ -1,6 +1,6 @@
 'use client'
 import type { FC } from 'react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@arco-design/web-react'
 
 type RES = {
@@ -47,14 +47,26 @@ function gen() {
   return Math.random() > 0.5 ? genPlus() : genMinus()
 }
 const PlusMinus: FC = () => {
-  const [current, setCurrent] = useState<RES>(gen())
+  const total = 100
+  const [completedNum, setCompletedNum] = useState(0)
+  const genNext = () => {
+    setCompletedNum(completedNum + 1)
+    setCurrent(gen())
+  }
+  const [current, setCurrent] = useState<RES>({})
+
+  useEffect(() => {
+    genNext()
+  }, [])
+
   return (
     <div className='w-[300px] mx-auto'>
-      <div className='flex justify-end'>
-        <Button type='primary' onClick={() => setCurrent(gen())}>下一题</Button>
-      </div>
-      <div className='mt-3 flex items-center justify-center text-[80px]'>
+      <div className='flex items-center justify-center text-[80px]'>
         {current.left} {current.op} {current.right} =
+      </div>
+      <div className='mt-3 flex justify-between'>
+        <div><span className='text-[#0f0]'>{completedNum}</span> / {total}</div>
+        <Button type='primary' onClick={genNext}>下一题</Button>
       </div>
     </div>
   )
