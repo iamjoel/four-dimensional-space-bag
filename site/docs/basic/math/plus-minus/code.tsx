@@ -46,25 +46,38 @@ function genMinus() {
 function gen() {
   return Math.random() > 0.5 ? genPlus() : genMinus()
 }
+
+function Keyboard({
+  onChange,
+  onEnter,
+}) {
+  const rows = [
+    [1, 2, 3],
+    [4],
+  ]
+  const Item = (num) => {
+    return <Button>{num}</Button>
+  }
+}
 const PlusMinus: FC = () => {
   const total = 100
   const [completedNum, setCompletedNum] = useState(0)
+  const [current, setCurrent] = useState<RES>({})
   const genNext = () => {
     setCompletedNum(completedNum + 1)
     setCurrent(gen())
   }
-  const [current, setCurrent] = useState<RES>({})
 
   useEffect(() => {
     genNext()
   }, [])
 
   return (
-    <div className='w-[300px] mx-auto'>
-      <div className='flex items-center justify-center text-[80px]'>
+    <div className='mx-auto'>
+      <div className='flex justify-center text-[80px]'>
         {current.left} {current.op} {current.right} =
       </div>
-      <div className='mt-3 flex justify-between'>
+      <div className='mt-3 pb-10 flex justify-between'>
         <div><span className='text-[#0f0]'>{completedNum}</span> / {total}</div>
         <Button type='primary' onClick={genNext}>下一题</Button>
       </div>
