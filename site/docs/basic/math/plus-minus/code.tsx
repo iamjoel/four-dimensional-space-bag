@@ -74,7 +74,7 @@ const PlusMinus: FC = () => {
 
   return (
     <div className='mx-auto'>
-      <div className='flex justify-center text-[80px]'>
+      <div className='flex text-[80px]'>
         {current.left} {current.op} {current.right} =
       </div>
       <div className='mt-3 pb-10 flex justify-between'>
