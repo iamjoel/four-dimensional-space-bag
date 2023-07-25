@@ -19,3 +19,16 @@ regex.lastIndex = 0 // 解决方案
 regex.test('foo'); // true
 
 ```
+
+## 提取文本中的 url
+```js
+// https://txtfiddle.com/~hlshwya/extract-urls-from-text
+const urlRegex = /\b((https?|ftp|file):\/\/|(www|ftp)\.)[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/ig
+```
+
+将文本中的 url 替换成 markdown 链接的写法：
+```js
+function highlightURL(content: string) {
+  return content.replace(urlRegex, '[$&]($&)')
+}
+```
