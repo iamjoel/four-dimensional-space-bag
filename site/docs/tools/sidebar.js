@@ -8,6 +8,11 @@ const config = [
   },
   {
     type: 'doc',
+    label: 'Git',
+    id: `${PREFIX}/git`,
+  },
+  {
+    type: 'doc',
     label: 'Docker',
     id: `${PREFIX}/docker/overview`,
   },
