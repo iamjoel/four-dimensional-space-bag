@@ -1,4 +1,5 @@
 import React from 'react'
+// 要 react 18 。 但 docsour 目前的 react 版本不支持。
 import ReactFlow, { Controls, Background, Position } from 'reactflow'
 import CalResNode from './cal-res'
 import 'reactflow/dist/style.css'
