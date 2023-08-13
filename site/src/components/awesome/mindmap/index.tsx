@@ -3,6 +3,7 @@ import { Transformer } from 'markmap-lib'
 import { Markmap } from 'markmap-view'
 import { Toolbar } from 'markmap-toolbar'
 import 'markmap-toolbar/dist/style.css'
+import BrowserOnly from '../browser-only'
 
 const transformer = new Transformer()
 
@@ -55,9 +56,11 @@ export default function MarkmapHooks({
   }, [refMm.current, value])
 
   return (
-    <div className='relative'>
-      <svg className="w-full" ref={refSvg} />
-      <div className="absolute bottom-1 right-1" ref={refToolbar}></div>
-    </div>
+    <BrowserOnly>
+      <div className='relative'>
+        <svg className="w-full" ref={refSvg} />
+        <div className="absolute bottom-1 right-1" ref={refToolbar}></div>
+      </div>
+    </BrowserOnly>
   )
 }

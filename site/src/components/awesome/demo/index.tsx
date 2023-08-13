@@ -17,7 +17,7 @@ const Demo: FC<IDemo> = ({
   contentSize = 'full',
   padding = 'p-12',
   className,
-  browserOnly,
+  browserOnly = true,
 }) => {
   const maxWidthStyle = (() => {
     if (contentSize === 'full')

@@ -3,6 +3,7 @@ import type { FC } from 'react'
 import React, { useEffect, useState } from 'react'
 import { Button, Message, Progress } from '@arco-design/web-react'
 import { useGetState } from 'ahooks'
+import BrowserOnly from '@site/src/components/awesome/browser-only'
 
 type RES = {
   left: number
@@ -175,23 +176,25 @@ const PlusMinus: FC = () => {
   }
 
   return (
-    <div className='p-3 shadow-lg'>
-      <Progress percent={countDown / EACH_TIME * 100} showText={false} />
-      <div className='text-[#f00] h-[22px]'>{countDown === 0 ? '超时了' : ' '}</div>
-      <div className='mt-3 mb-1 flex justify-between'>
-        <div><span className='text-[#0f0]'>{completedNum}</span> / {total}</div>
-        {/* <Button type='primary' onClick={genNext}>下一题</Button> */}
-      </div>
-      <div className='flex text-[80px]'>
-        {current.left} {current.op} {current.right} = {res}
-      </div>
+    <BrowserOnly>
+      <div className='p-3 shadow-lg'>
+        <Progress percent={countDown / EACH_TIME * 100} showText={false} />
+        <div className='text-[#f00] h-[22px]'>{countDown === 0 ? '超时了' : ' '}</div>
+        <div className='mt-3 mb-1 flex justify-between'>
+          <div><span className='text-[#0f0]'>{completedNum}</span> / {total}</div>
+          {/* <Button type='primary' onClick={genNext}>下一题</Button> */}
+        </div>
+        <div className='flex text-[80px]'>
+          {current.left} {current.op} {current.right} = {res}
+        </div>
 
-      <Keyboard
-        value={res}
-        onChange={setRes}
-        onEnter={handleOnEnter}
-      />
-    </div >
+        <Keyboard
+          value={res}
+          onChange={setRes}
+          onEnter={handleOnEnter}
+        />
+      </div >
+    </BrowserOnly>
   )
 }
-export default React.memo(PlusMinus)
+export default PlusMinus

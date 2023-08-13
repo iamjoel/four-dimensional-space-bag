@@ -131,6 +131,11 @@ const config = [
         label: '解析&生成 CSV',
         id: `${PREFIX}/scenario/csv/index`,
       },
+      {
+        type: 'doc',
+        label: '流程图',
+        id: `${PREFIX}/scenario/flow/demo`,
+      },
     ],
   },
   {
