@@ -17,3 +17,6 @@
 * [Product Hunt](https://www.producthunt.com/)
 * [indie hackers](https://www.indiehackers.com/)
 * [神器集](https://hao.logosc.cn/)
+
+## 其他
+* [Knowhow 交换集市](https://whjlnspmd6.feishu.cn/wiki/JtJNwDTm1ifFavkAtZKcj6G5n8b)
