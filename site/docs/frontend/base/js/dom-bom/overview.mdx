@@ -90,6 +90,35 @@ const handleKeyDown = (e) => {
 
 在 React 中，isComposing 在 e.nativeEvent 上。
 
+### 判断该元素是否被hover
+```js
+function App() {
+  const [isHovering, setIsHovering] = useState(false)
+  return (
+    <div
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      {isHovering ? 'hovering' : 'leave'}
+    </div>
+  )
+}
+```
+
+用 ahooks
+```js
+import { useHover } from 'ahooks'
+function App() {
+  const ref = useRef(null)
+  const isHovering = useHover(ref)
+  return (
+    <div ref={ref}>
+      {isHovering ? 'hovering' : 'leave'}
+    </div>
+  )
+}
+```
+
 ## URL 
 ### URL 信息
 * locaion.href
