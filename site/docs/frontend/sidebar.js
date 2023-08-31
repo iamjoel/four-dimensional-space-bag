@@ -133,6 +133,11 @@ const config = [
       },
       {
         type: 'doc',
+        label: '元素跟随(Portal to follow elem)',
+        id: `${PREFIX}/scenario/portal/index`,
+      },
+      {
+        type: 'doc',
         label: '流程图',
         id: `${PREFIX}/scenario/flow/demo`,
       },

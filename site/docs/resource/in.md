@@ -17,6 +17,7 @@
 * [Product Hunt](https://www.producthunt.com/)
 * [indie hackers](https://www.indiehackers.com/)
 * [神器集](https://hao.logosc.cn/)
+* [Solo](https://solo.xin/topics/node/6) 独立开发者社区
 
 ## 其他
 * [Knowhow 交换集市](https://whjlnspmd6.feishu.cn/wiki/JtJNwDTm1ifFavkAtZKcj6G5n8b)
