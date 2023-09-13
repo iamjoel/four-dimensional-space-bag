@@ -138,6 +138,11 @@ const config = [
       },
       {
         type: 'doc',
+        label: '拖放生成页面',
+        id: `${PREFIX}/scenario/dnd-page/index`,
+      },
+      {
+        type: 'doc',
         label: '流程图',
         id: `${PREFIX}/scenario/flow/demo`,
       },
