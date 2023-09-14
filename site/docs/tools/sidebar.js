@@ -8,6 +8,16 @@ const config = [
   },
   {
     type: 'doc',
+    label: 'ScriptKit',
+    id: `${PREFIX}/script-kit/overview`,
+  },
+  {
+    type: 'doc',
+    label: 'Chrome',
+    id: `${PREFIX}/chrome`,
+  },
+  {
+    type: 'doc',
     label: 'Git',
     id: `${PREFIX}/git`,
   },
