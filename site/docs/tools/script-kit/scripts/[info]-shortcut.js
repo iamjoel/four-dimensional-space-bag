@@ -7,7 +7,7 @@ const open = await npm("open")
 
 const dify = [
   {
-    name: "Dev URL",
+    name: "Dify Dev URL",
     description: "Dev URL",
     // shortcut: "d",
     value: {
@@ -15,42 +15,42 @@ const dify = [
     },
   },
   {
-    name: "Progress",
-    description: "Dev 环境构建进度",
+    name: "Dify Progress",
+    description: "Dify Dev 环境构建进度",
     value: {
       value: "https://github.com/langgenius/dify/commits/deploy/dev",
     },
   },
   {
-    name: "Pull Request",
-    description: "Pull Request",
+    name: "Dify Pull Request",
+    description: "Dify Pull Request",
     value: {
       value: "https://github.com/langgenius/dify/pulls",
     }
   },
   {
-    name: "Production URL",
+    name: "Dify Production URL",
     description: "线上 URL",
     value: {
       value: "https://cloud.dify.ai/apps",
     },
   },
   {
-    name: 'Ligai',
+    name: 'Dify Ligai',
     description: 'Ligai 跟进迭代',
     value: {
       value: "https://ligai.cn/app/kanban/list?pid=118028049"
     }
   },
   {
-    name: "Icon Doc",
+    name: "Dify Icon Doc",
     description: "Icon 文档",
     value: {
       value: 'https://langgenius.feishu.cn/wiki/ERwlwKLeNiNGO9kp88IcUflqnWp'
     },
   },
   {
-    name: "Chat Webapp Template",
+    name: "Dify Chat Webapp Template",
     description: "聊天 Web 模版",
     value: {
       action: 'code',
@@ -58,13 +58,34 @@ const dify = [
     },
   },
   {
-    name: "Text generation Webapp Template",
+    name: "Dify Text generation Webapp Template",
     description: "文本生成 Web 模版",
     value: {
       action: 'code',
       value: "~/dify/webapp-text-generator",
     },
-  }
+  },
+  {
+    name: "Dify Doc Code",
+    description: "Dify 文档",
+    value: {
+      action: 'code',
+      value: "~/dify/dify-docs",
+    },
+  },
+  {
+    name: 'Dify GitHub',
+    value: {
+      value: 'https://github.com/langgenius/dify'
+    }
+  },
+  {
+    name: 'Dify Website',
+    description: "Dify 官网",
+    value: {
+      value: 'https://dify.ai'
+    }
+  },
 ]
 
 const info = [
@@ -75,10 +96,30 @@ const info = [
     }
   },
   {
+    name: "Dialogue Code",
+    value: {
+      action: 'code',
+      value: "~/joel/dialogue",
+    }
+  },
+  {
     name: "Four dimensional Code",
     value: {
       action: 'code',
       value: "~/joel/four-dimensional-space-bag/site",
+    }
+  },
+  {
+    name: 'Joel GitHub',
+    value: {
+      value: 'https://github.com/iamjoel'
+    }
+  },
+  {
+    name: "LLM Explore Code",
+    value: {
+      action: 'code',
+      value: "~/joel/llm-explore",
     }
   },
   {
