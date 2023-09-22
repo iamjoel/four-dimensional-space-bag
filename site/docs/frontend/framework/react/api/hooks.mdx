@@ -24,7 +24,31 @@ useState 用来存数据。
   <ChangeVarNotReRender />
 </Demo>
 
+在 setTimeout 之类函数里拿最新的  state值：
+```jsx
+const [count, doSetCount] = useState(0)
+const countRef = useRef(0)
+const setCount = (newCount) => {
+  countRef.current = newCount
+  doSetCount(newCount)
+}
+const getCount = () => countRef.current
+const 
+useEffect(() => {
+  setTimeout(() => {
+    console.log(count) // 0
+    console.log(getCount()) // current value
+  }, 3000)
+}, [])
+```
 
+也可以用 ahooks 的工具库 `useGetState`:
+```js
+import { useGetState } from 'ahooks'
+const [count, setCount, getCount] = useGetState(0)
+```
+
+但也碰到 `useGetState` 有时拿到不是最新的值的场景。但用 `ref` 拿到的一定是最新的。
 
 ### useEffect
 

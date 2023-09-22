@@ -15,7 +15,7 @@ const dify = [
     },
   },
   {
-    name: "Dify Progress",
+    name: "Dify Dev Progress",
     description: "Dify Dev 环境构建进度",
     value: {
       value: "https://github.com/langgenius/dify/commits/deploy/dev",
@@ -29,7 +29,7 @@ const dify = [
     }
   },
   {
-    name: "Dify Production URL",
+    name: "Dify Production(Cloud) URL",
     description: "线上 URL",
     value: {
       value: "https://cloud.dify.ai/apps",
@@ -129,7 +129,14 @@ const info = [
     }
   },
   {
-    name: 'Sync Script to GitHub',
+    name: "ScriptKit Code",
+    value: {
+      action: 'code',
+      value: "~/.kenv",
+    }
+  },
+  {
+    name: 'Sync ScriptKit to GitHub',
     description: '同步 Script kit 的脚本到 GitHub',
     value: {
       action: 'exec',
