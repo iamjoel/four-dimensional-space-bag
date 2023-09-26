@@ -4,6 +4,7 @@
 
 import "@johnlindquist/kit"
 const open = await npm("open")
+const simpleGit = await npm("simple-git")
 
 const dify = [
   {
@@ -26,6 +27,14 @@ const dify = [
     description: "Dify Pull Request",
     value: {
       value: "https://github.com/langgenius/dify/pulls",
+    }
+  },
+  {
+    name: 'Dify merge main',
+    description: 'Fetch latest main to current branch',
+    value: {
+      action: 'customize',
+      value: 'difyMergeMain'
     }
   },
   {
@@ -129,6 +138,12 @@ const info = [
     }
   },
   {
+    name: 'Twitter',
+    value: {
+      value: 'https://twitter.com/home',
+    }
+  },
+  {
     name: "ScriptKit Code",
     value: {
       action: 'code',
@@ -147,12 +162,28 @@ const info = [
 
 let { value, action} = await arg("Select open target", [...dify, ...info])
 
+const tools = {
+  async difyMergeMain() {
+    const options = {
+      baseDir: '/Users/joel/dify/dify'
+    }
+    const git = simpleGit(options)
+    const {current: currBranch} = await git.branchLocal()
+    await git.checkout('main')
+    await git.pull()
+    await git.checkout(currBranch)
+    await git.mergeFromTo('main', currBranch)
+  }
+}
 switch (action) {
   case 'code':
     await exec(`code ${value}`)
     break
   case 'exec':
     await exec(value)
+    break
+  case 'customize':
+    tools[value]()
     break
   default:
     open(value)
