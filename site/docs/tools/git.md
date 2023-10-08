@@ -19,6 +19,15 @@ git remote remove [源简称]
 git remote -v
 ```
 
+## Sync fork repo latest code
+```
+git remote add [源简称] https://github.com/原仓库地址.git
+git fetch [源简称]
+git merge upstream/main
+```
+
+一般 `源简称` 叫 upstream。
+
 ## 获取远程分支
 
 ```bash
