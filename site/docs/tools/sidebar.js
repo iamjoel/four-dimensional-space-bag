@@ -23,6 +23,11 @@ const config = [
   },
   {
     type: 'doc',
+    label: 'Conda',
+    id: `${PREFIX}/conda`,
+  },
+  {
+    type: 'doc',
     label: 'Docker',
     id: `${PREFIX}/docker/overview`,
   },
