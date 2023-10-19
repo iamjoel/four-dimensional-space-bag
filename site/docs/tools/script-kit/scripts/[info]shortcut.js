@@ -151,6 +151,12 @@ const info = [
     }
   },
   {
+    name: "Style to Tailwind css name",
+    value: {
+      value: 'https://style-to-tailwind-class-name.vercel.app/'
+    }
+  },
+  {
     name: 'Sync ScriptKit to GitHub',
     description: '同步 Script kit 的脚本到 GitHub',
     value: {
@@ -189,6 +195,14 @@ switch (action) {
     open(value)
 }
 
-
+// support iframe
+// div(`
+//   <iframe 
+//     src='https://page-maker-fywu.vercel.app/form/normal/edit'
+//     class='w-full'
+//     style='height: 600px'
+//   >
+//   </iframe>
+// `)
 
 

@@ -18,6 +18,18 @@ const config = [
       },
     ],
   },
+  {
+    type: 'category',
+    label: 'Database',
+    collapsed: false,
+    items: [
+      {
+        type: 'doc',
+        label: 'Postgre',
+        id: `${PREFIX}/database/postgre`,
+      },
+    ],
+  },
 ]
 
 module.exports = config
