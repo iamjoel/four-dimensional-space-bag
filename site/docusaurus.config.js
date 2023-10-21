@@ -126,6 +126,11 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'custom-documate',
+            position: 'right',
+            endpoint: 'https://dg4hbetvb2.us.aircode.run/ask',
+          },
         ],
       },
       footer: {

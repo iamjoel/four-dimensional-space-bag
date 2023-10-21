@@ -17,12 +17,14 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "fix": "eslint . --fix"
+    "fix": "eslint . --fix",
+    "documate:upload": "documate upload"
   },
   "dependencies": {
     "@antfu/eslint-config": "^0.39.6",
     "@arco-design/web-react": "^2.44.0",
     "@babel/core": "^7.21.0",
+    "@documate/react": "latest",
     "@docusaurus/core": "latest",
     "@docusaurus/plugin-google-gtag": "^2.4.1",
     "@docusaurus/preset-classic": "latest",
@@ -66,6 +68,7 @@
     "webpack": "^5.76.0"
   },
   "devDependencies": {
+    "@documate/documate": "latest",
     "@docusaurus/module-type-aliases": "latest",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/sortablejs": "^1.15.1",
