@@ -52,7 +52,11 @@ const config = [
           },
         ],
       },
-
+      {
+        type: 'doc',
+        label: 'Tailwind',
+        id: `${PREFIX}/base/css/tailwind/overview`,
+      },
     ],
   },
   {

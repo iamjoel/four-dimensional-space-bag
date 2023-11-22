@@ -1,0 +1,14 @@
+import Demo from '@site/src/components/awesome/demo'
+import { GroupHover } from './demo'
+
+# Tailwind
+## Group Hover
+父元素 hover 时，子元素做出相应的样式。
+
+用法：父元素加 `group`, 子元素加 `group-hover:样式`。
+
+<Demo>
+  <GroupHover />
+</Demo>
+
+还支持自定义父元素的 group 名。如 `group/名称`，对应的子元素样式为 `group-hover/名称:样式`。更多信息见[这里](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state)。
