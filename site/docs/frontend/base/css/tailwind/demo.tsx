@@ -10,3 +10,21 @@ export function GroupHover() {
     </div>
   )
 }
+
+export function ColorWithOpacity() {
+  return (
+    <div>
+      <div className="text-black/40">Black opacity 40%</div>
+      <div className="text-gray-400/50">Gray-500 opacity 80%</div>
+    </div>
+  )
+}
+
+export function WordUppercase() {
+  return (
+    <div>
+      <div className='uppercase'>uppercase</div>
+      <div className='capitalize'>capitalize</div>
+    </div>
+  )
+}

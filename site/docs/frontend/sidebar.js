@@ -169,6 +169,11 @@ const config = [
     items: [
       {
         type: 'doc',
+        label: 'SVG 属性转化为驼峰',
+        id: `${PREFIX}/tools/svg-attr-case/readme`,
+      },
+      {
+        type: 'doc',
         label: 'Notion AI',
         id: `${PREFIX}/tools/notion-ai/readme`,
       },

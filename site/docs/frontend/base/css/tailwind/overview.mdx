@@ -1,5 +1,6 @@
 import Demo from '@site/src/components/awesome/demo'
-import { GroupHover } from './demo'
+import { GroupHover, ColorWithOpacity, WordUppercase } from './demo'
+
 
 # Tailwind
 ## Group Hover
@@ -12,3 +13,13 @@ import { GroupHover } from './demo'
 </Demo>
 
 还支持自定义父元素的 group 名。如 `group/名称`，对应的子元素样式为 `group-hover/名称:样式`。更多信息见[这里](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state)。
+
+## 带透明度的颜色值
+<Demo>
+  <ColorWithOpacity />
+</Demo>
+
+## 字母大写
+<Demo>
+  <WordUppercase />
+</Demo>
