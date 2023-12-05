@@ -1,0 +1,7 @@
+名称,描述,用法,
+"Git Review pull request
+",,"git  co -b review/xxx
+# 添加别人的 repo 源
+git remote add [源简称] https://github.com/[username]/[repo]
+git pull [源简称] [分支]
+",

@@ -95,6 +95,20 @@ const dify = [
       value: 'https://dify.ai'
     }
   },
+  {
+    name: "Dify Feature",
+    description: "The Feishu's doc links of features",
+    value: {
+      value: "https://langgenius.feishu.cn/drive/folder/XEpcfPLrtl3BkcdOJ5KclqTanRf",
+    }
+  },
+  {
+    name: "Dify Daily",
+    description: "The Feishu's doc links of daily",
+    value: {
+      value: "https://langgenius.feishu.cn/drive/folder/DXI9f3rlwlXAxPdpwuVc30QSnVd",
+    }
+  },
 ]
 
 const info = [
