@@ -52,6 +52,11 @@ docker image ls
 
 在 Docker 客户端可以看到更详细对信息。
 
+## 构建镜像
+```
+docker build -t 镜像名称 Dockerfile所在文件夹的路径
+```
+
 ## 定制镜像
 用 Dockerfile 来定制镜像。 Dockerfile 里包含了一系列修改的指令。每个指令都会给改 image 增加一层。
 
@@ -149,6 +154,8 @@ services:
     ports:
       - "5432:5432"
 ```
+
+image 会从本地镜像库寻找，如果没有则从 Docker Hub 下载。image 的名字可以是名称，或者是镜像 id 的一部分。
 
 ### 启动
 ```
