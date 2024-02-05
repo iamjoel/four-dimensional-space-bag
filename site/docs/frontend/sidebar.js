@@ -132,6 +132,11 @@ const config = [
       },
       {
         type: 'doc',
+        label: '手势',
+        id: `${PREFIX}/scenario/gesture/index`,
+      },
+      {
+        type: 'doc',
         label: '解析&生成 CSV',
         id: `${PREFIX}/scenario/csv/index`,
       },
