@@ -132,6 +132,11 @@ const config = [
       },
       {
         type: 'doc',
+        label: '动画',
+        id: `${PREFIX}/scenario/animate/index`,
+      },
+      {
+        type: 'doc',
         label: '手势',
         id: `${PREFIX}/scenario/gesture/index`,
       },
