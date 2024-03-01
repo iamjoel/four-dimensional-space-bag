@@ -52,10 +52,11 @@ const dify = [
     }
   },
   {
-    name: "Dify Icon Doc",
-    description: "Icon 文档",
+    name: "Dify 新建 ICON",
+    description: "npm run gen-icons",
     value: {
-      value: 'https://langgenius.feishu.cn/wiki/ERwlwKLeNiNGO9kp88IcUflqnWp'
+      action: 'exec',
+      value: "open ~/dify/dify/web/app/components/base/icons/assets",
     },
   },
   {
