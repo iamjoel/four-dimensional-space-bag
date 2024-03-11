@@ -8,6 +8,13 @@ const simpleGit = await npm("simple-git")
 
 const dify = [
   {
+    name: "Dify 飞书文档/Doc",
+    // shortcut: "d",
+    value: {
+      value: "https://langgenius.feishu.cn/wiki/WYDKwCWdairWh5kXN4NcGN1inyg",
+    },
+  },
+  {
     name: "Dify Dev URL",
     description: "Dev URL",
     // shortcut: "d",
