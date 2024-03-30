@@ -3,6 +3,7 @@ import React, { useCallback } from 'react'
 import normalize from '@site/src/utils/normalize'
 
 export type IButtonProps = {
+  className?: string
   type?: 'primary' | 'dashed' | 'outline' | 'text'
   size?: 'sm' | 'md' | 'lg'
   disabled?: boolean
@@ -11,10 +12,11 @@ export type IButtonProps = {
 }
 
 const Button: FC<IButtonProps> = ({
+  className,
   type = 'primary',
   size = 'md',
   disabled = false,
-  onClick = () => {},
+  onClick = () => { },
   children,
 }) => {
   const borderColorStyle = (() => (
@@ -79,6 +81,7 @@ const Button: FC<IButtonProps> = ({
   return (
     <div
       className={`
+        ${className || ''}
         inline-flex items-center
         box-border
         rounded-sm

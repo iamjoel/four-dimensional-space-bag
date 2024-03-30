@@ -31,6 +31,11 @@ const config = [
     label: 'Docker',
     id: `${PREFIX}/docker/overview`,
   },
+  {
+    type: 'doc',
+    label: 'Sort csv row',
+    id: `${PREFIX}/sort-csv-row/readme`,
+  },
 ]
 
 module.exports = config
