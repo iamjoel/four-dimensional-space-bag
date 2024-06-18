@@ -192,6 +192,11 @@ const config = [
         label: '自定义代码片段',
         id: `${PREFIX}/tools/vscode/snippet`,
       },
+      {
+        type: 'doc',
+        label: '包管理工具',
+        id: `${PREFIX}/tools/package-manage`,
+      },
     ],
   },
   {
