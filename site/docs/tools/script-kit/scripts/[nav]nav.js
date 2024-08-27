@@ -1,6 +1,7 @@
 // Group: Search
-// Name: Shortcut
+// Name: Nav
 // Shortcut: cmd 1
+// Frequently used tools, infos and so on.
 
 import "@johnlindquist/kit"
 const open = await npm("open")
@@ -36,27 +37,20 @@ const dify = [
       value: "https://github.com/langgenius/dify/pulls",
     }
   },
-  {
-    name: 'Dify merge main',
-    description: 'Fetch latest main to current branch',
-    value: {
-      action: 'customize',
-      value: 'difyMergeMain'
-    }
-  },
+  // {
+  //   name: 'Dify merge main',
+  //   description: 'Fetch latest main to current branch',
+  //   value: {
+  //     action: 'customize',
+  //     value: 'difyMergeMain'
+  //   }
+  // },
   {
     name: "Dify Production(Cloud) URL",
     description: "线上 URL",
     value: {
       value: "https://cloud.dify.ai/apps",
     },
-  },
-  {
-    name: 'Dify Ligai',
-    description: 'Ligai 跟进迭代',
-    value: {
-      value: "https://ligai.cn/app/kanban/list?pid=118028049"
-    }
   },
   {
     name: "Dify 新建 ICON",
@@ -80,14 +74,6 @@ const dify = [
     value: {
       action: 'code',
       value: "~/dify/webapp-text-generator",
-    },
-  },
-  {
-    name: "Dify Doc Code",
-    description: "Dify 文档",
-    value: {
-      action: 'code',
-      value: "~/dify/dify-docs",
     },
   },
   {
@@ -117,6 +103,37 @@ const dify = [
       value: "https://langgenius.feishu.cn/drive/folder/DXI9f3rlwlXAxPdpwuVc30QSnVd",
     }
   },
+]
+
+const dev = [
+  {
+    name: 'React Component Template',
+    value: {
+      action: 'customize',
+      value: 'outputReactComponentTemplate'
+    }
+  },
+  {
+    name: 'Tailwind cheat sheet',
+    value: {
+      action: 'customize',
+      value: 'showTailwindCheatSheet'
+    }
+  },
+  {
+    name: 'Show IP',
+    value: {
+      action: 'customize',
+      value: 'showIP'
+    }
+  }
+  // Deprecated. Not used for UI design upgraded.
+  // {
+  //   name: "Style to Tailwind css name",
+  //   value: {
+  //     value: 'https://style-to-tailwind-class-name.vercel.app/'
+  //   }
+  // },
 ]
 
 const info = [
@@ -173,9 +190,10 @@ const info = [
     }
   },
   {
-    name: "Style to Tailwind css name",
+    name: "ScriptKit Docs",
     value: {
-      value: 'https://style-to-tailwind-class-name.vercel.app/'
+      action: 'customize',
+      value: "showScriptKitDocs",
     }
   },
   {
@@ -188,7 +206,7 @@ const info = [
   }
 ]
 
-let { value, action} = await arg("Select open target", [...dify, ...info])
+let { value, action } = await arg("Select open target", [...dify, ...dev, ...info])
 
 const tools = {
   async difyMergeMain() {
@@ -196,11 +214,59 @@ const tools = {
       baseDir: '/Users/joel/dify/dify'
     }
     const git = simpleGit(options)
-    const {current: currBranch} = await git.branchLocal()
+    const { current: currBranch } = await git.branchLocal()
     await git.checkout('main')
     await git.pull()
     await git.checkout(currBranch)
     await git.mergeFromTo('main', currBranch)
+  },
+
+  async outputReactComponentTemplate() {
+    const name = await arg("Component name")
+    const code = `'use client'
+import React, { FC } from 'react'
+
+type Props = {
+  
+}
+
+const ${name}: FC<Props> = ({
+}) => {
+  return (
+    <div>
+    </div>
+  )
+}
+export default React.memo(${name})
+
+`
+    // insertText in cursor position
+    setSelectedText(code)
+  },
+  async showTailwindCheatSheet() {
+    await div(md(`
+* \`h-screen\`: 100vh
+* \`leading-tight\`: 1.25; \`leading-normal\`: 1.5
+* \`font-normal\`: 400
+* \`truncate\`: text overflow ellipsis and truncate
+* \`line-clamp-2\`: line clamp 2
+`))
+  },
+  async showIP() {
+    const ip = await npm("ip")
+    const ipAddr = ip.address()
+    await div(ipAddr, 'p-4')
+  },
+  async showScriptKitDocs() {
+    const html = md(`
+# ScriptKit
+* [Scripts](https://www.scriptkit.com/scripts)
+* [ScriptKit](https://scriptkit.com)
+* [API](https://github.com/johnlindquist/kit/blob/main/API.md)
+* [Guide](https://github.com/johnlindquist/kit/blob/main/GUIDE.md)
+`)
+
+    await div(html)
   }
 }
 switch (action) {
@@ -211,7 +277,7 @@ switch (action) {
     await exec(value)
     break
   case 'customize':
-    tools[value]()
+    await tools[value]()
     break
   default:
     open(value)
