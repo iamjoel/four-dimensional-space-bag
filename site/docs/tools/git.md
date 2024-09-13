@@ -19,6 +19,11 @@ git remote remove [源简称]
 git remote -v
 ```
 
+## 跳过 git hooks 的 lint 检查
+```
+git commit --no-verify -am 'xxx'
+```
+
 ## Sync fork repo latest code
 ```
 git remote add [源简称] https://github.com/原仓库地址.git

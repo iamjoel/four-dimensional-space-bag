@@ -20,7 +20,7 @@ const Logo: FC<Props> = ({
   const isKawaii = kawaiiQuery === 'true' || (kawaiiQuery !== 'false' && localStorage.getItem(saveISKaviiKey) === 'true')
   useEffect(() => {
     localStorage.setItem(saveISKaviiKey, isKawaii ? 'true' : 'false')
-  }, [])
+  }, [isKawaii])
   return (
     <div style={{
       width,
