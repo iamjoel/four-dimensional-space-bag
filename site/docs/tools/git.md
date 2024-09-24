@@ -24,6 +24,15 @@ git remote -v
 git commit --no-verify -am 'xxx'
 ```
 
+## SubModules
+[Git Submodules](https://www.freecodecamp.org/news/how-to-use-git-submodules/)
+
+### 拿最新的 SubModules 代码
+`git submodule update`
+
+### 更新 SubModules 代码
+`git submodule sync`
+
 ## Sync fork repo latest code
 ```
 git remote add [源简称] https://github.com/原仓库地址.git
