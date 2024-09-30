@@ -46,6 +46,22 @@ const dify = [
   //   }
   // },
   {
+    name: 'Review Dify PR',
+    description: 'Review pull request',
+    value: {
+      action: 'customize',
+      value: 'reviewDifyPr'
+    }
+  },
+  {
+    name: 'Reviewing Dify PR done',
+    description: 'Finished reviewing pull request',
+    value: {
+      action: 'customize',
+      value: 'reviewDifyPrDone'
+    }
+  },
+  {
     name: "Dify Production(Cloud) URL",
     description: "线上 URL",
     value: {
@@ -121,6 +137,38 @@ const dev = [
     }
   },
   {
+    name: 'Tailwind Docs',
+    value: {
+      value: 'https://tailwindcss.com/docs/grid-template-columns'
+    }
+  },
+  {
+    name: 'Git Docs',
+    value: {
+      value: 'https://iamjoel.github.io/four-dimensional-space-bag/site/build/docs/tools/git'
+    }
+  },
+  {
+    name: 'Google Translate',
+    // shortcut: 'cmd shift t',
+    value: {
+      value: 'https://translate.google.com/details?hl=zh-CN&sl=zh-CN&tl=en&op=translate'
+    }
+  },
+  // AI
+  {
+    name: 'Claude',
+    value: {
+      value: 'https://claude.ai/new'
+    }
+  },
+  {
+    name: 'v0',
+    value: {
+      value: 'https://v0.dev/chat'
+    }
+  },
+  {
     name: 'Show IP',
     value: {
       action: 'customize',
@@ -137,6 +185,12 @@ const dev = [
 ]
 
 const info = [
+  {
+    name: 'Gmail',
+    value: {
+      value: 'https://mail.google.com/'
+    }
+  },
   {
     name: "Four dimensional",
     value: {
@@ -208,6 +262,25 @@ const info = [
 
 let { value, action } = await arg("Select open target", [...dify, ...dev, ...info])
 
+function getRepoInfo(branchUrl) {
+  // Regular expression to match GitHub repository URL pattern
+  const regex = /^https:\/\/github\.com\/([^\/]+)\/([^\/]+)(?:\/tree\/([^\/]+))?/;
+
+  // Extract parts from the URL
+  const match = branchUrl.match(regex);
+
+  if (!match) {
+    throw new Error('Invalid GitHub branch URL');
+  }
+
+  const [, owner, repo, branch = 'main'] = match;
+
+  return {
+    url: `https://github.com/${owner}/${repo}.git`,
+    branch: branch
+  };
+}
+
 const tools = {
   async difyMergeMain() {
     const options = {
@@ -219,6 +292,40 @@ const tools = {
     await git.pull()
     await git.checkout(currBranch)
     await git.mergeFromTo('main', currBranch)
+  },
+
+  async reviewDifyPr() {
+    const name = await arg("Repo brach url")
+
+    const repo = getRepoInfo(name)
+
+    const reviewBranch = 'review/pr'
+    const remoteName = 'review'
+    const options = {
+      baseDir: '/Users/joel/dify/dify'
+    }
+    const git = simpleGit(options)
+    await git.checkout('main')
+    await git.pull()
+    await git.checkoutLocalBranch(reviewBranch)
+    await git.addRemote(remoteName, repo.url)
+    await git.pull(remoteName, repo.branch)
+    await notify('Done')
+  },
+
+  async reviewDifyPrDone() {
+    try {
+      const options = {
+        baseDir: '/Users/joel/dify/dify'
+      }
+      const git = simpleGit(options)
+      await git.checkout('main')
+      await git.deleteLocalBranch('review/pr', true)
+      await git.removeRemote('review')
+    } catch (e) {
+      console.error(e)
+    }
+    await notify('Done')
   },
 
   async outputReactComponentTemplate() {
