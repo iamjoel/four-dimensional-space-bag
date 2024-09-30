@@ -295,6 +295,7 @@ const tools = {
   },
 
   async reviewDifyPr() {
+    // like: 'https://github.com/iamjoel/dify-fork/tree/main'
     const name = await arg("Repo brach url")
 
     const repo = getRepoInfo(name)
@@ -307,6 +308,7 @@ const tools = {
     const git = simpleGit(options)
     await git.checkout('main')
     await git.pull()
+    await git.deleteLocalBranch(reviewBranch, true)
     await git.checkoutLocalBranch(reviewBranch)
     await git.addRemote(remoteName, repo.url)
     await git.pull(remoteName, repo.branch)
