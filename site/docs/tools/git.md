@@ -24,6 +24,12 @@ git remote -v
 git commit --no-verify -am 'xxx'
 ```
 
+## 不改代码，触发重新运行 git action
+```
+git commit --amend --no-edit                             
+git push --force-with-lease
+```
+
 ## SubModules
 [Git Submodules](https://www.freecodecamp.org/news/how-to-use-git-submodules/)
 
