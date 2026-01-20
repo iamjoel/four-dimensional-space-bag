@@ -24,6 +24,13 @@ const dify = [
     },
   },
   {
+    name: "Dify Staging URL",
+    description: "Staging URL",
+    value: {
+      value: "https://console-staging.dify.dev/apps",
+    },
+  },
+  {
     name: "Dify Dev Progress",
     description: "Dify Dev 环境构建进度",
     value: {
@@ -35,6 +42,28 @@ const dify = [
     description: "Dify Pull Request",
     value: {
       value: "https://github.com/langgenius/dify/pulls",
+    }
+  },
+  {
+    name: 'Dify Plugin dev',
+    value: {
+      value: 'https://console-plugin.dify.dev/apps'
+    }
+  },
+  {
+    name: "Dify get token",
+    description: "获取 token",
+    value: {
+      action: 'customize',
+      value: 'getToken',
+    }
+  },
+  {
+    name: "Dify set token",
+    description: "设置 token",
+    value: {
+      action: 'customize',
+      value: 'setToken',
     }
   },
   // {
@@ -155,13 +184,14 @@ const dev = [
       value: 'https://translate.google.com/details?hl=zh-CN&sl=zh-CN&tl=en&op=translate'
     }
   },
-  // AI
   {
-    name: 'Claude',
+    name: 'lint fix(Dify)',
     value: {
-      value: 'https://claude.ai/new'
+      action: 'customize',
+      value: 'lintFix',
     }
   },
+  // AI
   {
     name: 'v0',
     value: {
@@ -215,13 +245,6 @@ const info = [
     name: 'Joel GitHub',
     value: {
       value: 'https://github.com/iamjoel'
-    }
-  },
-  {
-    name: "LLM Explore Code",
-    value: {
-      action: 'code',
-      value: "~/joel/llm-explore",
     }
   },
   {
@@ -352,6 +375,10 @@ export default React.memo(${name})
     // insertText in cursor position
     setSelectedText(code)
   },
+  async lintFix() {
+    // insertText in cursor position
+    setSelectedText('npx eslint --quiet --concurrency="auto" --fix --prune-suppressions')
+  },
   async showTailwindCheatSheet() {
     await div(md(`
 * \`h-screen\`: 100vh
@@ -376,6 +403,18 @@ export default React.memo(${name})
 `)
 
     await div(html)
+  },
+  getToken() {
+    setSelectedText(`\`\${localStorage.getItem('console_token')}@@@\${localStorage.getItem('refresh_token')}\``)
+  },
+  setToken() {
+    setSelectedText(`function setAuth(str) {
+  const [console_token, refresh_token] = str.split('@@@')
+  localStorage.setItem('console_token', console_token)
+  localStorage.setItem('refresh_token', refresh_token)
+}
+setAuth('')
+location.href='/apps'`)
   }
 }
 switch (action) {
